@@ -1,0 +1,24 @@
+{
+  "name": "cs373-tbsa",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Sweetman/cs373-tbsa",
+  "authors": [
+    "Kevin Lin <kevin.lin@utexas.edu>"
+  ],
+  "description": "cs373 project",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.7",
+    "angular-route": "1.4.7",
+    "bootstrap": "3.3.5"
+  }
+}
