@@ -268,6 +268,32 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="id" id="FED5683F-B551-9B14-E2C1-AC1247787E6B">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-20 23:10:06 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B6BB274E-7520-DEBC-9968-63FDD6AFFCE8" name="{entity} PK">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-20 23:10:14 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FED5683F-B551-9B14-E2C1-AC1247787E6B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

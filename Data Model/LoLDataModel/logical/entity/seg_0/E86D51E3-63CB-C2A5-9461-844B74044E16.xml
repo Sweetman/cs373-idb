@@ -128,6 +128,20 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4000</dataTypeSize>
 </Attribute>
+<Attribute name="id1" id="4F67B16F-6F2B-88E1-FB4E-22E643BF3021">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-20 23:10:19 UTC</createdTime>
+<generatorID>503E6B27-9495-D4E5-05DE-643869FB2CA0</generatorID>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>FED5683F-B551-9B14-E2C1-AC1247787E6B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="3C9E7902-6E3A-E2EA-9563-0760F5893174" name="{entity} PK">
