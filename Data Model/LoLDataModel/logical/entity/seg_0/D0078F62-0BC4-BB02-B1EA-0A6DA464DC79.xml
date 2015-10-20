@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D0078F62-0BC4-BB02-B1EA-0A6DA464DC79" name="item">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 17:17:39 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="item_name" id="7BAB00EE-5C74-D9DD-3AAB-57860BF3E853">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 18:20:41 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="group" id="7C06B81A-1057-D147-7546-03C9046E7DB6">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 18:20:56 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="description" id="AB818C00-20CA-EA0D-FEB8-20DA5845FC85">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 18:21:07 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="plaintext" id="B5FE104D-CEDC-5FE6-8C68-EF788A7F865D">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 18:21:18 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="image" id="5DE0403B-6DF7-EA3D-5888-7BFB20B5C520">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 18:21:30 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="champ_name" id="F2D7CEC9-4000-2E8D-8FFC-31E7A5A230AE">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 19:27:46 UTC</createdTime>
+<generatorID>89DD7C8E-37D4-6C3F-EE5C-5AF088E7D2BF</generatorID>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>BA33A707-0912-EE46-DFB0-429586434C0B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="48DA8F2B-1882-84F3-D2E3-19BA12B10569" name="{entity} PK">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 18:22:34 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7BAB00EE-5C74-D9DD-3AAB-57860BF3E853</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

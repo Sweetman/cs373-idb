@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A9C2FD17-DE27-06DB-2767-455E1A9CB3B4" name="champion_passive">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 17:44:19 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="description" id="3D3CD40E-A69D-95A9-51C0-B1516D47D193">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 17:44:28 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="image" id="1F406220-6944-0DB0-42F4-C426AFB5CF9F">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 17:44:54 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="passive_name" id="80B884AC-A87E-E538-0A91-5BEB16C2A6A6">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 17:45:07 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="champ_name" id="3887D824-54A0-D20F-7736-9B27AB9E7EF0">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-19 17:45:22 UTC</createdTime>
+<generatorID>593211DD-DE27-9DB6-4EAE-F64C9C55EB0E</generatorID>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<referedAttribute>BA33A707-0912-EE46-DFB0-429586434C0B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BF70CD66-60F1-2268-1C0E-3692A8E8CB19" name="{entity} PK">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-20 19:14:44 UTC</createdTime>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3887D824-54A0-D20F-7736-9B27AB9E7EF0</attributeRef>
+<attributeRef>3887D824-54A0-D20F-7736-9B27AB9E7EF0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
