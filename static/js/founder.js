@@ -2,7 +2,7 @@ angular.module('tbsaApp.founder', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/founders', {
-        templateUrl: 'partials/founder.html',
+        templateUrl: '/static/partials/founder.html',
         controller: 'founderCtrl',
         controllerAs: 'founder'
     });

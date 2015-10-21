@@ -16,5 +16,9 @@ from models import *
 def index():
     return render_template('index.html')
 
+@app.route('/partials/<path:path>')
+def serve_partial():
+	return render_template('/partials/{}'.format(path))
+
 if __name__ == '__main__':
     app.run()
