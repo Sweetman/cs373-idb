@@ -11,28 +11,32 @@ angular.module('tbsaApp', [
         .when('/', {
             templateUrl: '/static/partials/home.html',
             controller: 'homeCtrl',
-            controllerAs: 'home'
+            controllerAs: 'home',
+            activeTab: 'Home'
         })
         .when('/champions', {
             templateUrl: '/static/partials/champion.html',
             controller: 'championCtrl',
-            controllerAs: 'champion'
+            controllerAs: 'champion',
+            activeTab: "Champions"
         })
         .when('/abilities', {
             templateUrl: '/static/partials/ability.html',
             controller: 'abilityCtrl',
-            controllerAs: 'ability'
+            controllerAs: 'ability',
+            activeTab: 'Abilities'
         })
         .when('/items', {
             templateUrl: '/static/partials/item.html',
             controller: 'itemCtrl',
-            controllerAs: 'item'
+            controllerAs: 'item',
+            activeTab: 'Items'
         })
         .otherwise({redirectTo: '/'});
         
     $locationProvider.html5Mode(true);
 }])
 
-.controller('indexCtrl', ['$scope', function($scope){
-
+.controller('indexCtrl', ['$scope', '$route', function($scope, $route){
+    $scope.$route = $route;
 }]);

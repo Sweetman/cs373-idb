@@ -42,10 +42,10 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/champions">Champions</a></li>
-                        <li><a href="/abilities">Abilities</a></li>
-                        <li><a href="/items">Items</a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'Home'}"><a href="/">Home</a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'Champions'}"><a href="/champions">Champions</a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'Abilities'}"><a href="/abilities">Abilities</a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'Items'}"><a href="/items">Items</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Default</a></li>

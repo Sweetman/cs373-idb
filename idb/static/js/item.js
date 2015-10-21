@@ -1,5 +1,5 @@
 angular.module('tbsaApp.item', ['ngRoute'])
 
-.controller('itemCtrl', [function(){
+.controller('itemCtrl', ['$scope', function($scope){
     
 }]);
