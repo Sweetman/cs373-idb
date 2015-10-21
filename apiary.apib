@@ -14,7 +14,7 @@ Simple API for the League based, IMDB inspired website.
         {
             'urls': {
                         "champions_url": "/champions",
-                        "spells_url": "/spells",
+                        "abilities_url": "/abilities",
                         "items_url": "/items"
                     }
         }
@@ -35,7 +35,6 @@ They have the following attributes:
 * lore: (string) Description of this champion's background lore.
 * partype: (string) Champion type.
 * title: (string) Champion's title.
-* ability_id: (integer) ID of this Champion's associated spell.
 
 ## All Champions [/champions]
 ### List all Champions [GET]
@@ -61,7 +60,6 @@ They have the following attributes:
                 "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox"
                 "partype": "BloodWell",
                 "title": "the Darkin Blade"
-                "ability_id": 0
             },
             "Thresh": {
                 "name": "Thresh",
@@ -81,7 +79,6 @@ They have the following attributes:
                 "lore": "Thresh is a sadistic, spectral reaper who relishes tormenting the living and the dead. Once a jailer who mercilessly brutalized all under his charge, Thresh was hanged from his own chains by the prisoners he had tortured. With his vicious essence unbound, the Chain Warden roams Runeterra in search of prey. He derives twisted joy from slowly breaking the minds of his most defiant victims, before trapping their souls within the sickly green light of his lantern."
                 "partype": "Mana",
                 "title": "the Chain Warden"
-                "ability_id": 1
               }
         }
 
@@ -117,22 +114,22 @@ They have the following attributes:
         }
 
 
-# Group Spells
+# Group Abilities
 
-Spells are special abilities.
+Abilities are special abilities.
 They have the following attributes:
 
 ### Attributes
 * description: (string) Description of the spell.
 * costType: (string) Type of cost of this spell.
-* id: (integer) Spell ID.
+* ability_id: (integer) Spell ID.
 * image: (string) Spell's image filename.
 * maxrank: (integer) Maximum rank for this spell.
 * spell_name: (string) Name of spell.
 * champ_name: (string) Name of champion who can cast this spell.
 
-## All Spells [/Spells]
-### List all Spells [GET]
+## All Abilities [/Abilities]
+### List all Abilities [GET]
 
 + Response 200 (application/json)
 
@@ -140,7 +137,7 @@ They have the following attributes:
             "0": {
                 "description": "Aatrox takes flight and slams down at a targeted location, dealing damage and knocking up enemies at the center of impact.",
                 "costType": "pofcurrentHealth",
-                "id": 0,
+                "ability_id": 0,
                 "image": "AatroxQ.png",
                 "maxrank": 5,
                 "spell_name": "Dark Flight",
@@ -149,7 +146,7 @@ They have the following attributes:
             "1": {
                 "description": "Aatrox unleashes the power of his blade, dealing damage to all enemies hit and slowing them.",
                 "costType": "pofcurrentHealth",
-                "id": 1,
+                "ability_id": 1,
                 "image": "AatroxE.png",
                 "maxrank": 5,
                 "spell_name": "Blades of Torment",
@@ -157,8 +154,8 @@ They have the following attributes:
             }
         }
         
-## Spell [/Spells/{id}]
-### Retrieve a Spell by ID [GET]
+## Ability [/Abilities/{ability_id}]
+### Retrieve a Ability by ID [GET]
 
 + Response 200 (application/json)
 
@@ -166,7 +163,7 @@ They have the following attributes:
             "0": {
                 "description": "Aatrox takes flight and slams down at a targeted location, dealing damage and knocking up enemies at the center of impact.",
                 "costType": "pofcurrentHealth",
-                "id": 0,
+                "ability_id": 0,
                 "image": "AatroxQ.png",
                 "maxrank": 5,
                 "spell_name": "Dark Flight",
