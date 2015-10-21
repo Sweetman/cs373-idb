@@ -125,3 +125,6 @@ class item_tag(Base):
 	tag_name = Column(String)
 	id = Column(Integer, primary_key=True)
 	item_name = Column(String, ForeignKey('item.item_name'))
+
+
+Base.metadata.create_all(engine) 

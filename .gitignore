@@ -2,4 +2,4 @@
 bower_components
 npm-debug.log
 *.pyc
-*.local
+/Data\ Model
