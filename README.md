@@ -11,7 +11,7 @@ bower update
 Export the required settings
 ```
 export APP_SETTINGS="config.DevelopmentConfig"
-export DATABSE_URL="postgresql://<user_name>@localhost/<database_name>"
+export DATABASE_URL="postgresql://<user_name>@localhost/<database_name>"
 ```
 
 Change directories into the idb app and migrate the databases
