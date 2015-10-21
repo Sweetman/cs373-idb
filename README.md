@@ -3,7 +3,8 @@
 ## Setup for local dev
 
 Note: Everyone on the team has OS X, so these instructions will be for that environment until we host on a linux server
-Required: (Python3)[https://www.python.org/downloads/]
+
+Required: [Python3](https://www.python.org/downloads/)
 
 ### Set up the virtual environment
 Install virtualenv
@@ -43,7 +44,7 @@ bower update
 
 
 ### Create the psql database
-Install with homebrew or download the (Postgresql.app) [http://postgresapp.com/]
+Install with homebrew or download the [Postgresql.app](http://postgresapp.com/)
 Start your psql through the app or type the command
 ```
 postgres -D /usr/local/pgsql/data
