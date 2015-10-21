@@ -116,7 +116,7 @@ They have the following attributes:
 
 # Group Abilities
 
-Abilities are special abilities.
+Abilities are the moves available to Champions.
 They have the following attributes:
 
 ### Attributes
@@ -128,7 +128,7 @@ They have the following attributes:
 * spell_name: (string) Name of spell.
 * champ_name: (string) Name of champion who can cast this spell.
 
-## All Abilities [/Abilities]
+## All Abilities [/abilities]
 ### List all Abilities [GET]
 
 + Response 200 (application/json)
@@ -154,8 +154,8 @@ They have the following attributes:
             }
         }
         
-## Ability [/Abilities/{ability_id}]
-### Retrieve a Ability by ID [GET]
+## Ability [/abilities/{ability_id}]
+### Retrieve an Ability by ID [GET]
 
 + Response 200 (application/json)
 
@@ -184,7 +184,7 @@ They have the following attributes:
 * image: (string) Item's image filename.
 * champ_name: (string) Name of the champion who owns this item.
 
-## All Items [/Items]
+## All Items [/items]
 ### List all Items [GET]
 
 + Response 200 (application/json)
@@ -208,7 +208,7 @@ They have the following attributes:
             }
         }
 
-## Item [/Items/{item_name}]
+## Item [/items/{item_name}]
 
 + Parameters
     + item_name (string) - Name of Item in the form of a string.
