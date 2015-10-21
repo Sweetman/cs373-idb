@@ -1,9 +1,9 @@
 angular.module('tbsaApp', [
     'ngRoute',
     'tbsaApp.home',
-    'tbsaApp.company',
-    'tbsaApp.founder',
-    'tbsaApp.investor'
+    'tbsaApp.champion',
+    'tbsaApp.ability',
+    'tbsaApp.item'
     ])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -13,20 +13,20 @@ angular.module('tbsaApp', [
             controller: 'homeCtrl',
             controllerAs: 'home'
         })
-        .when('/companies', {
-            templateUrl: '/static/partials/company.html',
-            controller: 'companyCtrl',
-            controllerAs: 'company'
+        .when('/champions', {
+            templateUrl: '/static/partials/champion.html',
+            controller: 'championCtrl',
+            controllerAs: 'champion'
         })
-        .when('/founders', {
-            templateUrl: '/static/partials/founder.html',
-            controller: 'founderCtrl',
-            controllerAs: 'founder'
+        .when('/abilities', {
+            templateUrl: '/static/partials/ability.html',
+            controller: 'abilityCtrl',
+            controllerAs: 'ability'
         })
-        .when('/investors', {
-            templateUrl: '/static/partials/investor.html',
-            controller: 'investorCtrl',
-            controllerAs: 'investor'
+        .when('/items', {
+            templateUrl: '/static/partials/item.html',
+            controller: 'itemCtrl',
+            controllerAs: 'item'
         })
         .otherwise({redirectTo: '/'});
         
