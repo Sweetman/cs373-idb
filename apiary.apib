@@ -32,18 +32,18 @@ They have the following attributes:
 * blurb: (string) Description of champion.
 * id: (integer) ID of the champion.
 * image: (string) Filename of this champion's image.
-* key: (string) Key that identifies the champion.
 * lore: (string) Description of this champion's background lore.
 * partype: (string) Champion type.
 * title: (string) Champion's title.
+* ability_id: (integer) ID of this Champion's associated spell.
 
 ## All Champions [/champions]
 ### List all Champions [GET]
 
 + Response 200 (application/json)
 
-        [   
-            {
+        {   
+            "Aatrox": {
                 "name": "Aatrox",
                 "allytips": [
                     "Avoid engaging in a fight with low health unless your Blood Well is full so that you regain enough health to continue fighting.",
@@ -58,12 +58,12 @@ They have the following attributes:
                 "blurb": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's ...",
                 "id": 266,
                 "image": "Aatrox.png",
-                "key": "Aatrox",
                 "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox"
                 "partype": "BloodWell",
                 "title": "the Darkin Blade"
+                "ability_id": 0
             },
-            {
+            "Thresh": {
                 "name": "Thresh",
                 "allytips": [
                     "Communication is key when making use of Thresh's lantern. Let your teammates know how you like to use it.",
@@ -78,12 +78,12 @@ They have the following attributes:
                 "blurb": "Thresh is a sadistic, spectral reaper who relishes tormenting the living and the dead. Once a jailer who mercilessly brutalized all under his charge, Thresh was hanged from his own chains by the prisoners he had tortured. With his vicious essence ...",
                 "id": 412,
                 "image": "Thresh.png",
-                "key": "Thresh",
                 "lore": "Thresh is a sadistic, spectral reaper who relishes tormenting the living and the dead. Once a jailer who mercilessly brutalized all under his charge, Thresh was hanged from his own chains by the prisoners he had tortured. With his vicious essence unbound, the Chain Warden roams Runeterra in search of prey. He derives twisted joy from slowly breaking the minds of his most defiant victims, before trapping their souls within the sickly green light of his lantern."
                 "partype": "Mana",
                 "title": "the Chain Warden"
+                "ability_id": 1
               }
-        ]
+        }
 
 ## Champion [/champions/{champ_name}]
 
@@ -94,8 +94,8 @@ They have the following attributes:
 
 + Response 200 (application/json)
 
-        [
-            {
+        {
+            "Aatrox": {
                 "name": "Aatrox",
                 "allytips": [
                     "Avoid engaging in a fight with low health unless your Blood Well is full so that you regain enough health to continue fighting.",
@@ -110,12 +110,11 @@ They have the following attributes:
                 "blurb": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's ...",
                 "id": 266,
                 "image": "Aatrox.png",
-                "key": "Aatrox",
                 "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox"
                 "partype": "BloodWell",
                 "title": "the Darkin Blade"
             }
-        ]
+        }
 
 
 # Group Spells
@@ -137,8 +136,8 @@ They have the following attributes:
 
 + Response 200 (application/json)
 
-        [
-            {
+        {
+            "0": {
                 "description": "Aatrox takes flight and slams down at a targeted location, dealing damage and knocking up enemies at the center of impact.",
                 "costType": "pofcurrentHealth",
                 "id": 0,
@@ -147,7 +146,7 @@ They have the following attributes:
                 "spell_name": "Dark Flight",
                 "champ_name": "Aatrox"
             },
-            {
+            "1": {
                 "description": "Aatrox unleashes the power of his blade, dealing damage to all enemies hit and slowing them.",
                 "costType": "pofcurrentHealth",
                 "id": 1,
@@ -156,15 +155,15 @@ They have the following attributes:
                 "spell_name": "Blades of Torment",
                 "champ_name": "Aatrox"
             }
-        ]
+        }
         
 ## Spell [/Spells/{id}]
 ### Retrieve a Spell by ID [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
+        {
+            "0": {
                 "description": "Aatrox takes flight and slams down at a targeted location, dealing damage and knocking up enemies at the center of impact.",
                 "costType": "pofcurrentHealth",
                 "id": 0,
@@ -173,7 +172,7 @@ They have the following attributes:
                 "spell_name": "Dark Flight",
                 "champ_name": "Aatrox"
             }
-        ]
+        }
 
 # Group Items
 
@@ -193,8 +192,8 @@ They have the following attributes:
 
 + Response 200 (application/json)
 
-        [
-            {
+        {
+            "Enchantment: Cinderhulk": {
                 "item_name": "Enchantment: Cinderhulk",
                 "group": "JungleItems"
                 "description": "<stats>+400 Health<br>+15% Bonus Health<\/stats><br><br><unique>UNIQUE Passive - Immolate:<\/unique> Deals 15 (+0.6 per champion level) magic damage a second to nearby enemies. Deals 100% bonus damage to monsters. ",
@@ -202,7 +201,7 @@ They have the following attributes:
                 "image": "3725.png",
                 "champ_name": "Aatrox"
             },
-            {
+            "Enchantment: Runeglaive": {
                 "item_name": "Enchantment: Runeglaive",
                 "group": "JungleItems"
                 "description": "<stats>+50 Ability Power<br><mana>+200 Mana<\/mana><br>+10% Cooldown Reduction<\/stats><br><br><unique>UNIQUE Passive - Spellblade:<\/unique> After using an ability, the next basic attack deals 100% Base Attack Damage (+30% of Ability Power) bonus magic damage on hit (1.5 second cooldown). When directly attacking a monster, the bonus damage is reapplied in an AoE around the target, and 8% of your missing Mana is restored.",
@@ -210,7 +209,7 @@ They have the following attributes:
                 "image": "3724.png",
                 "champ_name": "Aatrox"
             }
-        ]
+        }
 
 ## Item [/Items/{item_name}]
 
@@ -221,8 +220,8 @@ They have the following attributes:
 
 + Response 200 (application/json)
 
-        [
-            {
+        {
+            "Enchantment: Cinderhulk": {
                 "item_name": "Enchantment: Cinderhulk",
                 "group": "JungleItems"
                 "description": "<stats>+400 Health<br>+15% Bonus Health<\/stats><br><br><unique>UNIQUE Passive - Immolate:<\/unique> Deals 15 (+0.6 per champion level) magic damage a second to nearby enemies. Deals 100% bonus damage to monsters. ",
@@ -230,4 +229,4 @@ They have the following attributes:
                 "image": "3725.png",
                 "champ_name": "Aatrox"
             }
-        ]
+        }

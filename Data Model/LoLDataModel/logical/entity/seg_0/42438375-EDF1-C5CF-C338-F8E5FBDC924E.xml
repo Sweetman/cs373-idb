@@ -41,7 +41,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 </Attribute>
-<Attribute name="id" id="48B2E753-79B7-F90E-22DE-CD3B37851578">
+<Attribute name="ability_id" id="48B2E753-79B7-F90E-22DE-CD3B37851578">
 <createdBy>jeffreyli</createdBy>
 <createdTime>2015-10-19 18:00:23 UTC</createdTime>
 <ownerDesignName>LoLDataModel</ownerDesignName>
