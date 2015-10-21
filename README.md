@@ -2,55 +2,69 @@
 
 ## Setup for local dev
 
-Install python 3.5 via website download
+Note: Everyone on the team has OS X, so these instructions will be for that environment until we host on a linux server
+Required: (Python3)[https://www.python.org/downloads/]
 
-Install pip
-
+### Set up the virtual environment
 Install virtualenv
-
-If you don't have postgreesql
 ```
-brew install postgresql
-```
-
-initialize your virtual env by navigating to the project's root directory then
-```
-virtualenv venv
+pip install virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+mkdir -p $WORKON_HOME
+source /usr/local/bin/virtualenvwrapper.sh
 ```
 
-start your virtualenv by
+Create a virtualenv for the project with python3
 ```
-source venv/bin/activate
+mkvirtualenv -p /path/to/python3 idb
 ```
-ensure that your terminal prompt is in the virtualenv by noticing the (venv) on the left side of the prompt.
+You will know it worked when your shell prompt has (idb) appended to the beginning.
 
-
-Install the required python and front-end packages
+To start and deactivate your virtualenv run the following (tab completion included)
 ```
+workon idb
+deactivate idb
+```
+
+Edit the postactivate script for the virtualenv and add these commands
+```
+cd ~/path/to/project
+export APP_SETTINGS="config.DevelopmentConfig"
+export DATABASE_URL="postgresql://admin@localhost/idb"
+```
+
+Change directories into the project's root directory and install the required python and front-end packages
+Omit workon idb if you haven't set up the postactivate script with the cd command
+```
+workon idb
 pip install -r requirements.txt
 bower update
 ```
 
-Create a postgres server, user, and database
+
+### Create the psql database
+Install with homebrew or download the (Postgresql.app) [http://postgresapp.com/]
+Start your psql through the app or type the command
 ```
-pg_ctl -D /usr/local/var/postgres init
-pg_ctl -D /usr/local/var/postgres start
-createdb idb
+postgres -D /usr/local/pgsql/data
 ```
 
-Export the required settings
+Create a postgres server, user, and database.
 ```
-export APP_SETTINGS="config.DevelopmentConfig"
-export DATABASE_URL="postgresql://<user_name>@localhost/<database_name>"
+psql
+create database idb;
+create user admin;
+grant all privileges on database idb to admin;
 ```
 
-Change directories into the idb app and migrate the databases
+### Set up database and run the server
+Change directories into the idb app and upgrade the database to latest migrations
 ```
 cd idb
 python manage.py db upgrade
 ```
 
-Start server with
+Start server
 ```
 python manage.py runserver
 ```
