@@ -1,22 +1,20 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 import os
-from models import *
+
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
+
 # sanity check for app settings
-print(os.environ['APP_SETTINGS'])
+# print(os.environ['APP_SETTINGS'])
 
-@app.route('/')
-def hello():
-    return "Hello World!"
+from models import *
 
-@app.route('/<name>')
-def hello_name(name):
-    return "Hello {}!".format(name)
-
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()
