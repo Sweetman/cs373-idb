@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String, Boolean, Float
 engine = create_engine('postgresql://admin@localhost/idb')
 Base = declarative_base()
 
-class champion(Base):
+class Champion(Base):
 	__tablename__ = 'champion'
 	champ_name = Column(String, primary_key=True)
 	# commenting the Blob's out because we need to discuss this
@@ -31,7 +31,7 @@ class champion(Base):
 	champion_stat = relationship("champion_stat", uselist=False, backref="champion")
 	items = relationship("items", backref="champion")
 
-class champion_skin(Base):
+class Champion_Skin(Base):
 	__tablename__ = 'champion_skin'
 	chromas = Column(Boolean)
 	id = Column(String)
@@ -40,14 +40,14 @@ class champion_skin(Base):
 	champ_name = Column(String, ForeignKey('champion.champ_name'))
 
 
-class champion_passive(Base):
+class Champion_Passive(Base):
 	__tablename__ = 'champion_passive'
 	description = Column(String)
 	image = Column(String)
 	passive_name = Column(String)
 	champ_name = Column(String, ForeignKey('champion.champ_name'))
 
-class ability(Base):
+class Ability(Base):
 	__tablename__ = 'ability'
 	description = Column(String)
 	costType = Column(String)
@@ -57,7 +57,7 @@ class ability(Base):
 	spell_name = Column(String)
 	champ_name = Column(String, ForeignKey('champion.champ_name'))
 
-class champion_info(Base):
+class Champion_Info(Base):
 	__tablename__ = 'champion_info'
 	attack = Column(Integer)
 	defense = Column(Integer)
@@ -65,12 +65,12 @@ class champion_info(Base):
 	magic = Column(Integer)
 	champ_name = Column(String, ForeignKey('champion.champ_name'))
 
-class champion_tag(Base):
+class Champion_Tag(Base):
 	__tablename__ = 'champion_tag'
 	tag_name = Column(String)
 	champ_name = Column(String, ForeignKey('champion.champ_name'))
 
-class champion_stat(Base):
+class Champion_Stat(Base):
 	__tablename__ = 'champion_stat'
 	armor = Column(Float)
 	armorperlevel = Column(Float)
@@ -94,7 +94,7 @@ class champion_stat(Base):
 	spellblockperlevel = Column(Float)
 	champ_name = Column(String, ForeignKey('champion.champ_name'))
 
-class item(Base):
+class Item(Base):
 	__tablename__ = 'item'
 	item_name = Column(String)
 	group = Column(String)
@@ -106,13 +106,13 @@ class item(Base):
 	item_gold = relationship("item_gold", uselist=False, backref="item")
 	items_tag = relationship("items_tag", backref="item")
 
-class item_stat(Base):
+class Item_Stat(Base):
 	__tablename__ = 'item_stat'
 	type = Column(String)
 	stat_bonus = Column(Integer)
 	item_name = Column(String, ForeignKey('item.item_name'))
 
-class item_gold(Base):
+class Item_Gold(Base):
 	__tablename__ = 'item_gold'
 	base = Column(Integer)
 	purchaseable = Column(Boolean)
@@ -120,7 +120,7 @@ class item_gold(Base):
 	sell = Column(Integer)
 	item_name = Column(String, ForeignKey('item.item_name'))
 
-class item_tag(Base):
+class Item_Tag(Base):
 	__tablename__ = 'item_tag'
 	tag_name = Column(String)
 	id = Column(Integer, primary_key=True)
