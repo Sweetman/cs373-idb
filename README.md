@@ -1,23 +1,26 @@
 # The Best Startup Alive
 
-## Setup
-### Serve only frontend side
-after cloning the repo, run
-```
-bower update
-http-server
-```
-you must have bower and http-server installed.
+## Setup for local dev
 
-Access the app at
+Install the required python and front-end packages
 ```
-localhost:8080
-```
-
-### Serve whole web app
-Run the following commands
-```
-bower update
 pip install requirements.txt
-python app.py
+bower update
+```
+
+Export the required settings
+```
+export APP_SETTINGS="config.DevelopmentConfig"
+export DATABSE_URL="postgresql://<user_name>@localhost/<database_name>"
+```
+
+Change directories into the idb app and migrate the databases
+```
+cd idb
+python manage.py db upgrade
+```
+
+Start server with
+```
+python manage.py runserver
 ```
