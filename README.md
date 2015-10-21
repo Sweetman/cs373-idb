@@ -2,6 +2,14 @@
 
 ## Setup for local dev
 
+Install python 3.5 via website download
+Install pip
+Install virtualenv
+If you don't have postgreesql
+```
+brew install postgresql
+```
+
 Install the required python and front-end packages
 ```
 pip install -r requirements.txt
