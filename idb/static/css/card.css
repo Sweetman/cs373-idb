@@ -1,0 +1,24 @@
+.card {
+    margin: 25px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
+    background-color: #DEDEDE;
+    width: 300px;
+    height: 500px;
+}
+
+.cardThumbnail {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+}
+
+.cardName {
+    text-align: center;
+}
