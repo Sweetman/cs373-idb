@@ -16,6 +16,18 @@ from models import *
 def index():
     return render_template('index.html')
 
+@app.route('/champions', methods=['GET'])
+def champions():
+    return render_template('index.html')
+
+@app.route('/abilities', methods=['GET'])
+def abilities():
+    return render_template('index.html')
+
+@app.route('/items', methods=['GET'])
+def items():
+    return render_template('index.html')
+
 @app.route('/partials/<path:path>')
 def serve_partial():
 	return render_template('/partials/{}'.format(path))
