@@ -31,6 +31,13 @@ pip install -r requirements.txt
 bower update
 ```
 
+Create a postgres server, user, and database
+```
+pg_ctl -D /usr/local/var/postgres init
+pg_ctl -D /usr/local/var/postgres start
+createdb idb
+```
+
 Export the required settings
 ```
 export APP_SETTINGS="config.DevelopmentConfig"
