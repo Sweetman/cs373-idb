@@ -54,10 +54,10 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 </Attribute>
-<Attribute name="champ_name" id="3887D824-54A0-D20F-7736-9B27AB9E7EF0">
+<Attribute name="champ_name" id="5A171548-6BE8-1B9B-961A-675BFD610E25">
 <createdBy>jeffreyli</createdBy>
-<createdTime>2015-10-19 17:45:22 UTC</createdTime>
-<generatorID>593211DD-DE27-9DB6-4EAE-F64C9C55EB0E</generatorID>
+<createdTime>2015-10-21 04:58:09 UTC</createdTime>
+<generatorID>BCE5F14D-5CC0-048F-C9C8-7FF566B7660F</generatorID>
 <ownerDesignName>LoLDataModel</ownerDesignName>
 <engineerTo>
 <item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
@@ -79,8 +79,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>3887D824-54A0-D20F-7736-9B27AB9E7EF0</attributeRef>
-<attributeRef>3887D824-54A0-D20F-7736-9B27AB9E7EF0</attributeRef>
+<attributeRef>5A171548-6BE8-1B9B-961A-675BFD610E25</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

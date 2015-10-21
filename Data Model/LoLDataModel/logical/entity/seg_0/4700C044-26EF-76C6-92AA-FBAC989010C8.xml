@@ -255,31 +255,19 @@
 <use>1</use>
 <logicalDatatype>LOGDT020</logicalDatatype>
 </Attribute>
-<Attribute name="champ_name" id="C3B8355E-4B00-5683-C2F7-3A85FE65C69C">
+<Attribute name="champ_name" id="94225B50-16D2-B31B-B836-9DE8782FC3B6">
 <createdBy>jeffreyli</createdBy>
-<createdTime>2015-10-19 18:14:35 UTC</createdTime>
-<generatorID>503E6B27-9495-D4E5-05DE-643869FB2CA0</generatorID>
+<createdTime>2015-10-21 04:57:27 UTC</createdTime>
+<generatorID>B33E1630-E727-3228-6AA9-F1B65626D292</generatorID>
 <ownerDesignName>LoLDataModel</ownerDesignName>
 <engineerTo>
 <item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <referedAttribute>BA33A707-0912-EE46-DFB0-429586434C0B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
-</Attribute>
-<Attribute name="id" id="FED5683F-B551-9B14-E2C1-AC1247787E6B">
-<createdBy>jeffreyli</createdBy>
-<createdTime>2015-10-20 23:10:06 UTC</createdTime>
-<ownerDesignName>LoLDataModel</ownerDesignName>
-<engineerTo>
-<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -292,7 +280,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>FED5683F-B551-9B14-E2C1-AC1247787E6B</attributeRef>
+<attributeRef>94225B50-16D2-B31B-B836-9DE8782FC3B6</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -28,21 +28,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 </Attribute>
-<Attribute name="champ_name" id="D43D12D9-2AF9-A57E-FC44-B534CA10F386">
-<createdBy>jeffreyli</createdBy>
-<createdTime>2015-10-19 18:16:11 UTC</createdTime>
-<generatorID>0899BE0C-91BD-FAFC-E9C6-E28242B600A2</generatorID>
-<ownerDesignName>LoLDataModel</ownerDesignName>
-<engineerTo>
-<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
-</engineerTo>
-<referedAttribute>BA33A707-0912-EE46-DFB0-429586434C0B</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-</Attribute>
-<Attribute name="id" id="687DB67B-8A9A-6623-A66D-53071A00C2AA">
+<Attribute name="tag_id" id="687DB67B-8A9A-6623-A66D-53071A00C2AA">
 <createdBy>jeffreyli</createdBy>
 <createdTime>2015-10-20 19:18:44 UTC</createdTime>
 <ownerDesignName>LoLDataModel</ownerDesignName>
@@ -52,6 +38,21 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="champ_name" id="20F9908C-252D-9A8A-FF00-5BFE8316A890">
+<createdBy>jeffreyli</createdBy>
+<createdTime>2015-10-21 04:55:59 UTC</createdTime>
+<generatorID>ACDA39FC-08A9-3D80-70D9-80435B8482C1</generatorID>
+<ownerDesignName>LoLDataModel</ownerDesignName>
+<engineerTo>
+<item key="44924771-5273-71F0-446B-EF820F740594" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>BA33A707-0912-EE46-DFB0-429586434C0B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
