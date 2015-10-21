@@ -4,7 +4,7 @@
 
 Install the required python and front-end packages
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 bower update
 ```
 
