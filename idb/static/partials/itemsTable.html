@@ -2,23 +2,17 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Cost</th>
+                <th ng-click="item.order = 'id'">Id</th>
+                <th ng-click="item.order = 'name'">Name</th>
+                <th ng-click="item.order = 'cost'">Cost</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="/items/1">Lich Bane</a></td>
-                <td>3000</td>
+            <tr ng-repeat="i in item.tableData | orderBy: item.order">
+                <td>{{i.id}}</td>
+                <td><a href="/items/{{i.id}}">{{i.name}}</a></td>
+                <td>{{i.cost}}</td>
             </tr>
-            <tr>
-                <td>The Bloodthirster</td>
-                <td>3500</td>
-            </tr>
-            <tr>
-                <td>Frozen Heart</td>
-                <td>2450</td>
-            </tr>
-        </tbody>
+      </tbody>
     </table>
 </div>

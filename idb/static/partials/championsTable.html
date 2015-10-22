@@ -2,23 +2,17 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Description</th>
+                <th ng-click="champion.order = 'id'">Id</th>
+                <th ng-click="champion.order = 'name'">Name</th>
+                <th ng-click="champion.order = 'description'">Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="/champions/1">Lee Sin</a></td>
-                <td>The Blind Monk</td>
+            <tr ng-repeat="c in champion.tableData | orderBy: champion.order">
+                <td>{{c.id}}</td>
+                <td><a href="/champions/{{c.id}}">{{c.name}}</a></td>
+                <td>{{c.description}}</td>
             </tr>
-            <tr>
-                <td>Teemo</td>
-                <td>The Swift Scout</td>
-            </tr>
-            <tr>
-                <td>Renekton</td>
-                <td>The Butcher of the Sands</td>
-            </tr>
-        </tbody>
+      </tbody>
     </table>
 </div>
