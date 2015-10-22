@@ -13,7 +13,7 @@
 }
 
 .descriptionCard {
-    height: 500px;
+    overflow: auto;
 }
 
 .cardThumbnail {
