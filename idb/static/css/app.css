@@ -8,14 +8,19 @@ body {
 
 #headerwrap {
     background: url(../images/concrete-splash.png) no-repeat center top;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .tableWrapper {
     margin-top: 25px;
+    background-color: #696969;
+
 }
 
 .table {
     table-layout: fixed;
+    background-color: #696969;
 
 }
 

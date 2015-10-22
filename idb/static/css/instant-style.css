@@ -23,7 +23,7 @@
 }
 
 ::selection {
-    background: #16a085;
+    background: #696969;
     color: #a4003a;
     text-shadow: none;
 }
@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #workwrap h1 {
-	color:#ffffff;
+	color:#f2f2f2;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	letter-spacing: 4px;
@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #workwrap h4 {
 	font-weight: 400;
-	color: #ffffff
+	color: #f2f2f2;
 }
 
 #aboutwrap {	
