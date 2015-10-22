@@ -32,16 +32,22 @@ angular.module('tbsaApp', [
             controllerAs: 'item',
             activeTab: 'Items'
         })
-        .when('/champions/1', {
-            templateUrl: '/static/partials/champion.html',
+        .when('/champions/:id', {
+            templateUrl: function(params){
+                return '/static/partials/champion' + params.id + '.html';
+            },
             activeTab: "Champions"
         })
-        .when('/abilities/1', {
-            templateUrl: '/static/partials/ability.html',
+        .when('/abilities/:id', {
+            templateUrl: function(params){
+                return '/static/partials/ability' + params.id + '.html';
+            },
             activeTab: 'Abilities'
         })
-        .when('/items/1', {
-            templateUrl: '/static/partials/item.html',
+        .when('/items/:id', {
+            templateUrl: function(params){
+                return '/static/partials/item' + params.id + '.html';
+            },
             activeTab: 'Items'
         })
   
