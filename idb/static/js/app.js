@@ -12,7 +12,7 @@ angular.module('tbsaApp', [
             templateUrl: '/static/partials/home.html',
             controller: 'homeCtrl',
             controllerAs: 'home',
-            activeTab: 'Home'
+            activeTab: ''
         })
         .when('/champions', {
             templateUrl: '/static/partials/champion.html',

@@ -15,6 +15,7 @@
     <title>HardCarry.me</title>
 
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/instant-style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/app.css">
     <link rel="stylesheet" type="text/css" href="/static/css/home.css">
     <link rel="stylesheet" type="text/css" href="/static/css/card.css">
@@ -41,24 +42,33 @@
                     <a class="navbar-brand" href="/">HardCarry.me</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li ng-class="{active: $route.current.activeTab == 'Home'}"><a href="/">Home</a></li>
+                    <ul class="nav navbar-nav navbar-right">
                         <li ng-class="{active: $route.current.activeTab == 'Champions'}"><a href="/champions">Champions</a></li>
                         <li ng-class="{active: $route.current.activeTab == 'Abilities'}"><a href="/abilities">Abilities</a></li>
                         <li ng-class="{active: $route.current.activeTab == 'Items'}"><a href="/items">Items</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Default</a></li>
-                        <li><a href="#">Static top</a></li>
-                        <li class="active"><a href="#">Fixed top <span class="sr-only">(current)</span></a></li>
-                    </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-
         <div ng-view></div>
-
     </div>
+
+    <!-- Footer -->
+    <div id="footerwrap">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p><b>HardCarry.me</b></p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Created for Glenn Downing's CS 373</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
 
 
 <!-- Bootstrap core JavaScript

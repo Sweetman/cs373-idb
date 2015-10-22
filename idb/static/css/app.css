@@ -1,4 +1,13 @@
 body {
-  min-height: 2000px;
-  padding-top: 50px;
+    min-height: 2000px;
+    padding-top: 50px;
+}
+
+#headerwrap {
+    background: url(../images/splash.png) no-repeat center top;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
 }
