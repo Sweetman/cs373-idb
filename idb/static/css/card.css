@@ -1,12 +1,18 @@
 .card {
-    margin: 25px;
+    margin-top: 25px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(0, 0, 0, .2);
     border-radius: 5px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
-    background-color: #DEDEDE;
-    width: 300px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.nameCard {
+    height: 300px;
+}
+
+.descriptionCard {
     height: 500px;
 }
 
@@ -14,7 +20,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
     width: 120px;
     height: 120px;
 }
