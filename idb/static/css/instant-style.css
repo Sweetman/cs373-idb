@@ -101,13 +101,14 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/back.jpg) no-repeat center top;
+	background: url(../images/concrete-splash.png) no-repeat center top;
 	margin-top: -70px;
 	padding-top: 250px;
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 650px;
+	min-width: 1000px;
+	min-height: 850px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
