@@ -7,11 +7,6 @@ body {
     background: url(../images/splash.png) no-repeat center top;
 }
 
-.navbar-default {
-    background-color: #f8f8f8;
-    border-color: #e7e7e7;
-}
-
 .tableWrapper {
     margin-top: 25px;
 }
