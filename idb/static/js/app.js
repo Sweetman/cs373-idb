@@ -12,10 +12,10 @@ angular.module('tbsaApp', [
             templateUrl: '/static/partials/home.html',
             controller: 'homeCtrl',
             controllerAs: 'home',
-            activeTab: 'Home'
+            activeTab: ''
         })
         .when('/champions', {
-            templateUrl: '/static/partials/champion.html',
+            templateUrl: '/static/partials/championsTable.html',
             controller: 'championCtrl',
             controllerAs: 'champion',
             activeTab: "Champions"
@@ -32,6 +32,11 @@ angular.module('tbsaApp', [
             controllerAs: 'item',
             activeTab: 'Items'
         })
+        .when('/champions/1', {
+            templateUrl: '/static/partials/champion.html',
+            activeTab: "Champions"
+        })
+  
         .otherwise({redirectTo: '/'});
         
     $locationProvider.html5Mode(true);
