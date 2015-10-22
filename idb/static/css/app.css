@@ -1,8 +1,8 @@
 body {
-    min-height: 300px;
+    min-height: 500px;
     padding-top: 50px;
     background-image: url(../images/concrete-seamless.png);
-    background-color: #333333;
+    background-color: #999999;
 
 }
 
@@ -28,4 +28,5 @@ body {
     table-layout: fixed;
 
 }
+
 

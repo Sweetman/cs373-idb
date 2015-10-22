@@ -82,7 +82,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-default {
-	background-color: transparent;
+	background-color: #222222;
+	opacity: 0.7;
 	border-color: transparent;
 }
 
@@ -183,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #workwrap h1 {
-	color:#f2f2f2;
+	color: #E6E6E6;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	letter-spacing: 4px;
@@ -193,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #workwrap h4 {
 	font-weight: 400;
-	color: #f2f2f2;
+	color: #E6E6E6;
 }
 
 #aboutwrap {	
