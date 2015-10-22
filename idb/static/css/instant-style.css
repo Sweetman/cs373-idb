@@ -23,7 +23,7 @@
 }
 
 ::selection {
-    background: #696969;
+    background: #16a085;
     color: #a4003a;
     text-shadow: none;
 }
@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 1200px;
+	min-height: 1000px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-top: 10px;
 	padding-bottom: 20px;
 	letter-spacing: 4px;
-	font-size: 80px;
+	font-size: 5.9vw;
 	font-weight: bold;
 }
 
