@@ -21,13 +21,13 @@ angular.module('tbsaApp', [
             activeTab: "Champions"
         })
         .when('/abilities', {
-            templateUrl: '/static/partials/ability.html',
+            templateUrl: '/static/partials/abilitiesTable.html',
             controller: 'abilityCtrl',
             controllerAs: 'ability',
             activeTab: 'Abilities'
         })
         .when('/items', {
-            templateUrl: '/static/partials/item.html',
+            templateUrl: '/static/partials/itemsTable.html',
             controller: 'itemCtrl',
             controllerAs: 'item',
             activeTab: 'Items'
@@ -35,6 +35,14 @@ angular.module('tbsaApp', [
         .when('/champions/1', {
             templateUrl: '/static/partials/champion.html',
             activeTab: "Champions"
+        })
+        .when('/abilities/1', {
+            templateUrl: '/static/partials/ability.html',
+            activeTab: 'Abilities'
+        })
+        .when('/items/1', {
+            templateUrl: '/static/partials/item.html',
+            activeTab: 'Items'
         })
   
         .otherwise({redirectTo: '/'});
