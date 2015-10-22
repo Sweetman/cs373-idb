@@ -15,3 +15,7 @@ body {
 .tableWrapper {
     margin-top: 25px;
 }
+
+.table {
+    table-layout: fixed;
+}

@@ -7,18 +7,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="/champions/1">Lee Sin</a></td>
-                <td>The Blind Monk</td>
+            <tr ng-repeat="c in champion.tableData">
+                <td><a href="/champions/{{c.id}}">{{c.name}}</a></td>
+                <td>{{c.description}}</td>
             </tr>
-            <tr>
-                <td>Teemo</td>
-                <td>The Swift Scout</td>
-            </tr>
-            <tr>
-                <td>Renekton</td>
-                <td>The Butcher of the Sands</td>
-            </tr>
-        </tbody>
+      </tbody>
     </table>
 </div>
