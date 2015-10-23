@@ -3,7 +3,8 @@ angular.module('tbsaApp', [
     'tbsaApp.home',
     'tbsaApp.champion',
     'tbsaApp.ability',
-    'tbsaApp.item'
+    'tbsaApp.item',
+    'tbsaApp.about'
     ])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -34,6 +35,8 @@ angular.module('tbsaApp', [
         })
         .when('/about', {
             templateUrl: '/static/partials/about.html',
+            controller: 'aboutCtrl',
+            controllerAs: 'about',
             activeTab: 'About'
         })
         .when('/champions/:id', {
