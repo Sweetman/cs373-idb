@@ -56,11 +56,6 @@ class Champion_Passive(db.Model):
 
 class Ability(db.Model):
 	'''
-	A Champion’s abilities are a unique characteristic of each champion that separates them apart from the other champions. 
-	Its abilities can be characterized as Basic, Passive, and Ultimate which can determine the style or role a champion plays 
-	on a team in the Fields of Justice. Every champion has at least five unique abilities, four of which are learned throughout 
-	the course of the battle and requires leveling the champion to acquire/spending ability points, one of which is an innate 
-	passive ability that can't be leveled. There’s a 1:M relationship between Champion:Ability, as each champion possesses multiple abilities.
 	'''
 	__tablename__ = 'ability'
 	description = db.Column(db.String)
@@ -120,10 +115,6 @@ class Champion_Stat(db.Model):
 
 class Item(db.Model):
 	'''
-	As the game progresses, players acquire currency in the form of gold and can spend it on power items to improve the champion’s performance. 
-	Each item provides a unique bonus such as faster movement, improved damaged, increased durability, reduced ability cooldowns. 
-	There’s a 1:M relationship between Champion:Item respectively, as each player can purchase/obtain multiple items for their champion during 
-	the course of a game.
 	'''
 	__tablename__ = 'item'
 	item_name = db.Column(db.String, primary_key=True)
