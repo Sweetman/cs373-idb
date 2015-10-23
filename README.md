@@ -12,7 +12,8 @@ Install virtualenv
 pip install virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
+which virtualenvwrapper.sh
+source /path/outputted/by/which/command
 ```
 
 Create a virtualenv for the project with python3

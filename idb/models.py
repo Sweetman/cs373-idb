@@ -2,6 +2,11 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from app import db
 
 class Champion(db.Model):
+	'''
+	A champion is a person or being that has been summoned to wage battle in the League of Legends on the Fields of Justice. 
+	They are the player-controlled characters in League of Legends, all of them bringing their own unique set of abilities, traits and characteristics. 
+	They're fighting styles and attributes dictate their use and role in the Fields of Justice.
+	'''
 	__tablename__ = 'champion'
 	champ_name = db.Column(db.String, primary_key=True)
 	# commenting the Blob's out because we need to discuss this
@@ -28,6 +33,9 @@ class Champion(db.Model):
 	items = db.relationship("items", backref="champion")
 
 class Champion_Skin(db.Model):
+	'''
+	Used to decorate the champion
+	'''
 	__tablename__ = 'champion_skin'
 	chromas = db.Column(db.Boolean)
 	id = db.Column(db.String)
@@ -37,6 +45,9 @@ class Champion_Skin(db.Model):
 
 
 class Champion_Passive(db.Model):
+	'''
+	Each champ has one or more innate abilities
+	'''
 	__tablename__ = 'champion_passive'
 	description = db.Column(db.String)
 	image = db.Column(db.String)
@@ -44,6 +55,13 @@ class Champion_Passive(db.Model):
 	champ_name = db.Column(db.String, db.ForeignKey('champion.champ_name'))
 
 class Ability(db.Model):
+	'''
+	A Champion’s abilities are a unique characteristic of each champion that separates them apart from the other champions. 
+	Its abilities can be characterized as Basic, Passive, and Ultimate which can determine the style or role a champion plays 
+	on a team in the Fields of Justice. Every champion has at least five unique abilities, four of which are learned throughout 
+	the course of the battle and requires leveling the champion to acquire/spending ability points, one of which is an innate 
+	passive ability that can't be leveled. There’s a 1:M relationship between Champion:Ability, as each champion possesses multiple abilities.
+	'''
 	__tablename__ = 'ability'
 	description = db.Column(db.String)
 	costType = db.Column(db.String)
@@ -54,6 +72,9 @@ class Ability(db.Model):
 	champ_name = db.Column(db.String, db.ForeignKey('champion.champ_name'))
 
 class Champion_Info(db.Model):
+	'''
+	Base stats of the champ
+	'''
 	__tablename__ = 'champion_info'
 	attack = db.Column(db.Integer)
 	defense = db.Column(db.Integer)
@@ -62,13 +83,18 @@ class Champion_Info(db.Model):
 	champ_name = db.Column(db.String, db.ForeignKey('champion.champ_name'), primary_key=True)
 
 class Champion_Tag(db.Model):
+	'''
+	Tag refers to the category or the type of champ
+	'''
 	__tablename__ = 'champion_tag'
-
 	id = db.Column(db.Integer, primary_key=True)
 	tag_name = db.Column(db.String)
 	champ_name = db.Column(db.String, db.ForeignKey('champion.champ_name'))
 
 class Champion_Stat(db.Model):
+	'''
+	These are the in-game stats that the champ will have depending on the level and items equipped
+	'''
 	__tablename__ = 'champion_stat'
 	armor = db.Column(db.Float)
 	armorperlevel = db.Column(db.Float)
@@ -93,6 +119,12 @@ class Champion_Stat(db.Model):
 	champ_name = db.Column(db.String, db.ForeignKey('champion.champ_name'), primary_key=True)
 
 class Item(db.Model):
+	'''
+	As the game progresses, players acquire currency in the form of gold and can spend it on power items to improve the champion’s performance. 
+	Each item provides a unique bonus such as faster movement, improved damaged, increased durability, reduced ability cooldowns. 
+	There’s a 1:M relationship between Champion:Item respectively, as each player can purchase/obtain multiple items for their champion during 
+	the course of a game.
+	'''
 	__tablename__ = 'item'
 	item_name = db.Column(db.String, primary_key=True)
 	group = db.Column(db.String)
@@ -105,12 +137,18 @@ class Item(db.Model):
 	items_tag = db.relationship("items_tag", backref="item")
 
 class Item_Stat(db.Model):
+	'''
+	The bonus that the item gives to the champ, raising a specific stat
+	'''
 	__tablename__ = 'item_stat'
 	type = db.Column(db.String)
 	stat_bonus = db.Column(db.Integer)
 	item_name = db.Column(db.String, db.ForeignKey('item.item_name'), primary_key=True)
 
 class Item_Gold(db.Model):
+	'''
+	How much an item costs to buy and can be sold for
+	'''
 	__tablename__ = 'item_gold'
 	model = db.Column(db.Integer)
 	purchaseable = db.Column(db.Boolean)
@@ -119,6 +157,9 @@ class Item_Gold(db.Model):
 	item_name = db.Column(db.String, db.ForeignKey('item.item_name'), primary_key=True)
 
 class Item_Tag(db.Model):
+	'''
+	Category or type that the item belongs to
+	'''
 	__tablename__ = 'item_tag'
 	tag_name = db.Column(db.String)
 	id = db.Column(db.Integer, primary_key=True)
