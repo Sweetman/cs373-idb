@@ -32,6 +32,10 @@ angular.module('tbsaApp', [
             controllerAs: 'item',
             activeTab: 'Items'
         })
+        .when('/about', {
+            templateUrl: '/static/partials/about.html',
+            activeTab: 'About'
+        })
         .when('/champions/:id', {
             templateUrl: function(params){
                 return '/static/partials/champion' + params.id + '.html';
