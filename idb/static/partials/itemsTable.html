@@ -5,8 +5,8 @@
                 <th ng-click="item.changeOrderTo('id')">Id</th>
                 <th ng-click="item.changeOrderTo('name')">Name</th>
                 <th ng-click="item.changeOrderTo('cost')">Cost</th>
-                <th ng-click="item.changeOrderTo('base')">Base Cost</th>
-                <th ng-click="item.changeOrderTo('name_id')">Name ID</th>
+                <th ng-click="item.changeOrderTo('baseCost')">Base Cost</th>
+                <th ng-click="item.changeOrderTo('nameId')">Name ID</th>
             </tr>
         </thead>
         <tbody>
@@ -14,6 +14,8 @@
                 <td>{{i.id}}</td>
                 <td><a href="/items/{{i.id}}">{{i.name}}</a></td>
                 <td>{{i.cost}}</td>
+                <td>{{i.baseCost}}</td>
+                <td>{{i.nameId}}</td>
             </tr>
         </tbody>
     </table>

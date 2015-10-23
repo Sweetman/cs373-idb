@@ -5,10 +5,10 @@
                 <th ng-click="champion.changeOrderTo('id')">Id</th>
                 <th ng-click="champion.changeOrderTo('name')">Name</th>
                 <th ng-click="champion.changeOrderTo('description')">Description</th>
-                <th ng-click="item.changeOrderTo('attack')">Attack</th>
-                <th ng-click="item.changeOrderTo('defense')">Defense</th>
-                <th ng-click="item.changeOrderTo('difficulty')">Difficulty</th>
-                <th ng-click="item.changeOrderTo('magic')">Magic</th>
+                <th ng-click="champion.changeOrderTo('attack')">Attack</th>
+                <th ng-click="champion.changeOrderTo('defense')">Defense</th>
+                <th ng-click="champion.changeOrderTo('difficulty')">Difficulty</th>
+                <th ng-click="champion.changeOrderTo('magic')">Magic</th>
 
             </tr>
         </thead>
@@ -17,6 +17,10 @@
                 <td>{{c.id}}</td>
                 <td><a href="/champions/{{c.id}}">{{c.name}}</a></td>
                 <td>{{c.description}}</td>
+                <td>{{c.attack}}</td>
+                <td>{{c.defense}}</td>
+                <td>{{c.difficulty}}</td>
+                <td>{{c.magic}}</td>
             </tr>
         </tbody>
     </table>

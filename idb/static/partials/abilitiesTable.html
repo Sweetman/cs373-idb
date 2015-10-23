@@ -5,10 +5,10 @@
                 <th ng-click="ability.changeOrderTo('id')">Id</th>
                 <th ng-click="ability.changeOrderTo('name')">Name</th>
                 <th ng-click="ability.changeOrderTo('champion')">Champion</th>
-                <th ng-click="ability.changeOrderTo('cost_burn')">Cost Burn</th>
-                <th ng-click="ability.changeOrderTo('cost_type')">Cost Type</th>
-                <th ng-click="ability.changeOrderTo('max_rank')">Max Rank</th>
-                <th ng-click="ability.changeOrderTo('range_burn')">Range Burn</th>
+                <th ng-click="ability.changeOrderTo('costBurn')">Cost Burn</th>
+                <th ng-click="ability.changeOrderTo('costType')">Cost Type</th>
+                <th ng-click="ability.changeOrderTo('maxRank')">Max Rank</th>
+                <th ng-click="ability.changeOrderTo('rangeBurn')">Range Burn</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +16,10 @@
                 <td>{{a.id}}</td>
                 <td><a href="/abilities/{{a.id}}">{{a.name}}</a></td>
                 <td>{{a.champion}}</td>
+                <td>{{a.costBurn}}</td>
+                <td>{{a.costType}}</td>
+                <td>{{a.maxRank}}</td>
+                <td>{{a.rangeBurn}}</td>
             </tr>
         </tbody>
     </table>
