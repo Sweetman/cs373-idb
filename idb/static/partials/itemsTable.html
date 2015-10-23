@@ -1,0 +1,34 @@
+<div class="container tableWrapper">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th ng-click="item.changeOrderTo('id')">Id</th>
+                <th ng-click="item.changeOrderTo('name')">Name</th>
+                <th ng-click="item.changeOrderTo('cost')">Cost</th>
+                <th ng-click="item.changeOrderTo('baseCost')">Base Cost</th>
+                <th ng-click="item.changeOrderTo('nameId')">Name ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="i in item.tableData | orderBy:item.order:item.orderReverse">
+                <td>{{i.id}}</td>
+                <td><a href="/items/{{i.id}}">{{i.name}}</a></td>
+                <td>{{i.cost}}</td>
+                <td>{{i.baseCost}}</td>
+                <td>{{i.nameId}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+
+<section id="works"></section>
+<div class="container">
+    <div class="row centered mt mb">
+
+        <!-- TEMPORARY PLACE HOLDER -->
+        <div style="height: 40px;">
+        </div>
+        <h1>...</h1>
+        
+    </div><!--/row -->
+</div><!--/container -->

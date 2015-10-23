@@ -1,0 +1,38 @@
+<div class="container tableWrapper">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th ng-click="ability.changeOrderTo('id')">Id</th>
+                <th ng-click="ability.changeOrderTo('name')">Name</th>
+                <th ng-click="ability.changeOrderTo('champion')">Champion</th>
+                <th ng-click="ability.changeOrderTo('costBurn')">Cost Burn</th>
+                <th ng-click="ability.changeOrderTo('costType')">Cost Type</th>
+                <th ng-click="ability.changeOrderTo('maxRank')">Max Rank</th>
+                <th ng-click="ability.changeOrderTo('rangeBurn')">Range Burn</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="a in ability.tableData | orderBy:ability.order:ability.orderReverse">
+                <td>{{a.id}}</td>
+                <td><a href="/abilities/{{a.id}}">{{a.name}}</a></td>
+                <td>{{a.champion}}</td>
+                <td>{{a.costBurn}}</td>
+                <td>{{a.costType}}</td>
+                <td>{{a.maxRank}}</td>
+                <td>{{a.rangeBurn}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+
+<section id="works"></section>
+<div class="container">
+    <div class="row centered mt mb">
+
+        <!-- TEMPORARY PLACE HOLDER -->
+        <div style="height: 40px;">
+        </div>
+        <h1>...</h1>
+        
+    </div><!--/row -->
+</div><!--/container -->

@@ -10,11 +10,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- <link rel="icon" href="http://getbootstrap.com/favicon.ico"> -->
+    <base href="/">
 
-    <title>TBSA</title>
+    <title>hardcarry.me</title>
 
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- Custom styles for our web -->
+    <link rel="stylesheet" type="text/css" href="/static/css/instant-style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/card.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/about.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -25,6 +35,7 @@
 
 <body ng-app="tbsaApp">
     <div ng-controller="indexCtrl">
+
         <!-- Fixed navbar -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -35,28 +46,44 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#/">TBSA</a>
+                    <a class="navbar-brand" href="/">HardCarry.me</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#/">Home</a></li>
-                        <li><a href="#/companies">Companies</a></li>
-                        <li><a href="#/founders">Founders</a></li>
-                        <li><a href="#/investors">Investors</a></li>
-                    </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Default</a></li>
-                        <li><a href="#">Static top</a></li>
-                        <li class="active"><a href="#">Fixed top <span class="sr-only">(current)</span></a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'Champions'}"><a href="/champions">Champions</a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'Abilities'}"><a href="/abilities">Abilities</a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'Items'}"><a href="/items">Items</a></li>
+                        <li ng-class="{active: $route.current.activeTab == 'About'}"><a href="/about">About</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-
         <div ng-view></div>
-
     </div>
 
+    
+    <!-- Footer -->
+    <div id="footerwrap">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-4">
+                    <p><b>LEAGUE OF LEGENDS</b></p>
+                </div>
+            
+                <div class="col-lg-4">
+                    <p><b>HARD CARRY ME</b></p>
+                </div>
+                <div class="col-lg-4">
+                  <p>
+                     <a class="footer-icons" href="http://www.cs.utexas.edu/users/downing/cs373/index.html"><i class="fa fa-bell" style="color:white"></i></a>
+                     <a class="footer-icons" href="https://github.com/Sweetman/cs373-idb"><i class="fa fa-github" style="color:white"></i></a>
+                     <a class="footer-icons" href="http://www.rackspace.com"><i class="fa fa-server" style="color:white"></i></a>
+                     <a class="footer-icons" href="http://www.postgresql.org/"><i class="fa fa-database" style="color:white"></i></a>
+                  </p>
+               </div>
+            </div>
+        </div>
+    </div> 
 
 <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -67,8 +94,9 @@
     <script src="/static/bower_components/angular-route/angular-route.js"></script>
     <script src="/static/js/app.js"></script>
     <script src="/static/js/home.js"></script>
-    <script src="/static/js/company.js"></script>
-    <script src="/static/js/founder.js"></script>
-    <script src="/static/js/investor.js"></script>
+    <script src="/static/js/champion.js"></script>
+    <script src="/static/js/ability.js"></script>
+    <script src="/static/js/item.js"></script>
+    <script src="/static/js/about.js"></script>
 </body>
 </html>
