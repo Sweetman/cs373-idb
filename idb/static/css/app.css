@@ -2,8 +2,7 @@ body {
     min-height: 500px;
     padding-top: 50px;
     background-image: url(../images/concrete-seamless.png);
-    background-color: #999999;
-
+    /*background-color: #999999;*/
 }
 
 #headerwrap {

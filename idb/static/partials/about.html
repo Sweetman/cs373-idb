@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>We are DreamForce</h1>
+
+    <h2>Team Members</h2>
+    <div class="row">
+        <div class="col-md-6" ng-repeat="member in about.teamMembers">
+            <div class="card">
+                <img src="/static/images/members/{{member.id}}.jpg">
+                {{member.name}}
+            </div>
+        </div>
+    </div>
+
+    <h2>Stats</h2>
+    <ul>
+        <li>Total Commits: 100</li>
+        <li>Total GitHub Issues: 9</li>
+        <li>Total Unit Tests:</li>
+        <li><a href="http://docs.tbsa.apiary.io/#">Apiary API</a></li>
+        <li><a href="https://github.com/Sweetman/cs373-idb/issues">GitHub Issue Tracker</a></li>
+        <li><a href="https://github.com/Sweetman/cs373-idb">GitHub Repo</a></li>
+        <li><a href="https://github.com/Sweetman/cs373-idb/wiki">GitHub Wiki</a></li>
+    </ul>
+
+    <h2>Data</h2>
+    <ul>
+        <li>Data Sources:</li>
+        <li>how data was scraped: lorem ipsum</li>
+    </ul>
+</div>
