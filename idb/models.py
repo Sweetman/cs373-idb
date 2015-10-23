@@ -4,8 +4,9 @@ from app import db
 class Champion(db.Model):
 	'''
 	A champion is a person or being that has been summoned to wage battle in the League of Legends on the Fields of Justice. 
-	They are the player-controlled characters in League of Legends, all of them bringing their own unique set of abilities, traits and characteristics. 
-	They're fighting styles and attributes dictate their use and role in the Fields of Justice.
+	They are the player-controlled characters in League of Legends, all of them bringing their own unique set of abilities, 
+	traits and characteristics. Their fighting styles and attributes dictate their use and role in the Fields of Justice.
+	A champion has a number of different relationships and sub-relationship entities.
 	'''
 	__tablename__ = 'champion'
 	champ_name = db.Column(db.String, primary_key=True)
@@ -34,7 +35,8 @@ class Champion(db.Model):
 
 class Champion_Skin(db.Model):
 	'''
-	Used to decorate the champion
+	Champions can be bought within the game and are used to decorate a champion. 
+	A champion might have multiple skins.
 	'''
 	__tablename__ = 'champion_skin'
 	chromas = db.Column(db.Boolean)
@@ -46,7 +48,7 @@ class Champion_Skin(db.Model):
 
 class Champion_Passive(db.Model):
 	'''
-	Each champ has one or more innate abilities
+	Each champion has a single innate, passive ability.
 	'''
 	__tablename__ = 'champion_passive'
 	description = db.Column(db.String)
@@ -56,6 +58,10 @@ class Champion_Passive(db.Model):
 
 class Ability(db.Model):
 	'''
+	A Champion's abilities are a unique characteristic of each champion that separates them apart from other champions. 
+	Every champion has at least five unique abilities, four of which are learned throughout the course of the battle 
+	and requires leveling the champion to acquire/spending ability points. There's a 1:M relationship between 
+	Champion:Ability, as each champion possesses multiple abilities.
 	'''
 	__tablename__ = 'ability'
 	description = db.Column(db.String)
@@ -68,7 +74,7 @@ class Ability(db.Model):
 
 class Champion_Info(db.Model):
 	'''
-	Base stats of the champ
+	Base stats of the champ.
 	'''
 	__tablename__ = 'champion_info'
 	attack = db.Column(db.Integer)
@@ -79,7 +85,8 @@ class Champion_Info(db.Model):
 
 class Champion_Tag(db.Model):
 	'''
-	Tag refers to the category or the type of champ
+	Tag refers to the category or the type of champ. A champion might be categorized as multiple types,
+	such as a Tank, Support, Jungler, etc.
 	'''
 	__tablename__ = 'champion_tag'
 	id = db.Column(db.Integer, primary_key=True)
@@ -88,7 +95,7 @@ class Champion_Tag(db.Model):
 
 class Champion_Stat(db.Model):
 	'''
-	These are the in-game stats that the champ will have depending on the level and items equipped
+	These are the in-game stats that the champ will have depending on the level and items equipped.
 	'''
 	__tablename__ = 'champion_stat'
 	armor = db.Column(db.Float)
@@ -115,6 +122,11 @@ class Champion_Stat(db.Model):
 
 class Item(db.Model):
 	'''
+	As the game progresses, players acquire currency in the form of gold and can spend 
+	it on powerful items to improve the champion's performance. Each item provides a 
+	unique bonus such as faster movement, improved damage, increased durability, reduced ability 
+	cooldowns, etc. There's a 1:M relationship between Champion:Item respecively, as each player 
+	can purchase multiple items for their champion during the game.
 	'''
 	__tablename__ = 'item'
 	item_name = db.Column(db.String, primary_key=True)
@@ -129,7 +141,7 @@ class Item(db.Model):
 
 class Item_Stat(db.Model):
 	'''
-	The bonus that the item gives to the champ, raising a specific stat
+	The bonus that the item gives to the champ, raising a specific stat.
 	'''
 	__tablename__ = 'item_stat'
 	type = db.Column(db.String)
@@ -138,7 +150,7 @@ class Item_Stat(db.Model):
 
 class Item_Gold(db.Model):
 	'''
-	How much an item costs to buy and can be sold for
+	How much an item costs to buy and can be sold for.
 	'''
 	__tablename__ = 'item_gold'
 	model = db.Column(db.Integer)
@@ -149,7 +161,7 @@ class Item_Gold(db.Model):
 
 class Item_Tag(db.Model):
 	'''
-	Category or type that the item belongs to
+	Category or type that the item belongs to.
 	'''
 	__tablename__ = 'item_tag'
 	tag_name = db.Column(db.String)
