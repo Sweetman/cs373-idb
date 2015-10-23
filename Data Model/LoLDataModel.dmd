@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="LoLDataModel" id="26F54CEB-F16C-60D9-F2F3-1A31A409EAC8" version="3.5">
-<createdBy>jeffreyli</createdBy>
-<createdTime>2015-10-19 17:13:30 UTC</createdTime>
-<ownerDesignName>LoLDataModel</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>26F54CEB-F16C-60D9-F2F3-1A31A409EAC8</designId>
-</OSDM_Design>
