@@ -5,8 +5,22 @@
     <div class="row">
         <div class="col-md-6" ng-repeat="member in about.teamMembers">
             <div class="card">
-                <img src="/static/images/members/{{member.id}}.jpg">
-                {{member.name}}
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-circle" src="/static/images/members/{{member.id}}.jpg">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="centerText">
+                            <h3>{{member.name}}</h3>
+                            <h6><small>{{member.bio}}</small></h6>
+                        </div>
+                        <ul>
+                            <li>Number of Commits: {{member.commits}}</li>
+                            <li>Issues Closed: {{member.issues}}</li>
+                            <li>Number of Unit Tests: {{member.unitTests}}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
