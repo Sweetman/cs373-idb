@@ -1,0 +1,883 @@
+commit 15ef6cb609f56ae9044d361e74d40cdd762391a6
+Merge: 2a2ba64 5633ec7
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 21:40:16 2015 -0500
+
+    Merge branch 'dev'
+
+commit 5633ec7fd0c3c1b21a5a905984ccb3fac224049d
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Oct 22 21:35:27 2015 -0500
+
+    added models.html
+
+commit f1acb28399c7617a16a484f98dd8c3ebfbb68871
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 21:32:59 2015 -0500
+
+    Update about stats
+
+commit 5b7cb0c71acc3c9fe2add439b216c0cead15fbb4
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 21:31:57 2015 -0500
+
+    Separate sections in About page
+
+commit 6bd58698f3290d1734cf7535f6258094c194f6a6
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 21:19:22 2015 -0500
+
+    pydoc3 doesn't seem to be working
+
+commit 14de210ea7004c0e754d5fed1f289eb05bec1fec
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 21:13:42 2015 -0500
+
+    updated data sources on about page
+
+commit 6a4cbb9d2d3b91db04f3955b70a9dd46f5677541
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 21:12:23 2015 -0500
+
+    updated about page
+
+commit 5185c28cb18092251cb1dada7e7d71b31139d819
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 21:11:21 2015 -0500
+
+    added responsibilities and fixed grammar for about page
+
+commit 4adeb66f047e95b72b2abe4ab96d4c492b05854d
+Merge: 0c6dbcc 0b8efc2
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 21:06:23 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit 0c6dbcca7f871a47aaed426df288cb1eab6d14a0
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 21:06:18 2015 -0500
+
+    Fix tables
+
+commit 0b8efc2f49d13ad25723c1ddd6ee15c4d479edd9
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 21:03:38 2015 -0500
+
+    fixed typo
+
+commit 6d09141cf572271a00e7e18a5dd0f54582736a0e
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 21:02:35 2015 -0500
+
+    updating about page
+
+commit 1fce6fe98281dec2d7ff37a50978b4ddf416c8c8
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 20:57:37 2015 -0500
+
+    put Team Stats and Data side by side in about
+
+commit 3d25fda9f47ed0c48b27ca3a765b1099096038f3
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 20:53:40 2015 -0500
+
+    Populate about page
+
+commit 698921b1325519779510b0cdf06a4d10e011e6bc
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 20:36:16 2015 -0500
+
+    converted images to jpg
+
+commit 942d3689448998f7dfb26a9a2c756396ecf8224b
+Merge: aa4ef2b 2eca4cd
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 20:33:10 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-idb into dev
+
+commit aa4ef2b3bc38e4dc7f76e2ec469991f9a8b82b27
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 20:33:00 2015 -0500
+
+    populating table data
+
+commit 2eca4cda2c4c1a0d4e1c3011790f71870470c9be
+Merge: 15a02cc 107d446
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 20:32:58 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit 15a02cccc19d0d04d5652a55378945a6e30f687c
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 20:32:52 2015 -0500
+
+    Set up about page angular scaffolding
+
+commit 2a2ba64d5f7e0db7405b122f868873703d66842b
+Author: Clinton Burgos <clinton.burgos@gmail.com>
+Date:   Thu Oct 22 20:11:23 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 107d446f35bd2a2ba91e4ac8f5807dbe0bba867b
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 20:08:06 2015 -0500
+
+    added comments to models.py
+
+commit 314f2e3dd086bf99fc2954b2b61786fb6b14e671
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 19:56:06 2015 -0500
+
+    Create files for about page
+
+commit 5791982a4d2a5673c3b419b2fd4edeb580f46d79
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 19:52:26 2015 -0500
+
+    Remove comment blocks with non-ASCII chars
+
+commit 699c93e3440119516c7f437d42b74dbed68afd42
+Merge: 6962080 bd77e8c
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 19:34:40 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-idb into dev
+
+commit 69620804178518ae544ec8f17706bf98783111ab
+Merge: d568803 e8d77b6
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 19:34:23 2015 -0500
+
+    Merge branch 'deploy' into dev
+
+commit bd77e8c594ff4fdff68d51a7da918fc369198194
+Merge: e54af34 d568803
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 19:34:15 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit e54af34e9d75856efc2a42a11fb74aee3743dd2f
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 19:34:10 2015 -0500
+
+    Fix jumbotron
+
+commit e8d77b63f319aefded4d65bf43871a820e6240b2
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 19:33:52 2015 -0500
+
+    fixed data information
+
+commit d568803be89f828aa5387d8138f279d9c1041ec1
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Oct 22 19:31:59 2015 -0500
+
+    added makefile
+
+commit 3a82dd5ff5eb5881758dc50179154a0561a23d9f
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 19:25:12 2015 -0500
+
+    Place champion videos in description cards
+
+commit 6e9ee34fca3938910fc7e20f3fa2af7d0010b338
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Oct 22 19:16:41 2015 -0500
+
+    updated readme and comments to models.py
+
+commit fa3d2224f3048c9a52f562fabb6ff8cf72eec478
+Merge: 147d8d0 b3f02ac
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 19:07:58 2015 -0500
+
+    Merge branch 'dev' into deploy
+
+commit 147d8d06b60c13a47c3f42425eff5c917e464dfd
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 19:07:23 2015 -0500
+
+    removing data models folder
+
+commit b3f02acf4133778a1fb2eddad0e5a04ce34d2e24
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Oct 22 19:02:46 2015 -0500
+
+    changes to unittests
+
+commit eb3a8fe08a1f4f60299ccc487f08ab39848ddcd1
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 18:52:38 2015 -0500
+
+    All tables now reverse sortable
+
+commit cd104cd580568a9a8cd6673a78a35307f18588bb
+Merge: 89b965a d6e433e
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 18:48:12 2015 -0500
+
+    Merge branch 'dev' into deploy
+
+commit d6e433e876031ba1c4a10d5b3f0de3ab594a2de1
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 18:46:37 2015 -0500
+
+    Champion table sortable in both directions
+
+commit 89b965a33d773d8807e9b57acf32035b8ddebcb4
+Merge: 7872998 21c4d4c
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 18:11:20 2015 -0500
+
+    Merge branch 'dev' into deploy
+
+commit 21c4d4c17608878524e957baeb6ae838cdcc4409
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 18:03:14 2015 -0500
+
+    front end stuff, colors, readablity
+
+commit 7d85d8b13d7afb4cf0d48e2219147919df4d9ece
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 17:48:32 2015 -0500
+
+    fixed all alignments
+
+commit e08e6b92b3ee50ff263d2c6c44d07f7689397405
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 17:33:58 2015 -0500
+
+    splash text has background
+
+commit 7872998abe2d7cb046ab6a9f2062a20ac62fee6b
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 16:54:36 2015 -0500
+
+    testing
+
+commit d5aafc2a1e444b1de7f1bb1e41b9da095ec1c8b0
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 16:28:05 2015 -0500
+
+    fixed the extra space under footer, adjust splash image
+
+commit ee43eab1995244311bf8d8c8dfd944d044bd5989
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 16:17:32 2015 -0500
+
+    background color change, added featured champions
+
+commit a5a50ce6254dad1686b9e6ba3f4c1c89d4302fdf
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 09:11:29 2015 -0500
+
+    added member images, James' pic needs to be 250px by 250x to match.
+
+commit 6643655925b629718ce54785ee456aedf9c9fbcd
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 07:49:46 2015 -0500
+
+    changed the color of the ficons
+
+commit e84fdc8eb44820acbcbfa89d5e0b8a8ccf72f3fc
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 07:45:50 2015 -0500
+
+    added embedded links to footer
+
+commit 5b0d23c19c9f34ccfd9ece70a083fac3f136b9f7
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 07:23:39 2015 -0500
+
+    added embedded videos for the champions
+
+commit 3770ce9645436cd9edf8762f8e110197cdb8bca4
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 07:02:03 2015 -0500
+
+    added carousels for each of the champion pages
+
+commit f3f263d5b931750c2ee8f00f61ac70cf2eab6a8e
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 06:27:18 2015 -0500
+
+    added images
+
+commit 2bbc5b6e73204ee40472b2ad197d0b30967aa264
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 06:17:48 2015 -0500
+
+    fixed bolding
+
+commit f5ac53694368f98674f7312701a9aae52c8f84dd
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 06:13:09 2015 -0500
+
+    forgot closing tag
+
+commit eca3ddae5aff6aab2999426977c56b138f54e3c6
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 06:12:01 2015 -0500
+
+    fixing tags
+
+commit 3858fbf63e9657109254697107884b43ae5c573e
+Merge: 27036e3 be403e0
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 06:11:03 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-idb into dev
+
+commit 27036e34d973be9908162103bbf6f2ee179fcc13
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 06:10:54 2015 -0500
+
+    forgot closing tag
+
+commit be403e0b4cf3e6949d22bd5bb8124904cf51f374
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 06:10:14 2015 -0500
+
+    temporary space holder
+
+commit 78828a1258f797cbd3760e46cba967480447db4a
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 06:09:41 2015 -0500
+
+    adding images and fixed data
+
+commit 15c58cf950d6f6d3c718c5405247f4cefdfe3a92
+Merge: fff5abc 207c22d
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 06:05:33 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit fff5abc1e2306ff2b7e427c733ab36338fa3f611
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 06:05:26 2015 -0500
+
+    Cards auto resize
+
+commit 207c22d48d17f0211704d5eb84c620a84a6c33cb
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 06:04:35 2015 -0500
+
+    navigation bar transparent
+
+commit 332292d16a80c00515841e5ae735e5d6ce5b99bd
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 06:03:26 2015 -0500
+
+    homepage splash header sizing
+
+commit 344a0f4e6bb77579a0d818afa4d2b75f10f0b210
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 05:58:29 2015 -0500
+
+    add modular routing for partials
+
+commit 880aa910fa99fea9c649f12e9eae06f284b7c72c
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 05:50:04 2015 -0500
+
+    Fix spacing for table html files
+
+commit 6883222203295f2cfe35d00c290a262f7a9fd33f
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 05:44:52 2015 -0500
+
+    Fix merge confict on app.css
+
+commit 218064e01ab84dbdcd5bf543a7bb8ce79c716778
+Merge: 8eb4bc7 c4c5012
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 05:39:19 2015 -0500
+
+    Merge app.css
+
+commit c4c501207a572c796ca08eedc0af3b6c5ba47f4b
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 05:33:19 2015 -0500
+
+    adding data for items
+
+commit e4bf941b248604cd2aace3cfbbdc359fae8cbdc7
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 05:31:14 2015 -0500
+
+    adding data for abilities
+
+commit bf0186cb1fef64c2f75a9998d91dc8faa074bbb7
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 05:30:31 2015 -0500
+
+    Angularize items table
+
+commit 26d7bf293c8f94273c9be5e5db8a0b0ed8f7375d
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 05:26:09 2015 -0500
+
+    Angularize abilities table
+
+commit ee53502728ceb2cc87ba00f1df00be785304c3b5
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 05:24:07 2015 -0500
+
+    adding data for champions
+
+commit 97aed943a0bb694f206425bb71c51fb39954dec0
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 05:20:56 2015 -0500
+
+    Sortable champion table
+
+commit 8eb4bc7d829dc7bcb3ba1635a145e0b990a6c815
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 05:19:23 2015 -0500
+
+    css edits, background image added
+
+commit 22a98cd70eb1c7c0d93aa7a5c3f40aa98b9eba52
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 05:06:55 2015 -0500
+
+    Angularize champions table
+
+commit 8ace4c903c64cb4b9f3b48aae727933065cee5e7
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 04:59:30 2015 -0500
+
+    editing the data for the pages
+
+commit 457165883c83a6ed3ed383b25ea96d05e4331b8a
+Merge: 39e4f0d f8d5e2a
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 04:48:30 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-idb into dev
+
+commit f8d5e2a751c7ed1bfbd5f5ca7e7f80243822f20c
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 04:47:12 2015 -0500
+
+    Tables with links
+
+commit 39e4f0daf26adaf393b9d9f01f2069541dfed54e
+Merge: b3c900d 3dc2768
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 04:28:04 2015 -0500
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-idb into dev
+
+commit 3dc27688ef6c73d0767e2b547eba4fab2baf78fc
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 04:27:23 2015 -0500
+
+    Create champions table
+
+commit b3c900d4d89db7e0b30d135ec07369e1e853cf00
+Merge: 1eb08bc 158cfe6
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 22 04:23:27 2015 -0500
+
+    Merge branch 'master' of https://github.com/Sweetman/cs373-idb into dev
+
+commit f1e2352f87677055876696d75818e30d8e3d31a7
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 04:07:28 2015 -0500
+
+    update ability and item layout
+
+commit f73a0824b6d9866764d32e488de1c9955da4d18e
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 03:42:56 2015 -0500
+
+    Redesign champion page
+
+commit 889ae060edd54d8317b14d21c1f83c54d289aaa8
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Oct 22 03:19:25 2015 -0500
+
+    icon
+
+commit 0394c88ac6368bf84cbe4a56dd14d9fbdef67643
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Oct 22 01:28:05 2015 -0500
+
+    Use Instant bootstrap theme
+
+commit 967f1a6283e0156df776313f958ffbaf0877c5a2
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Wed Oct 21 17:42:58 2015 -0500
+
+    fixed formatting and linking issues
+
+commit f1568dce2e3a066f837885c26f287abd7efe7058
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Wed Oct 21 17:34:09 2015 -0500
+
+    readme should be complete
+
+commit 7e1dc6f2b595aed7ed4c02fa265d81218c1c7b7d
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Wed Oct 21 13:43:01 2015 -0500
+
+    fixed concrete-splash transparency
+
+commit 1eb08bc548f2b0ec2a03c7c31aa0773bf443daa7
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Wed Oct 21 13:20:34 2015 -0500
+
+    update readme
+
+commit f3240dacd130e8e0b9e9c74fb7f1c38c26666392
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Wed Oct 21 13:18:11 2015 -0500
+
+    Add concrete-splash, remove old images
+
+commit f2bab8c582598ae5946f98c7200083db0e9c19d1
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Wed Oct 21 12:50:20 2015 -0500
+
+    Update readme
+
+commit 158cfe61ef3066c6753201fda5d9cb98c9d23620
+Author: Clinton Burgos <clinton.burgos@gmail.com>
+Date:   Wed Oct 21 10:25:40 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 45b9775ad40092fe5c1f8be2b8e372ba479d7317
+Author: Clinton Burgos <clinton.burgos@gmail.com>
+Date:   Wed Oct 21 10:17:52 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 5a7ac7a123bc5b1af2c87b9838858b2ce17c46b1
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 04:22:18 2015 -0500
+
+    Active tab in navbar now functional
+
+commit 1d0c8420fc8926104fe869b8bb4fbe8750aa8183
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 03:57:09 2015 -0500
+
+    Experiment with card view
+
+commit 4a7e82f570fe78755cc55fd4252e82c72fb1abb6
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 02:45:18 2015 -0500
+
+    Modify splash screen
+
+commit ef3933b18d0ad375cc528a3c3e285a76083add1f
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 02:24:42 2015 -0500
+
+    modify static html page bodies
+
+commit 673e684dea0e989b11ac65aed35f1cf645b25b97
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 02:15:49 2015 -0500
+
+    Change branding from TBSA to HardCarry.me
+
+commit b3778b21dca2b7d5592cb4e257ddd244da3803d7
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 02:15:11 2015 -0500
+
+    Add routes to flask
+
+commit 6fdd89b090159d56a829210d763de9de2ae22cdb
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 02:04:44 2015 -0500
+
+    Change company/founder/investor to champion/ability/item
+
+commit 7689b23cbad3bcdaec53f2ab1900d67546559149
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Wed Oct 21 01:34:07 2015 -0500
+
+    moved images into static folder
+
+commit da50991e917ed09ad1d3626adaca5ec97d6bf340
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Wed Oct 21 01:29:48 2015 -0500
+
+    adding images
+
+commit b58319b677074c894efdfc159ccc4daf08467116
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 01:05:35 2015 -0500
+
+    Remove hash from URL, refactor angular routeProvider logic to app.js
+
+commit 658dd54b26f922c7b22b52b34c8e3e4ef72bc6c3
+Merge: c68fb04 28aa0fb
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 00:38:46 2015 -0500
+
+    Merge branch 'master' into dev
+
+commit c68fb0420b77ac104bb6d5ef8aac21e33e699ce3
+Merge: 5d0d459 2c49425
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 00:37:17 2015 -0500
+
+    Merge branch 'master' into dev
+
+commit 5d0d45936be36fb0d8cbf5033db353b4a3943893
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Oct 21 00:36:15 2015 -0500
+
+    Move bower.json to correct directory, update readme
+
+commit 28aa0fb750e95d370472438ac3dc61c899227a32
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Wed Oct 21 00:15:53 2015 -0500
+
+    adding UML pdf file
+
+commit e4c95c11fe34dca8d156698c4733a025551834c5
+Author: Clinton Burgos <clinton.burgos@gmail.com>
+Date:   Tue Oct 20 23:46:30 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit c3885e5cd91ce8b4c9793a4d334832c57a0ba8b0
+Merge: ea76c45 2c49425
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 23:06:36 2015 -0500
+
+    Merge branch 'master' of https://github.com/Sweetman/cs373-tbsa
+
+commit ea76c45c15d8b36b516f8b44878bdf15183301de
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 23:02:30 2015 -0500
+
+    another typo in readme
+
+commit f3e74975d310a17030dfdaf343f31e142338344f
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 22:51:32 2015 -0500
+
+    fixed typo
+
+commit 44d4b7f64de53996819e011b2beb426b3defa3de
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 22:43:55 2015 -0500
+
+    updated documentation and imports
+
+commit 317089d8b4e634940cf9edd6b7fef07198c06536
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 22:18:44 2015 -0500
+
+    file structure reformatted
+
+commit 4c8edb77c0ff44ed36c64ad4a5392f8ba69400bd
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 22:15:10 2015 -0500
+
+    flask now serves angular
+
+commit d03311f72a198292d05cd0908b499287d7e865e4
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 21:30:45 2015 -0500
+
+    don't need db-setup.py
+
+commit 72bebf86889dfde87fd3cc3bb4252d87ebc83e3c
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 21:29:52 2015 -0500
+
+    flask can now pick up js, css, and templates
+
+commit 447d8bedf1cc89888c873cd29d35e269985b3d69
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 21:15:07 2015 -0500
+
+    added a manager file and implemented migrations
+
+commit d387864b914483d9a0b28e71a95c00c1d895db2b
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 21:14:45 2015 -0500
+
+    fixed models import issue, working on displaying index.html
+
+commit 976484fb806169d1f2e30f7f49ad639fd6f0e522
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 20:00:16 2015 -0500
+
+    models.py now being read by app.py, fixed import issue in config.py
+
+commit 55a3f8b3d9e31806e95412530ca4bea5144579aa
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 19:36:09 2015 -0500
+
+    changed class name to fit naming convention
+
+commit 1ca72205c1988150fb9c7386c8df0ea118b4b2fe
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 19:13:15 2015 -0500
+
+    added models.py, will replace db-setup.py
+
+commit 9b3475627a71c63ebba2a01a2e0be1b6ef2433f3
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 19:06:19 2015 -0500
+
+    laying foundation for flask app with app.py and config.py, added more python packages for future use
+
+commit 2c49425ff0cabe009bfb90e0e0c544628925b1c6
+Merge: 4a34185 3b87b6c
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Tue Oct 20 18:47:19 2015 -0500
+
+    Merge branch 'master' of https://github.com/Sweetman/cs373-idb
+
+commit 4a34185f3d393b68c20d12c582e9ecd20d07f7ca
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Tue Oct 20 18:47:07 2015 -0500
+
+    removed temp tech report
+
+commit 3b87b6c88aed260336c1a59b8761bca6aa04ab75
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Tue Oct 20 18:19:52 2015 -0500
+
+    db setup script created, requirements for python packages created, and gitignore updated
+
+commit 127dc08037a7904fa01883b4daf5b0a1288533ca
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Tue Oct 20 18:12:53 2015 -0500
+
+    modified data models
+
+commit ddbcca202e906a0049d1672c34eaa2344bb21baa
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Tue Oct 20 14:34:09 2015 -0500
+
+    adding data model
+
+commit cbda5cb0464b5185b5b6900c5ce31cc7602cc029
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Tue Oct 20 13:31:30 2015 -0500
+
+    Wrote unittests for models and tested with coverage3. Included output of test in file which is the expected failures.
+
+commit 4641cc2758cc8721fc7ab04aa264e5e2c8471429
+Author: Clinton Burgos <clinton.burgos@gmail.com>
+Date:   Tue Oct 20 03:04:47 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 9fadb45d1edaf636a0b5e251acc755bb75f1e67d
+Author: Clinton Burgos <clinton.burgos@gmail.com>
+Date:   Tue Oct 20 03:04:28 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit ee7aa65a79e024811426f394b2b735b627569dc0
+Author: Clinton Burgos <clinton.burgos@gmail.com>
+Date:   Tue Oct 20 03:03:44 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 4bcbf778ca1d9564caac5d83bf8b032455ea3a5c
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Sat Oct 17 02:14:49 2015 -0500
+
+    Modify home page
+
+commit 7b515c82bd058e7b6d07441d8fd6f9b248186da6
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Sat Oct 17 02:12:24 2015 -0500
+
+    Create basic company, founder, and investor pages
+
+commit 20461e554f586c60fe81b71861338163c166682b
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Sat Oct 17 01:47:31 2015 -0500
+
+    Update .gitignore
+
+commit f8fa4115db86e06253eee281cb996f83b115ab22
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Sat Oct 17 01:46:03 2015 -0500
+
+    Update readme instructions
+
+commit 9c9f4fa9c9d3996c840ccc1b420002c018557374
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Sat Oct 17 01:44:00 2015 -0500
+
+    Provide scaffolding for company, founder, and investor partials
+
+commit 4d3c6c791459e9a5f26dd2d12bca4ea57a8486e2
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Sat Oct 17 01:32:51 2015 -0500
+
+    Refactor out home page into partials
+
+commit f6531aed9fb75ddba7063e36b7b03a8f2da9be95
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Sat Oct 17 00:42:56 2015 -0500
+
+    Fix bootstrap.css reference
+
+commit 71224c6ef01b5bcf16078d986cb48ec8d120a41e
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Sat Oct 17 00:37:00 2015 -0500
+
+    updating report intro
+
+commit f49d5e79bd69f9b0153d07541557ad9ec32eeca2
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Oct 16 20:03:38 2015 -0500
+
+    Update readme
+
+commit 2c13229abb0ce33f59ae435e3475194f09af02e5
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Oct 16 20:01:01 2015 -0500
+
+    Set up Angular Scaffolding
+
+commit f89103c1ee1fa88270cf9ce4b3f9baef2c51212c
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Oct 16 18:40:38 2015 -0500
+
+    Bootstrap scaffolding complete
+
+commit 47a46fd85dbd7a0e6ab9f1486da0aca503bb0dd4
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Oct 16 17:50:24 2015 -0500
+
+    Add files and folder for front end
+
+commit 5056037dfcd47ed42a72be4557f05a84926c758d
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Oct 16 17:44:51 2015 -0500
+
+    Git ignore DS_Store
+
+commit 51d452c6422e13d6d614292fdf6bfae9ffe0f00d
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 15 21:37:12 2015 -0500
+
+    adding technical report
+
+commit 7f6948bb2bf04fe6975d0732e10043afd9fc16c8
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Oct 15 21:35:53 2015 -0500
+
+    first commit
