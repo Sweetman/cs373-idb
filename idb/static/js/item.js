@@ -5,4 +5,14 @@ angular.module('tbsaApp.item', ['ngRoute'])
                       {name: "The Bloodthirster", id: 2, cost: 3500},
                       {name: "Frozen Heart",      id: 3, cost: 2450}];
     this.order = "id";
+    this.orderReverse = false;
+    this.changeOrderTo = function(newOrder) {
+        if(this.order === newOrder){
+            this.orderReverse = ! this.orderReverse;
+        }
+        else {
+            this.orderReverse = false;
+        }
+        this.order = newOrder;
+    };
 }]);
