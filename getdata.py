@@ -85,7 +85,6 @@ summoners = {}
 summonerInfoUrls = []
 summonerInfoNum = 0
 for jsonFG in jsonResponse['gameList']:
-	# fgData = jsonResponse['gameList'][jsonFG]
 	if jsonFG['gameId'] not in featured_games:
 		featured_game = {}
 		featured_game['gameId'] = jsonFG['gameId']
@@ -102,10 +101,13 @@ for jsonFG in jsonResponse['gameList']:
 		curParticipantName = participant['summonerName']
 		if curParticipantName not in summoners:
 			summoner = {}
+
+			# building requests to get more summoner info later
 			if not summonerInfoNum % 10:
 				summonerInfoUrls.append('https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/')
 			summonerInfoUrls[-1] += curParticipantName.replace(' ', '%20') + ','
 			summonerInfoNum += 1
+			
 			summoner['name'] = participant['summonerName']
 			summoner['profileIconId'] = participant['profileIconId']
 			summoner['bot'] = participant['bot']
@@ -120,30 +122,22 @@ for jsonFG in jsonResponse['gameList']:
 			summoners[curParticipantName]['gameId'].add(participant['gameId'])
 
 # to avoid too many requests causing an error, get all this stuff after the fact
+# each summoner info url has 10 names. if you have too many in a request you get an error
 jsonSummonerInfo = {}
 for i in range(len(summonerInfoUrls)):
 	summonerInfoUrls[i] += '?api_key=b5cf54ec-e9cf-4c5f-8009-74785a540ce4'
 	summonerInfoUrls[i] = str(summonerInfoUrls[i].encode('ascii', 'ignore'))[2:-1]
-	print(summonerInfoUrls)
 	apiResponse = urlopen(summonerInfoUrls[i])
 	apiResponseInfo = apiResponse.info()
 	apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 	jsonSummonerInfo.update(json.loads(apiResponseRaw))
-print(summonerInfoUrls)
-
-print("\n\n\n\n" + str(jsonSummonerInfo))
 
 for summonerName in summoners:
 	jsonSummonerName = summonerName.lower().replace(' ', '')
 	summoners[summonerName]['summonerId'] = jsonSummonerInfo[jsonSummonerName]['id']
 	summoners[summonerName]['summonerLevel'] = jsonSummonerInfo[jsonSummonerName]['summonerLevel']
 
-
-
-
-
-
-
+print(champions)
+print(abilities)
+print(featured_games)
 print(summoners)
-
-
