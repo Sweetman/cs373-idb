@@ -18,7 +18,8 @@
     <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
 
     <!-- Custom styles for our web -->
-    <link rel="stylesheet" type="text/css" href="/static/css/instant-style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/instant-style.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/solid-state.css">
     <link rel="stylesheet" type="text/css" href="/static/css/app.css">
     <link rel="stylesheet" type="text/css" href="/static/css/home.css">
     <link rel="stylesheet" type="text/css" href="/static/css/card.css">
@@ -35,57 +36,56 @@
 
 <body ng-app="tbsaApp">
     <div ng-controller="indexCtrl">
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
 
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">HardCarry.me</a>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">HardCarry.me</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li ng-class="{active: $route.current.activeTab == 'Champions'}"><a href="/champions">Champions</a></li>
+                            <li ng-class="{active: $route.current.activeTab == 'Abilities'}"><a href="/abilities">Abilities</a></li>
+                            <li ng-class="{active: $route.current.activeTab == 'Items'}"><a href="/items">Items</a></li>
+                            <li ng-class="{active: $route.current.activeTab == 'About'}"><a href="/about">About</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li ng-class="{active: $route.current.activeTab == 'Champions'}"><a href="/champions">Champions</a></li>
-                        <li ng-class="{active: $route.current.activeTab == 'Abilities'}"><a href="/abilities">Abilities</a></li>
-                        <li ng-class="{active: $route.current.activeTab == 'Items'}"><a href="/items">Items</a></li>
-                        <li ng-class="{active: $route.current.activeTab == 'About'}"><a href="/about">About</a></li>
+            </nav>
+
+
+            <div ng-view></div>
+
+            <!-- Footer -->
+            <section id="footer">
+                <div class="inner">
+                    <ul class="copyright">
+                        <li>League of Legends</li>
+                        <li>HardCarry.me</li>
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                     </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
-        <div ng-view></div>
+                    <ul class="contact">
+                        <li class="fa-bell"><a href="http://www.cs.utexas.edu/users/downing/cs373/index.html"></a></li>
+                        <li class="fa-github"><a href="https://github.com/Sweetman/cs373-idb"></a></li>
+                        <li class="fa-server"><a href="http://www.rackspace.com"></a></li>
+                        <li class="fa-database"><a href="http://www.postgresql.org/"></a></li>
+                    </ul>
+                </div>
+            </section>
+    
+        </div>
     </div>
 
-    
-    <!-- Footer -->
-    <div id="footerwrap">
-        <div class="container">
-            <div class="row centered">
-                <div class="col-lg-4">
-                    <p><b>LEAGUE OF LEGENDS</b></p>
-                </div>
-            
-                <div class="col-lg-4">
-                    <p><b>HARD CARRY ME</b></p>
-                </div>
-                <div class="col-lg-4">
-                  <p>
-                     <a class="footer-icons" href="http://www.cs.utexas.edu/users/downing/cs373/index.html"><i class="fa fa-bell" style="color:white"></i></a>
-                     <a class="footer-icons" href="https://github.com/Sweetman/cs373-idb"><i class="fa fa-github" style="color:white"></i></a>
-                     <a class="footer-icons" href="http://www.rackspace.com"><i class="fa fa-server" style="color:white"></i></a>
-                     <a class="footer-icons" href="http://www.postgresql.org/"><i class="fa fa-database" style="color:white"></i></a>
-                  </p>
-               </div>
-            </div>
-        </div>
-    </div> 
-
-<!-- Bootstrap core JavaScript
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
@@ -98,5 +98,9 @@
     <script src="/static/js/ability.js"></script>
     <script src="/static/js/item.js"></script>
     <script src="/static/js/about.js"></script>
+    <script src="/static/js/skel.min.js"></script>
+    <script src="/static/js/jquery.scrollex.min.js"></script>
+    <script src="/static/js/util.js"></script>
 </body>
 </html>
+
