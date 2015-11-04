@@ -39,3 +39,16 @@ body {
 .centerText {
     text-align: center;
 }
+
+.table-hover > tbody > tr:hover {
+    background-color: rgb(51, 54, 69);
+}
+
+table tbody tr:nth-child(2n + 1){
+    background-color: transparent;
+}
+
+#footer {
+    margin-top: 0;
+    padding-top: 0;
+}
