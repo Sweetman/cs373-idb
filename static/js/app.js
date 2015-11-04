@@ -2,7 +2,7 @@ angular.module('tbsaApp', [
     'ngRoute',
     'tbsaApp.home',
     'tbsaApp.champion',
-    'tbsaApp.ability',
+    'tbsaApp.summoner',
     'tbsaApp.featuredGame',
     'tbsaApp.about'
     ])
@@ -21,11 +21,11 @@ angular.module('tbsaApp', [
             controllerAs: 'champion',
             activeTab: "Champions"
         })
-        .when('/abilities', {
-            templateUrl: '/static/partials/abilitiesTable.html',
-            controller: 'abilityCtrl',
-            controllerAs: 'ability',
-            activeTab: 'Abilities'
+        .when('/summoners', {
+            templateUrl: '/static/partials/summonersTable.html',
+            controller: 'summonerCtrl',
+            controllerAs: 'summoner',
+            activeTab: 'Summoners'
         })
         .when('/featuredGames', {
             templateUrl: '/static/partials/featuredGamesTable.html',
@@ -45,11 +45,11 @@ angular.module('tbsaApp', [
             },
             activeTab: "Champions"
         })
-        .when('/abilities/:id', {
+        .when('/summoners/:id', {
             templateUrl: function(params){
-                return '/static/partials/ability' + params.id + '.html';
+                return '/static/partials/summoner' + params.id + '.html';
             },
-            activeTab: 'Abilities'
+            activeTab: 'Summoners'
         })
         .when('/featuredGame/:id', {
             templateUrl: function(params){
