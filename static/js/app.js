@@ -3,7 +3,7 @@ angular.module('tbsaApp', [
     'tbsaApp.home',
     'tbsaApp.champion',
     'tbsaApp.ability',
-    'tbsaApp.item',
+    'tbsaApp.featuredGame',
     'tbsaApp.about'
     ])
 
@@ -27,11 +27,11 @@ angular.module('tbsaApp', [
             controllerAs: 'ability',
             activeTab: 'Abilities'
         })
-        .when('/items', {
-            templateUrl: '/static/partials/itemsTable.html',
-            controller: 'itemCtrl',
-            controllerAs: 'item',
-            activeTab: 'Items'
+        .when('/featuredGames', {
+            templateUrl: '/static/partials/featuredGamesTable.html',
+            controller: 'featuredGameCtrl',
+            controllerAs: 'featuredGame',
+            activeTab: 'Featured Games'
         })
         .when('/about', {
             templateUrl: '/static/partials/about.html',
@@ -51,11 +51,11 @@ angular.module('tbsaApp', [
             },
             activeTab: 'Abilities'
         })
-        .when('/items/:id', {
+        .when('/featuredGame/:id', {
             templateUrl: function(params){
-                return '/static/partials/item' + params.id + '.html';
+                return '/static/partials/featuredGame' + params.id + '.html';
             },
-            activeTab: 'Items'
+            activeTab: 'Featured Games'
         })
   
         .otherwise({redirectTo: '/'});
