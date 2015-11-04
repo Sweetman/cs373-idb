@@ -21,6 +21,9 @@ angular.module('tbsaApp', [
             controllerAs: 'champion',
             activeTab: "Champions"
         })
+        .when('/runTests', {
+            templateUrl: '/static/partials/unitTests.html'
+        })
         .when('/summoners', {
             templateUrl: '/static/partials/summonersTable.html',
             controller: 'summonerCtrl',
