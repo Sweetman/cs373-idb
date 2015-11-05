@@ -1,0 +1,26 @@
+<div class="container tableWrapper">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th ng-click="summonerTable.changeOrderTo('id')">Id</th>
+                <th ng-click="summonerTable.changeOrderTo('name')">Name</th>
+                <th ng-click="summonerTable.changeOrderTo('champion')">Champion</th>
+                <th ng-click="summonerTable.changeOrderTo('costBurn')">Cost Burn</th>
+                <th ng-click="summonerTable.changeOrderTo('costType')">Cost Type</th>
+                <th ng-click="summonerTable.changeOrderTo('maxRank')">Max Rank</th>
+                <th ng-click="summonerTable.changeOrderTo('rangeBurn')">Range Burn</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="s in summonerTable.tableData | orderBy:summonerTable.order:summonerTable.orderReverse">
+                <td>{{s.id}}</td>
+                <td><a href="/summoners/{{s.id}}">{{s.name}}</a></td>
+                <td>{{s.champion}}</td>
+                <td>{{s.costBurn}}</td>
+                <td>{{s.costType}}</td>
+                <td>{{s.maxRank}}</td>
+                <td>{{s.rangeBurn}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

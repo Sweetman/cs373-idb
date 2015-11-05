@@ -1,9 +1,9 @@
 angular.module('tbsaApp', [
     'ngRoute',
     'tbsaApp.home',
-    'tbsaApp.champion',
-    'tbsaApp.summoner',
-    'tbsaApp.featuredGame',
+    'tbsaApp.championTable',
+    'tbsaApp.summonerTable',
+    'tbsaApp.featuredGameTable',
     'tbsaApp.about'
     ])
 
@@ -16,21 +16,21 @@ angular.module('tbsaApp', [
             activeTab: ''
         })
         .when('/champions', {
-            templateUrl: '/static/partials/championsTable.html',
-            controller: 'championCtrl',
-            controllerAs: 'champion',
+            templateUrl: '/static/partials/championTable.html',
+            controller: 'championTableCtrl',
+            controllerAs: 'championTable',
             activeTab: "Champions"
         })
         .when('/summoners', {
-            templateUrl: '/static/partials/summonersTable.html',
-            controller: 'summonerCtrl',
-            controllerAs: 'summoner',
+            templateUrl: '/static/partials/summonerTable.html',
+            controller: 'summonerTableCtrl',
+            controllerAs: 'summonerTable',
             activeTab: 'Summoners'
         })
         .when('/featuredGames', {
-            templateUrl: '/static/partials/featuredGamesTable.html',
-            controller: 'featuredGameCtrl',
-            controllerAs: 'featuredGame',
+            templateUrl: '/static/partials/featuredGameTable.html',
+            controller: 'featuredGameTableCtrl',
+            controllerAs: 'featuredGameTable',
             activeTab: 'Featured Games'
         })
         .when('/about', {
@@ -43,18 +43,21 @@ angular.module('tbsaApp', [
             templateUrl: function(params){
                 return '/static/partials/champion' + params.id + '.html';
             },
+            controller: "championCtrl",
             activeTab: "Champions"
         })
         .when('/summoners/:id', {
             templateUrl: function(params){
                 return '/static/partials/summoner' + params.id + '.html';
             },
+            controller: "summonerCtrl",
             activeTab: 'Summoners'
         })
-        .when('/featuredGame/:id', {
+        .when('/featuredGames/:id', {
             templateUrl: function(params){
                 return '/static/partials/featuredGame' + params.id + '.html';
             },
+            controller: "featuredGameCtrl",
             activeTab: 'Featured Games'
         })
   
