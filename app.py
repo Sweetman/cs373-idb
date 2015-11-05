@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
+from subprocess import call
 import os
 
 
@@ -15,6 +16,13 @@ from models import *
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
+
+@app.route('/runTests/')
+def run_tests():
+	call('coverage run tests.py > tests.out 2>&1', shell=True)
+	f = open('tests.out')
+	result = f.read()
+	return ('<pre>' + result + '</pre>')
 
 @app.route('/partials/<path:path>')
 def serve_partial():

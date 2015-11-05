@@ -1,3 +1,8 @@
+<link rel="shortcut icon" href="{{ url_for('static', filename='cat.ico') }}">
+    <link rel="icon" type="image/png" href="http://elderscrolls.wikia.com/wiki/File:Ok-icon.png">
+    <link rel="shortcut icon" type="image/png" href="/cat.ico"/>
+    <link rel="shortcut icon" type="image/png" href="http://elderscrolls.wikia.com/wiki/File:Ok-icon.png"/>
+
 <div class="container">
     <br>
     <h1>We are DreamForce</h1>
@@ -30,7 +35,7 @@
     <hr>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3 col-md-offset-2 col-sm-4">
             <h2>Team Stats</h2>
             <ul>
                 <li>Total Commits: 150</li>
@@ -43,11 +48,18 @@
             </ul>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-3 col-sm-4">
             <h2>Data</h2>
             <ul>
                 <li>Data Sources: <a href="https://developer.riotgames.com/">RIOT API</a></li>
-                <li>Data Scraping: <a href="https://github.com/Sweetman/cs373-idb/wiki/Data-Scraping">GitHub Wiki/Data Scraping</a></li></li>
+                <li>Data Scraping: <a href="https://github.com/Sweetman/cs373-idb/wiki/Data-Scraping">GitHub Wiki / Data Scraping</a></li></li>
+            </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+            <h2>Unit Tests</h2>
+            <ul>
+                <li><a href="/runTests">Run Unit Tests</a></li>
             </ul>
         </div>
     </div>

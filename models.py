@@ -60,8 +60,46 @@ class Champion(db.Model):
 	stat_spellblock = db.Column(db.Float)
 	stat_spellblockperlevel = db.Column(db.Float)
 	number_of_skins = db.Column(db.Integer)
-	abilities = db.relationship('ChampionAbility', backref='champion',
-                                lazy='dynamic')
+	abilities = db.relationship('ChampionAbility', backref="champion", cascade="all, delete-orphan" , lazy='dynamic')
+
+	def __init__(self, name, championId, imageFileName, lore, partype, title, attack, defense, magic,\
+		difficulty, passiveDescription, passiveImageFileName, passiveName, armor, armorperlevel,\
+		attackdamage, attackdamageperlevel, attackrange, attackspeedoffset, attackspeedperlevel,\
+		crit, hp, hpperlevel, hpregen, hpregenperlevel, movespeed, mp, mpperlevel, mpregen,\
+		mpregenperlevel, spellblock, spellblockperlevel, numberofskins):
+		self.name = name
+		self.championId = championId
+		self.image_file_name = imageFileName
+		self.lore = lore
+		self.partype = partype
+		self.title = title
+		self.attack = attack
+		self.defense = defense
+		self.magic = magic
+		self.difficulty = difficulty
+		self.passive_description = passiveDescription
+		self.passive_image_file_name = passiveImageFileName
+		self.passive_name = passiveName
+		self.stat_armor = armor
+		self.stat_armorperlevel = armorperlevel
+		self.stat_attackdamage = attackdamage
+		self.stat_attackdamageperlevel = attackdamageperlevel
+		self.stat_attackrange = attackrange
+		self.stat_attackspeedoffset = attackspeedoffset
+		self.stat_attackspeedperlevel = attackspeedperlevel
+		self.stat_crit = crit
+		self.stat_hp = hp
+		self.stat_hpperlevel = hpperlevel
+		self.stat_hpregen = hpregen
+		self.stat_hpregenperlevel = hpregenperlevel
+		self.stat_movespeed = movespeed
+		self.stat_mp = mp
+		self.stat_mpperlevel = mpperlevel
+		self.stat_mpregen = mpregen
+		self.stat_mpregenperlevel = mpregenperlevel
+		self.stat_spellblock = spellblock
+		self.stat_spellblockperlevel = spellblockperlevel
+		self.number_of_skins = numberofskins
 
 class ChampionAbility(db.Model):
 	"""
@@ -71,13 +109,21 @@ class ChampionAbility(db.Model):
 	Champion:Ability, as each champion possesses multiple abilities.
 	"""
 	__tablename__ = 'champion_ability'
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String)
 	description = db.Column(db.String)
 	costType = db.Column(db.String)
-	id = db.Column(db.String, primary_key=True)
 	image = db.Column(db.String)
 	maxrank = db.Column(db.Integer)
 	spell_name = db.Column(db.String)
 	championId = db.Column(db.Integer, db.ForeignKey('champion.championId'))
+	def __init__(self, name, description, costType, image, maxrank, spell_name):
+		self.name = name
+		self.description = description
+		self.costType = costType
+		self.image = self.image
+		self.maxrank = maxrank
+		self.spell_name = spell_name
 
 class Summoner(db.Model):
 	__tablename__ = 'summoner'
@@ -88,7 +134,14 @@ class Summoner(db.Model):
 	bot = db.Column(db.Boolean)
 	championId = db.Column(db.Integer)
 	teamId = db.Column(db.Integer)
+	championId = db.Column(db.Integer, db.ForeignKey('champion.championId'))
 	champions = db.relationship('Champion', secondary=summoners_champions, backref=db.backref('summoners', lazy='dynamic'), lazy='dynamic')
+	def __init__(self, summoner_id, name, profileIconId, summonerLevel, bot):
+		self.summoner_id = summoner_id
+		self.name = name
+		self.profileIconId = profileIconId
+		self.summonerLevel = summonerLevel
+		self.bot = bot
 
 class FeaturedGame(db.Model):
 	__tablename__ = 'featured_game'
@@ -100,3 +153,10 @@ class FeaturedGame(db.Model):
 	mapId = db.Column(db.Integer)
 	champions = db.relationship('Champion', secondary=featuredgames_champions, backref=db.backref('featured_games', lazy='dynamic'))
 	summoners = db.relationship('Summoner', secondary=featuredgames_summoners, backref=db.backref('featured_games'))
+	def __init__(self, gameId, gameLength, gameMode, gameStartTime, gameType, mapId):
+		self.gameId = gameId
+		self.gameLength = gameLength
+		self.gameMode = gameMode
+		self.gameStartTime = gameStartTime
+		self.gameType = gameType
+		self.mapId = mapId
