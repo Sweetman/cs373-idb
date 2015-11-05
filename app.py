@@ -31,6 +31,18 @@ def run_tests():
 # API requests
 # ------------
 
+@app.route('/api/')
+def api_root():
+	data = {
+				'urls': {
+							'champions_url': '/champions',
+                     		'abilities_url': '/abilities',
+                	 		'summoners_url': '/summoners',
+                	 		'featured-games_url': '/featured-games'
+                		}
+           }
+	return jsonify(data)
+
 def get_dict_from_obj(obj):
 	fields = {}
 	for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata']:
