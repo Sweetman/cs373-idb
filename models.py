@@ -25,9 +25,6 @@ class Champion(db.Model):
 	"""
 	__tablename__ = 'champion'
 	name = db.Column(db.String)
-	# commenting the Blob's out because we need to discuss this
-	# allytips = db.Column(Blob)
-	# enemytips = db.Column(Blob)
 	championId = db.Column(db.Integer, primary_key=True)
 	image_file_name = db.Column(db.String)
 	lore = db.Column(db.String)
@@ -116,25 +113,25 @@ class ChampionAbility(db.Model):
 	image = db.Column(db.String)
 	maxrank = db.Column(db.Integer)
 	spell_name = db.Column(db.String)
+	tooltip = db.Column(db.String)
 	championId = db.Column(db.Integer, db.ForeignKey('champion.championId'))
-	def __init__(self, name, description, costType, image, maxrank, spell_name):
+	def __init__(self, name, description, costType, image, maxrank, spell_name, tooltip):
 		self.name = name
 		self.description = description
 		self.costType = costType
 		self.image = self.image
 		self.maxrank = maxrank
 		self.spell_name = spell_name
+		self.tooltip = tooltip
 
 class Summoner(db.Model):
 	__tablename__ = 'summoner'
-	summoner_id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True)
+	summoner_id = db.Column(db.Integer)
 	name = db.Column(db.String)
 	profileIconId = db.Column(db.Integer)
 	summonerLevel = db.Column(db.Integer)
 	bot = db.Column(db.Boolean)
-	championId = db.Column(db.Integer)
-	teamId = db.Column(db.Integer)
-	championId = db.Column(db.Integer, db.ForeignKey('champion.championId'))
 	champions = db.relationship('Champion', secondary=summoners_champions, backref=db.backref('summoners', lazy='dynamic'), lazy='dynamic')
 	def __init__(self, summoner_id, name, profileIconId, summonerLevel, bot):
 		self.summoner_id = summoner_id
@@ -145,7 +142,8 @@ class Summoner(db.Model):
 
 class FeaturedGame(db.Model):
 	__tablename__ = 'featured_game'
-	gameId = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True)
+	gameId = db.Column(db.Integer)
 	gameLength = db.Column(db.Integer)
 	gameMode = db.Column(db.String)
 	gameStartTime = db.Column(db.Integer)
