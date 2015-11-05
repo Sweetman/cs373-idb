@@ -53,6 +53,11 @@ def api_champions_id(queried_id):
 	data = Champion.query.get(queried_id)
 	return jsonify(get_dict_from_obj(data))
 
+@app.route('/api/champions/<queried_id>/abilities')
+def api_champions_id_abilities(queried_id):
+	data = Champion.query.get(queried_id)
+	return jsonify(get_dict_from_obj(data))
+
 @app.route('/api/abilities/')
 def api_abilities_all():
 	jsonData = {}
@@ -81,7 +86,7 @@ def api_summoners_id(queried_id):
 def api_featuredgames_all():
 	jsonData = {}
 	for data in FeaturedGame.query:
-		jsonData[data.name] = get_dict_from_obj(data)
+		jsonData[data.id] = get_dict_from_obj(data)
 	return jsonify(jsonData)
 
 @app.route('/api/featured-games/<queried_id>')
