@@ -1,11 +1,15 @@
 angular.module('hardcarryApp', [
     'ngRoute',
+    'ngSanitize',
     'hardcarryApp.home',
     'hardcarryApp.championTable',
     'hardcarryApp.summonerTable',
     'hardcarryApp.featuredGameTable',
+    'hardcarryApp.champion',
+    'hardcarryApp.summoner',
+    'hardcarryApp.featuredGame',
     'hardcarryApp.about'
-    ])
+])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider
@@ -43,10 +47,9 @@ angular.module('hardcarryApp', [
             activeTab: 'About'
         })
         .when('/champions/:id', {
-            templateUrl: function(params){
-                return '/static/partials/champion' + params.id + '.html';
-            },
+            templateUrl: '/static/partials/champion.html',
             controller: "championCtrl",
+            controllerAs: 'champion',
             activeTab: "Champions"
         })
         .when('/summoners/:id', {
@@ -54,6 +57,7 @@ angular.module('hardcarryApp', [
                 return '/static/partials/summoner' + params.id + '.html';
             },
             controller: "summonerCtrl",
+            controllerAs: 'summoner',
             activeTab: 'Summoners'
         })
         .when('/featuredGames/:id', {
@@ -61,6 +65,7 @@ angular.module('hardcarryApp', [
                 return '/static/partials/featuredGame' + params.id + '.html';
             },
             controller: "featuredGameCtrl",
+            controllerAs: 'featuredGame',
             activeTab: 'Featured Games'
         })
   
@@ -71,4 +76,17 @@ angular.module('hardcarryApp', [
 
 .controller('indexCtrl', ['$scope', '$route', function($scope, $route){
     $scope.$route = $route;
+    $scope.range = function(n){
+        var ans = [];
+        for(var i = 0; i < n; i += 1){
+            ans.push(i);
+        }
+        return ans;
+    };
+}])
+
+.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
 }]);
