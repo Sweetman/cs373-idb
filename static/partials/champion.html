@@ -1,0 +1,58 @@
+<div class="container">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="{{i}}" ng-class="{active: i === 0}" ng-repeat="i in range(champion.data.numberOfSkins)"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item" ng-class="{active: i === 0}" ng-repeat="i in range(champion.data.numberOfSkins)">
+                <img src="http://res.cloudinary.com/dx4at2j5f/image/upload/ChampSkins/{{champion.data.key}}_{{i}}.jpg" width="100%">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card nameCard">
+                <img class="cardThumbnail" src="http://res.cloudinary.com/dx4at2j5f/image/upload/ChampIcons/{{champion.data.key}}.png">
+                <h1 class="cardName">{{champion.data.name}}</h1>
+                <h4 class="cardName">{{champion.data.nickname}}</h4>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card descriptionCard">
+                <ul>
+                    <li><b>id:</b> {{champion.id}}</li>
+                    <li><b>attack:</b> {{champion.data.attack}}</li>
+                    <li><b>defense:</b> {{champion.data.defense}}</li>
+                    <li><b>difficulty:</b> {{champion.data.difficulty}}</li>
+                    <li><b>magic:</b> {{champion.data.magic}}</li>
+                    <li><b>ally tips:</b> {{champion.data.allyTips}}</li>
+                    <li><b>enemy tips:</b> {{champion.data.enemyTips}}</li>
+                    <li><b>par type:</b> {{champion.data.parType}}</li>
+                    <li><b>blurb:</b> {{champion.data.blub}}</li>
+                    <li><b>lore:</b> {{champion.data.lore}}</li>
+                </ul>
+                <div class="aspectRatio">
+                    <iframe src="{{champion.data.youtube | trusted}}" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

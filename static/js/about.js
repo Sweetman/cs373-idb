@@ -1,4 +1,4 @@
-angular.module('tbsaApp.about', ['ngRoute'])
+angular.module('hardcarryApp.about', ['ngRoute'])
 
 .controller('aboutCtrl', [function(){
     this.teamMembers = [{id: 1, name: "Kevin Lin", commits: 45, issues: 0, responsibility: "Front-End", unitTests: 0, bio: "Kevin enjoys biking and having fun in the sun!"},

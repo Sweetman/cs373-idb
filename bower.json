@@ -1,7 +1,7 @@
 {
-  "name": "cs373-tbsa",
+  "name": "cs373-idb",
   "version": "0.0.0",
-  "homepage": "https://github.com/Sweetman/cs373-tbsa",
+  "homepage": "https://github.com/Sweetman/cs373-idb",
   "authors": [
     "Kevin Lin <kevin.lin@utexas.edu>"
   ],
@@ -19,6 +19,7 @@
   "dependencies": {
     "angular": "1.4.7",
     "angular-route": "1.4.7",
+    "angular-sanitize": "1.4.7",
     "bootstrap": "3.3.5"
   }
 }

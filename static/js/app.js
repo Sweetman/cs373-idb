@@ -1,11 +1,15 @@
-angular.module('tbsaApp', [
+angular.module('hardcarryApp', [
     'ngRoute',
-    'tbsaApp.home',
-    'tbsaApp.champion',
-    'tbsaApp.summoner',
-    'tbsaApp.featuredGame',
-    'tbsaApp.about'
-    ])
+    'ngSanitize',
+    'hardcarryApp.home',
+    'hardcarryApp.championTable',
+    'hardcarryApp.summonerTable',
+    'hardcarryApp.featuredGameTable',
+    'hardcarryApp.champion',
+    'hardcarryApp.summoner',
+    'hardcarryApp.featuredGame',
+    'hardcarryApp.about'
+])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider
@@ -16,21 +20,24 @@ angular.module('tbsaApp', [
             activeTab: ''
         })
         .when('/champions', {
-            templateUrl: '/static/partials/championsTable.html',
-            controller: 'championCtrl',
-            controllerAs: 'champion',
+            templateUrl: '/static/partials/championTable.html',
+            controller: 'championTableCtrl',
+            controllerAs: 'championTable',
             activeTab: "Champions"
         })
+        .when('/runTests', {
+            templateUrl: '/static/partials/unitTests.html'
+        })
         .when('/summoners', {
-            templateUrl: '/static/partials/summonersTable.html',
-            controller: 'summonerCtrl',
-            controllerAs: 'summoner',
+            templateUrl: '/static/partials/summonerTable.html',
+            controller: 'summonerTableCtrl',
+            controllerAs: 'summonerTable',
             activeTab: 'Summoners'
         })
         .when('/featuredGames', {
-            templateUrl: '/static/partials/featuredGamesTable.html',
-            controller: 'featuredGameCtrl',
-            controllerAs: 'featuredGame',
+            templateUrl: '/static/partials/featuredGameTable.html',
+            controller: 'featuredGameTableCtrl',
+            controllerAs: 'featuredGameTable',
             activeTab: 'Featured Games'
         })
         .when('/about', {
@@ -40,21 +47,25 @@ angular.module('tbsaApp', [
             activeTab: 'About'
         })
         .when('/champions/:id', {
-            templateUrl: function(params){
-                return '/static/partials/champion' + params.id + '.html';
-            },
+            templateUrl: '/static/partials/champion.html',
+            controller: "championCtrl",
+            controllerAs: 'champion',
             activeTab: "Champions"
         })
         .when('/summoners/:id', {
             templateUrl: function(params){
                 return '/static/partials/summoner' + params.id + '.html';
             },
+            controller: "summonerCtrl",
+            controllerAs: 'summoner',
             activeTab: 'Summoners'
         })
-        .when('/featuredGame/:id', {
+        .when('/featuredGames/:id', {
             templateUrl: function(params){
                 return '/static/partials/featuredGame' + params.id + '.html';
             },
+            controller: "featuredGameCtrl",
+            controllerAs: 'featuredGame',
             activeTab: 'Featured Games'
         })
   
@@ -65,4 +76,17 @@ angular.module('tbsaApp', [
 
 .controller('indexCtrl', ['$scope', '$route', function($scope, $route){
     $scope.$route = $route;
+    $scope.range = function(n){
+        var ans = [];
+        for(var i = 0; i < n; i += 1){
+            ans.push(i);
+        }
+        return ans;
+    };
+}])
+
+.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
 }]);
