@@ -1,4 +1,4 @@
-from flask 				  import Flask, render_template
+from flask 				  import Flask, render_template, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.declarative import DeclarativeMeta
 from subprocess 		  import call
@@ -30,59 +30,64 @@ def run_tests():
 # API requests
 # ------------
 
-class AlchemyEncoder(json.JSONEncoder):
-	def default(self, obj):
-		if isinstance(obj.__class__, DeclarativeMeta):
-			fields = {}
-			for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata']:
-				data = obj.__getattribute__(field)
-				try:
-					json.dumps(data)
-					fields[field] = data
-				except TypeError:
-					fields[field] = None
-			return fields
-		return json.JSONEncoder.default(self, obj)
+def get_dict_from_obj(obj):
+	fields = {}
+	for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata']:
+		data = obj.__getattribute__(field)
+		try:
+			json.dumps(data)
+			fields[field] = data
+		except TypeError:
+			fields[field] = None
+	return fields
 
 @app.route('/api/champions/')
 def api_champions_all():
-	data = Champion.query.all()
-	return json.dumps(data, cls=AlchemyEncoder)
+	jsonData = {}
+	for data in Champion.query:
+		jsonData[data.name] = get_dict_from_obj(data)
+	return jsonify(jsonData)
 
 @app.route('/api/champions/<queried_id>')
 def api_champions_id(queried_id):
 	data = Champion.query.get(queried_id)
-	return json.dumps(data, cls=AlchemyEncoder)
+	return jsonify(get_dict_from_obj(data))
 
 @app.route('/api/abilities/')
 def api_abilities_all():
-	data = ChampionAbility.query.all()
-	return json.dumps(data, cls=AlchemyEncoder)
+	jsonData = {}
+	for data in ChampionAbility.query:
+		jsonData[data.name] = get_dict_from_obj(data)
+	return jsonify(jsonData)
 
 @app.route('/api/abilities/<queried_id>')
 def api_abilities_id(queried_id):
 	data = ChampionAbility.query.get(queried_id)
-	return json.dumps(data, cls=AlchemyEncoder)
+	return jsonify(get_dict_from_obj(data))
 
 @app.route('/api/summoners/')
 def api_summoners_all():
-	data = Summoner.query.all()
-	return json.dumps(data, cls=AlchemyEncoder)
+	jsonData = {}
+	for data in Summoner.query:
+		jsonData[data.name] = get_dict_from_obj(data)
+	return jsonify(jsonData)
 
 @app.route('/api/summoners/<queried_id>')
 def api_summoners_id(queried_id):
 	data = Summoner.query.get(queried_id)
-	return json.dumps(data, cls=AlchemyEncoder)
+	return jsonify(get_dict_from_obj(data))
 
 @app.route('/api/featured-games/')
 def api_featuredgames_all():
-	data = FeaturedGame.query.all()
-	return json.dumps(data, cls=AlchemyEncoder)
+	jsonData = {}
+	for data in FeaturedGame.query:
+		jsonData[data.name] = get_dict_from_obj(data)
+	return jsonify(jsonData)
 
 @app.route('/api/featured-games/<queried_id>')
 def api_featuredgames_id(queried_id):
 	data = FeaturedGame.query.get(queried_id)
-	return json.dumps(data, cls=AlchemyEncoder)
+	return jsonify(get_dict_from_obj(data))
 
 # -------
 # Default
