@@ -47,8 +47,8 @@ class TestModels (TestCase):
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertEqual(jsonResponse['266']['name'], 'Aatrox') 
-		self.assertEqual(jsonResponse['266']['title'], 'the Darkin Blade') 
+		self.assertEqual(jsonResponse['name'], 'Aatrox') 
+		self.assertEqual(jsonResponse['title'], 'the Darkin Blade') 
 
 	# ---------
 	# Abilities
@@ -75,8 +75,8 @@ class TestModels (TestCase):
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertEqual(jsonResponse['0']['name'], 'Dark Flight') 
-		self.assertEqual(jsonResponse['0']['maxrank'], 5) 
+		self.assertEqual(jsonResponse['name'], 'Dark Flight') 
+		self.assertEqual(jsonResponse['maxrank'], 5) 
 
 	# --------------
 	# Featured Games
@@ -103,8 +103,8 @@ class TestModels (TestCase):
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertEqual(mockResponse['0']['gameLength'], 321) 
-		self.assertEqual(mockResponse['0']['gameMode'], 'CLASSIC') 
+		self.assertEqual(mockResponse['gameLength'], 321) 
+		self.assertEqual(mockResponse['gameMode'], 'CLASSIC') 
 
 	# ---------
 	# Summoners
@@ -127,12 +127,12 @@ class TestModels (TestCase):
 		self.assertEqual(summoner2.teamId, 100) 
 
 	def test_model_summoners_3(self):
-		apiResponse = urlopen('http://api.hardcarry.me/summoners/0')
+		apiResponse = urlopen('http://hardcarry.me/api/summoners/0')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertEqual(mockResponse['0']['name'], 'Riesig') 
-		self.assertEqual(mockResponse['0']['profileIconId'], 538) 
+		self.assertEqual(mockResponse['name'], 'Riesig') 
+		self.assertEqual(mockResponse['profileIconId'], 538) 
 
 # ----
 # Main
