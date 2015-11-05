@@ -1,4 +1,4 @@
-angular.module('tbsaApp.summonerTable', ['ngRoute'])
+angular.module('hardcarryApp.summonerTable', ['ngRoute'])
 
 .controller('summonerTableCtrl', [function(){
     this.tableData = [{name: "Tempest",       id: 1, champion: "Lee Sin",  cooldownBurn: "10", costBurn: "50", costType: "Energy", maxRank: "18", rangeBurn: "425"},

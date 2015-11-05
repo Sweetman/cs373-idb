@@ -1,10 +1,10 @@
-angular.module('tbsaApp', [
+angular.module('hardcarryApp', [
     'ngRoute',
-    'tbsaApp.home',
-    'tbsaApp.championTable',
-    'tbsaApp.summonerTable',
-    'tbsaApp.featuredGameTable',
-    'tbsaApp.about'
+    'hardcarryApp.home',
+    'hardcarryApp.championTable',
+    'hardcarryApp.summonerTable',
+    'hardcarryApp.featuredGameTable',
+    'hardcarryApp.about'
     ])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
