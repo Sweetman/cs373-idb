@@ -1,4 +1,4 @@
-# The Best Startup Alive
+# HardCarry
 
 ## Setup for local dev
 
