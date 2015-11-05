@@ -35,6 +35,13 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['Thresh']['partype'], 'Mana') 
 
 	def test_model_champions_2(self):
+		mockChampion = Champion('Aatrox', 266, '', '', '', 'the Darkin Blade', 8, 4, 3,\
+			4, '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+		self.assertEqual(mockChampion.name, 'Aatrox') 
+		self.assertEqual(mockChampion.championId, 266) 
+		self.assertEqual(mockChampion.title, 'the Darkin Blade') 
+
+	def test_model_champions_3(self):
 		champ1 = Champion.query.get(266)
 		champ2 = Champion.query.get(412)
 		self.assertEqual(champ1.name, 'Aatrox') 
@@ -42,7 +49,7 @@ class TestModels (TestCase):
 		self.assertEqual(champ2.name, 'Thresh') 
 		self.assertEqual(champ2.partype, 'Mana') 
 
-	def test_model_champions_3(self):
+	def test_model_champions_4(self):
 		apiResponse = urlopen('http://localhost:5000/api/champions/266')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
@@ -60,9 +67,14 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['0']['name'], 'Dark Flight') 
 		self.assertEqual(mockResponse['0']['maxrank'], 5) 
 		self.assertEqual(mockResponse['1']['name'], 'Blades of Torment') 
-		self.assertEqual(mockResponse['1']['costType'], 'pofcurrentHealth') 
+		self.assertEqual(mockResponse['1']['costType'], 'pofcurrentHealth')
 
 	def test_model_abilities_2(self):
+		mockAbility = ChampionAbility('Dark Flight', '', '', '', 5, '', '')
+		self.assertEqual(mockAbility.name, 'Dark Flight') 
+		self.assertEqual(mockAbility.maxrank, 5) 
+
+	def test_model_abilities_3(self):
 		ability1 = ChampionAbility.query.get(268)
 		ability2 = ChampionAbility.query.get(270)
 		self.assertEqual(ability1.name, 'Dark Flight') 
@@ -70,7 +82,7 @@ class TestModels (TestCase):
 		self.assertEqual(ability2.name, 'Blades of Torment') 
 		self.assertEqual(ability2.costType, 'pofcurrentHealth') 
 
-	def test_model_abilities_3(self):
+	def test_model_abilities_4(self):
 		apiResponse = urlopen('http://localhost:5000/api/abilities/268')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
@@ -91,6 +103,11 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse[1]['mapId'], 11) 
 
 	def test_model_featuredgames_2(self):
+		mockGame = FeaturedGame(0, 321, 'CLASSIC', 0, '', 0)
+		self.assertEqual(mockGame.gameLength, 321) 
+		self.assertEqual(mockGame.gameMode, 'CLASSIC') 
+
+	def test_model_featuredgames_3(self):
 		game1 = FeaturedGame.query.get(1)
 		game2 = FeaturedGame.query.get(2)
 		self.assertEqual(game1.gameLength, 362) 
@@ -98,7 +115,7 @@ class TestModels (TestCase):
 		self.assertEqual(game2.gameType, 'MATCHED_GAME') 
 		self.assertEqual(game2.mapId, 11) 
 
-	def test_model_featuredgames_3(self):
+	def test_model_featuredgames_4(self):
 		apiResponse = urlopen('http://localhost:5000/api/featured-games/1')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
@@ -119,6 +136,11 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['GochuHunter']['teamId'], 100) 
 
 	def test_model_summoners_2(self):
+		mockSummoner = Summoner(0, 'Riesig', 538, 30, False)
+		self.assertEqual(mockSummoner.name, 'Riesig') 
+		self.assertEqual(mockSummoner.profileIconId, 538) 
+
+	def test_model_summoners_3(self):
 		summoner1 = Summoner.query.get(70)
 		summoner2 = Summoner.query.get(16)
 		self.assertEqual(summoner1.name, ' FlapDoodLe  Hmm') 
@@ -126,7 +148,7 @@ class TestModels (TestCase):
 		self.assertEqual(summoner2.summonerLevel, 30)
 		self.assertEqual(summoner2.name, 'A Wizard') 
 
-	def test_model_summoners_3(self):
+	def test_model_summoners_4(self):
 		apiResponse = urlopen('http://localhost:5000/api/summoners/16')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
