@@ -55,7 +55,7 @@ for jsonChamp in jsonResponse['data']:
 	champion['spellblock'] = champData['stats']['spellblock']
 	champion['spellblockperlevel'] = champData['stats']['spellblockperlevel']
 	champion['numberOfSkins'] = len(champData['skins'])
-
+	print("%d is the number of skins" %(len(champData['skins'])))
 	champ = Champion.query.filter_by(name=champion['name']).first()
 
 	if champ is None:
@@ -81,7 +81,7 @@ for jsonChamp in jsonResponse['data']:
 			ability['tooltip'] = spell['tooltip']
 			ability['championId'] = champData['id']
 			ability = ChampionAbility(ability['name'], ability['description'], ability['costType'], ability['imageFileName'],\
-				ability['maxrank'], ability['name'])
+				ability['maxrank'], ability['name'], ability['tooltip'])
 			print("%s created" % (ability.name))
 			champ.abilities.append(ability)
 		champion_list.append(champ)

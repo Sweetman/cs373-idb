@@ -1703,7 +1703,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ffffff !important;
+			color: #4B6BD7 !important;
 		}
 
 		a.special:not(.button) {
@@ -2537,7 +2537,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: rgba(255, 255, 255, 0.025);
+			background-color: rgba(255, 255, 255, 0.025);;
 		}
 
 		input[type="submit"]:active,
@@ -2803,7 +2803,7 @@
 					}
 
 					#header nav a[href="#menu"]:hover {
-						background-color: rgba(255, 255, 255, 0.025);
+						background-color: rgba(255, 255, 255, 0.025);;
 					}
 
 					#header nav a[href="#menu"]:active {
