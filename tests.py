@@ -43,7 +43,7 @@ class TestModels (TestCase):
 		self.assertEqual(champ2.partype, 'Mana') 
 
 	def test_model_champions_3(self):
-		apiResponse = urlopen('http://hardcarry.me/api/champions/266')
+		apiResponse = urlopen('http://localhost:5000/api/champions/266')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
@@ -63,15 +63,15 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['1']['costType'], 'pofcurrentHealth') 
 
 	def test_model_abilities_2(self):
-		ability1 = Champion.query.get(0)
-		ability2 = Champion.query.get(1)
+		ability1 = ChampionAbility.query.get(268)
+		ability2 = ChampionAbility.query.get(270)
 		self.assertEqual(ability1.name, 'Dark Flight') 
 		self.assertEqual(ability1.maxrank, 5) 
 		self.assertEqual(ability2.name, 'Blades of Torment') 
 		self.assertEqual(ability2.costType, 'pofcurrentHealth') 
 
 	def test_model_abilities_3(self):
-		apiResponse = urlopen('http://hardcarry.me/api/abilities/0')
+		apiResponse = urlopen('http://localhost:5000/api/abilities/268')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
@@ -91,20 +91,20 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse[1]['mapId'], 11) 
 
 	def test_model_featuredgames_2(self):
-		game1 = Champion.query.get(0)
-		game2 = Champion.query.get(1)
-		self.assertEqual(game1.gameLength, 321) 
+		game1 = FeaturedGame.query.get(1)
+		game2 = FeaturedGame.query.get(2)
+		self.assertEqual(game1.gameLength, 362) 
 		self.assertEqual(game1.gameMode, 'CLASSIC') 
 		self.assertEqual(game2.gameType, 'MATCHED_GAME') 
 		self.assertEqual(game2.mapId, 11) 
 
 	def test_model_featuredgames_3(self):
-		apiResponse = urlopen('http://hardcarry.me/api/featured-games/0')
+		apiResponse = urlopen('http://localhost:5000/api/featured-games/1')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertEqual(mockResponse['gameLength'], 321) 
-		self.assertEqual(mockResponse['gameMode'], 'CLASSIC') 
+		self.assertEqual(jsonResponse['gameLength'], 362)
+		self.assertEqual(jsonResponse['gameMode'], 'CLASSIC')
 
 	# ---------
 	# Summoners
@@ -119,20 +119,20 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['GochuHunter']['teamId'], 100) 
 
 	def test_model_summoners_2(self):
-		summoner1 = Champion.query.get(0)
-		summoner2 = Champion.query.get(1)
-		self.assertEqual(summoner1.name, 'Riesig') 
-		self.assertEqual(summoner1.profileIconId, 538) 
-		self.assertEqual(summoner2.summonerLevel, 30) 
-		self.assertEqual(summoner2.teamId, 100) 
+		summoner1 = Summoner.query.get(70)
+		summoner2 = Summoner.query.get(16)
+		self.assertEqual(summoner1.name, ' FlapDoodLe  Hmm') 
+		self.assertEqual(summoner1.profileIconId, 550) 
+		self.assertEqual(summoner2.summonerLevel, 30)
+		self.assertEqual(summoner2.name, 'A Wizard') 
 
 	def test_model_summoners_3(self):
-		apiResponse = urlopen('http://hardcarry.me/api/summoners/0')
+		apiResponse = urlopen('http://localhost:5000/api/summoners/16')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertEqual(mockResponse['name'], 'Riesig') 
-		self.assertEqual(mockResponse['profileIconId'], 538) 
+		self.assertEqual(jsonResponse['name'], 'A Wizard') 
+		self.assertEqual(jsonResponse['profileIconId'], 16) 
 
 # ----
 # Main
