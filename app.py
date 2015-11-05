@@ -19,7 +19,7 @@ def index():
 def serve_partial():
 	return render_template('/partials/{}'.format(path))
 
-@app.route('/runTests/')
+@app.route('/tests/runTests/')
 def run_tests():
 	call('coverage run tests.py > tests.out 2>&1', shell=True)
 	f = open('tests.out')

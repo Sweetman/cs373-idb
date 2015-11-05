@@ -1,4 +1,85 @@
+.EE..E.EE.EE
+======================================================================
+ERROR: test_model_abilities_2 (__main__.TestModels)
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "tests.py", line 13, in <module>
-    from urllib.request import urlopen
-ImportError: No module named request
+  File "tests.py", line 68, in test_model_abilities_2
+    self.assertEqual(ability1.name, 'Dark Flight')
+AttributeError: 'NoneType' object has no attribute 'name'
+
+======================================================================
+ERROR: test_model_abilities_3 (__main__.TestModels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests.py", line 77, in test_model_abilities_3
+    jsonResponse = json.loads(apiResponseRaw)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/__init__.py", line 318, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 343, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 361, in raw_decode
+    raise ValueError(errmsg("Expecting value", s, err.value)) from None
+ValueError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_model_champions_3 (__main__.TestModels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests.py", line 49, in test_model_champions_3
+    jsonResponse = json.loads(apiResponseRaw)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/__init__.py", line 318, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 343, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 361, in raw_decode
+    raise ValueError(errmsg("Expecting value", s, err.value)) from None
+ValueError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_model_featuredgames_2 (__main__.TestModels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests.py", line 96, in test_model_featuredgames_2
+    self.assertEqual(game1.gameLength, 321)
+AttributeError: 'NoneType' object has no attribute 'gameLength'
+
+======================================================================
+ERROR: test_model_featuredgames_3 (__main__.TestModels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests.py", line 105, in test_model_featuredgames_3
+    jsonResponse = json.loads(apiResponseRaw)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/__init__.py", line 318, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 343, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 361, in raw_decode
+    raise ValueError(errmsg("Expecting value", s, err.value)) from None
+ValueError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_model_summoners_2 (__main__.TestModels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests.py", line 124, in test_model_summoners_2
+    self.assertEqual(summoner1.name, 'Riesig')
+AttributeError: 'NoneType' object has no attribute 'name'
+
+======================================================================
+ERROR: test_model_summoners_3 (__main__.TestModels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests.py", line 133, in test_model_summoners_3
+    jsonResponse = json.loads(apiResponseRaw)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/__init__.py", line 318, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 343, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py", line 361, in raw_decode
+    raise ValueError(errmsg("Expecting value", s, err.value)) from None
+ValueError: Expecting value: line 1 column 1 (char 0)
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.899s
+
+FAILED (errors=7)
