@@ -55,7 +55,6 @@ for jsonChamp in jsonResponse['data']:
 	champion['spellblock'] = champData['stats']['spellblock']
 	champion['spellblockperlevel'] = champData['stats']['spellblockperlevel']
 	champion['numberOfSkins'] = len(champData['skins'])
-	print("%d is the number of skins" %(len(champData['skins'])))
 	champ = Champion.query.filter_by(name=champion['name']).first()
 
 	if champ is None:

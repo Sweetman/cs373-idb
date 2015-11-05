@@ -25,8 +25,11 @@ for jsonFG in jsonResponse['gameList']:
 	featured_game['gameMode'] = jsonFG['gameMode']
 	print(featured_game['gameMode'])
 	featured_game['gameStartTime'] = jsonFG['gameStartTime']
+	print(featured_game['gameStartTime'])
 	featured_game['gameType'] = jsonFG['gameType']
+	print(featured_game['gameType'])
 	featured_game['mapId'] = jsonFG['mapId']
+	print(featured_game['mapId'])
 
 	db_fg = FeaturedGame(featured_game['gameId'], featured_game['gameLength'],\
 		featured_game['gameMode'],featured_game['gameStartTime'],featured_game['gameType'],\
@@ -53,8 +56,8 @@ for jsonFG in jsonResponse['gameList']:
 			champ = Champion.query.filter_by(championId=participant['championId']).first()
 			db_fg.champions.append(champ)
 			print("this game %d had summoner %s who was playing %s" %(db_fg.gameId, summoner['name'], champ.name))
-			summoner['teamId'] = {participant['teamId']}
-			summoner['gameId'] = {jsonFG['gameId']}
+			summoner['teamId'] = participant['teamId']
+			summoner['gameId'] = jsonFG['gameId']
 
 			summoners[curParticipantName] = summoner
 		else:

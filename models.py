@@ -143,7 +143,7 @@ class Summoner(db.Model):
 class FeaturedGame(db.Model):
 	__tablename__ = 'featured_game'
 	id = db.Column(db.Integer, primary_key=True)
-	gameId = db.Column(db.Integer)
+	gameId = db.Column(db.Numeric)
 	gameLength = db.Column(db.Integer)
 	gameMode = db.Column(db.String)
 	gameStartTime = db.Column(db.Numeric)
