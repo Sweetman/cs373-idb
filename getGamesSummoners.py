@@ -90,5 +90,6 @@ for summonerName in summoners:
 	db_fg.summoners.append(summoner)
 	champ = Champion.query.filter_by(championId=summoners[summonerName]['championId']).first()
 	summoner.champions.append(champ)
+	db.session.commit()
 db.session.commit()
 
