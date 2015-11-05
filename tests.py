@@ -13,7 +13,6 @@ from io             import StringIO
 from urllib.request import urlopen
 from unittest       import main, TestCase
 from models 		import *
-from app 			import AlchemyEncoder
 
 import json, postgresql
 
@@ -36,12 +35,12 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['Thresh']['partype'], 'Mana') 
 
 	def test_model_champions_2(self):
-		champ1 = json.loads(json.dumps(Champion.query.get(266), cls=AlchemyEncoder))
-		champ2 = json.loads(json.dumps(Champion.query.get(412), cls=AlchemyEncoder))
-		self.assertEqual(champ1['name'], 'Aatrox') 
-		self.assertEqual(champ1['title'], 'the Darkin Blade') 
-		self.assertEqual(champ2['name'], 'Thresh') 
-		self.assertEqual(champ2['partype'], 'Mana') 
+		champ1 = Champion.query.get(266)
+		champ2 = Champion.query.get(412)
+		self.assertEqual(champ1.name, 'Aatrox') 
+		self.assertEqual(champ1.title, 'the Darkin Blade') 
+		self.assertEqual(champ2.name, 'Thresh') 
+		self.assertEqual(champ2.partype, 'Mana') 
 
 	def test_model_champions_3(self):
 		apiResponse = urlopen('http://hardcarry.me/api/champions/266')
@@ -64,12 +63,12 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['1']['costType'], 'pofcurrentHealth') 
 
 	def test_model_abilities_2(self):
-		ability1 = json.loads(json.dumps(Champion.query.get(0), cls=AlchemyEncoder))
-		ability2 = json.loads(json.dumps(Champion.query.get(1), cls=AlchemyEncoder))
-		self.assertEqual(ability1['name'], 'Dark Flight') 
-		self.assertEqual(ability1['maxrank'], 5) 
-		self.assertEqual(ability2['name'], 'Blades of Torment') 
-		self.assertEqual(ability2['costType'], 'pofcurrentHealth') 
+		ability1 = Champion.query.get(0)
+		ability2 = Champion.query.get(1)
+		self.assertEqual(ability1.name, 'Dark Flight') 
+		self.assertEqual(ability1.maxrank, 5) 
+		self.assertEqual(ability2.name, 'Blades of Torment') 
+		self.assertEqual(ability2.costType, 'pofcurrentHealth') 
 
 	def test_model_abilities_3(self):
 		apiResponse = urlopen('http://hardcarry.me/api/abilities/0')
@@ -92,12 +91,12 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse[1]['mapId'], 11) 
 
 	def test_model_featuredgames_2(self):
-		game1 = json.loads(json.dumps(Champion.query.get(0), cls=AlchemyEncoder))
-		game2 = json.loads(json.dumps(Champion.query.get(1), cls=AlchemyEncoder))
-		self.assertEqual(game1['gameLength'], 321) 
-		self.assertEqual(game1['gameMode'], 'CLASSIC') 
-		self.assertEqual(game2['gameType'], 'MATCHED_GAME') 
-		self.assertEqual(game2['mapId'], 11) 
+		game1 = Champion.query.get(0)
+		game2 = Champion.query.get(1)
+		self.assertEqual(game1.gameLength, 321) 
+		self.assertEqual(game1.gameMode, 'CLASSIC') 
+		self.assertEqual(game2.gameType, 'MATCHED_GAME') 
+		self.assertEqual(game2.mapId, 11) 
 
 	def test_model_featuredgames_3(self):
 		apiResponse = urlopen('http://hardcarry.me/api/featured-games/0')
@@ -120,12 +119,12 @@ class TestModels (TestCase):
 		self.assertEqual(mockResponse['GochuHunter']['teamId'], 100) 
 
 	def test_model_summoners_2(self):
-		summoner1 = json.loads(json.dumps(Champion.query.get(0), cls=AlchemyEncoder))
-		summoner2 = json.loads(json.dumps(Champion.query.get(1), cls=AlchemyEncoder))
-		self.assertEqual(summoner1['name'], 'Riesig') 
-		self.assertEqual(summoner1['profileIconId'], 538) 
-		self.assertEqual(summoner2['summonerLevel'], 30) 
-		self.assertEqual(summoner2['teamId'], 100) 
+		summoner1 = Champion.query.get(0)
+		summoner2 = Champion.query.get(1)
+		self.assertEqual(summoner1.name, 'Riesig') 
+		self.assertEqual(summoner1.profileIconId, 538) 
+		self.assertEqual(summoner2.summonerLevel, 30) 
+		self.assertEqual(summoner2.teamId, 100) 
 
 	def test_model_summoners_3(self):
 		apiResponse = urlopen('http://api.hardcarry.me/summoners/0')
