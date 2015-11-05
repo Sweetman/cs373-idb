@@ -28,8 +28,8 @@ class Champion(db.Model):
 	# commenting the Blob's out because we need to discuss this
 	# allytips = db.Column(Blob)
 	# enemytips = db.Column(Blob)
-	championId = db.Column(db.Integer, primary_key=True)
-	image_file_name = db.Column(db.String)
+	id = db.Column(db.Integer, primary_key=True)
+	imageFileName = db.Column(db.String)
 	lore = db.Column(db.String)
 	partype = db.Column(db.String)
 	title = db.Column(db.String)
@@ -39,37 +39,37 @@ class Champion(db.Model):
 	difficulty = db.Column(db.Integer)
 	passive_description = db.Column(db.String)
 	passive_image_file_name = db.Column(db.String)
-	passive_name = db.Column(db.String)
-	stat_armor = db.Column(db.Float)
-	stat_armorperlevel = db.Column(db.Float)
-	stat_attackdamage = db.Column(db.Float)
-	stat_attackdamageperlevel = db.Column(db.Float)
-	stat_attackrange = db.Column(db.Float)
-	stat_attackspeedoffset = db.Column(db.Float)
-	stat_attackspeedperlevel = db.Column(db.Float)
-	stat_crit = db.Column(db.Float)
-	stat_hp = db.Column(db.Float)
-	stat_hpperlevel = db.Column(db.Float)
-	stat_hpregen = db.Column(db.Float)
-	stat_hpregenperlevel = db.Column(db.Float)
-	stat_movespeed = db.Column(db.Float)
-	stat_mp = db.Column(db.Float)
-	stat_mpperlevel = db.Column(db.Float)
-	stat_mpregen = db.Column(db.Float)
-	stat_mpregenperlevel = db.Column(db.Float)
-	stat_spellblock = db.Column(db.Float)
-	stat_spellblockperlevel = db.Column(db.Float)
-	number_of_skins = db.Column(db.Integer)
+	passiveName = db.Column(db.String)
+	armor = db.Column(db.Float)
+	armorperlevel = db.Column(db.Float)
+	attackdamage = db.Column(db.Float)
+	attackdamageperlevel = db.Column(db.Float)
+	attackrange = db.Column(db.Float)
+	attackspeedoffset = db.Column(db.Float)
+	attackspeedperlevel = db.Column(db.Float)
+	crit = db.Column(db.Float)
+	hp = db.Column(db.Float)
+	hpperlevel = db.Column(db.Float)
+	hpregen = db.Column(db.Float)
+	hpregenperlevel = db.Column(db.Float)
+	movespeed = db.Column(db.Float)
+	mp = db.Column(db.Float)
+	mpperlevel = db.Column(db.Float)
+	mpregen = db.Column(db.Float)
+	mpregenperlevel = db.Column(db.Float)
+	spellblock = db.Column(db.Float)
+	spellblockperlevel = db.Column(db.Float)
+	numberOfSkins = db.Column(db.Integer)
 	abilities = db.relationship('ChampionAbility', backref="champion", cascade="all, delete-orphan" , lazy='dynamic')
 
-	def __init__(self, name, championId, imageFileName, lore, partype, title, attack, defense, magic,\
+	def __init__(self, name, id, imageFileName, lore, partype, title, attack, defense, magic,\
 		difficulty, passiveDescription, passiveImageFileName, passiveName, armor, armorperlevel,\
 		attackdamage, attackdamageperlevel, attackrange, attackspeedoffset, attackspeedperlevel,\
 		crit, hp, hpperlevel, hpregen, hpregenperlevel, movespeed, mp, mpperlevel, mpregen,\
 		mpregenperlevel, spellblock, spellblockperlevel, numberofskins):
 		self.name = name
-		self.championId = championId
-		self.image_file_name = imageFileName
+		self.id = id
+		self.imageFileName = imageFileName
 		self.lore = lore
 		self.partype = partype
 		self.title = title
@@ -79,27 +79,27 @@ class Champion(db.Model):
 		self.difficulty = difficulty
 		self.passive_description = passiveDescription
 		self.passive_image_file_name = passiveImageFileName
-		self.passive_name = passiveName
-		self.stat_armor = armor
-		self.stat_armorperlevel = armorperlevel
-		self.stat_attackdamage = attackdamage
-		self.stat_attackdamageperlevel = attackdamageperlevel
-		self.stat_attackrange = attackrange
-		self.stat_attackspeedoffset = attackspeedoffset
-		self.stat_attackspeedperlevel = attackspeedperlevel
-		self.stat_crit = crit
-		self.stat_hp = hp
-		self.stat_hpperlevel = hpperlevel
-		self.stat_hpregen = hpregen
-		self.stat_hpregenperlevel = hpregenperlevel
-		self.stat_movespeed = movespeed
-		self.stat_mp = mp
-		self.stat_mpperlevel = mpperlevel
-		self.stat_mpregen = mpregen
-		self.stat_mpregenperlevel = mpregenperlevel
-		self.stat_spellblock = spellblock
-		self.stat_spellblockperlevel = spellblockperlevel
-		self.number_of_skins = numberofskins
+		self.passiveName = passiveName
+		self.armor = armor
+		self.armorperlevel = armorperlevel
+		self.attackdamage = attackdamage
+		self.attackdamageperlevel = attackdamageperlevel
+		self.attackrange = attackrange
+		self.attackspeedoffset = attackspeedoffset
+		self.attackspeedperlevel = attackspeedperlevel
+		self.crit = crit
+		self.hp = hp
+		self.hpperlevel = hpperlevel
+		self.hpregen = hpregen
+		self.hpregenperlevel = hpregenperlevel
+		self.movespeed = movespeed
+		self.mp = mp
+		self.mpperlevel = mpperlevel
+		self.mpregen = mpregen
+		self.mpregenperlevel = mpregenperlevel
+		self.spellblock = spellblock
+		self.spellblockperlevel = spellblockperlevel
+		self.numberOfSkins = numberofskins
 
 class ChampionAbility(db.Model):
 	"""

@@ -17,6 +17,14 @@ from models import *
 def index():
     return render_template('index.html')
 
+@app.route('/api/champions/')
+def api_champions_all():
+	return ''
+
+@app.route('/api/champions/{id}')
+def api_champions_id(id):
+	return ''
+
 @app.route('/runTests/')
 def run_tests():
 	call('coverage run tests.py > tests.out 2>&1', shell=True)
