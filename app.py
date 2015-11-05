@@ -19,7 +19,7 @@ def index():
 
 @app.route('/runTests/')
 def run_tests():
-	call('coverage3 run tests.py > tests.out 2>&1', shell=True)
+	call('coverage run tests.py > tests.out 2>&1', shell=True)
 	f = open('tests.out')
 	result = f.read()
 	return ('<pre>' + result + '</pre>')
