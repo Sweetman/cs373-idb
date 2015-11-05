@@ -50,7 +50,7 @@ class TestModels (TestCase):
 		self.assertEqual(champ2.partype, 'Mana') 
 
 	def test_model_champions_4(self):
-		apiResponse = urlopen('http://localhost:5000/api/champions/266')
+		apiResponse = urlopen('http://hardcarry.me/api/champions/266')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
@@ -83,7 +83,7 @@ class TestModels (TestCase):
 		self.assertEqual(ability2.costType, 'pofcurrentHealth') 
 
 	def test_model_abilities_4(self):
-		apiResponse = urlopen('http://localhost:5000/api/abilities/268')
+		apiResponse = urlopen('http://hardcarry.me/api/abilities/268')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
@@ -116,7 +116,7 @@ class TestModels (TestCase):
 		self.assertEqual(game2.mapId, 11) 
 
 	def test_model_featuredgames_4(self):
-		apiResponse = urlopen('http://localhost:5000/api/featured-games/1')
+		apiResponse = urlopen('http://hardcarry.me/api/featured-games/1')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
@@ -149,7 +149,7 @@ class TestModels (TestCase):
 		self.assertEqual(summoner2.name, 'A Wizard') 
 
 	def test_model_summoners_4(self):
-		apiResponse = urlopen('http://localhost:5000/api/summoners/16')
+		apiResponse = urlopen('http://hardcarry.me/api/summoners/16')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
@@ -164,78 +164,24 @@ if __name__ == '__main__' :
 	main()
 
 
-# .Unable to connect to the database.
-# EE.Unable to connect to the database.
-# EE.Unable to connect to the database.
-# EE
-# ======================================================================
-# ERROR: test_model_abilities_2 (__main__.TestModels)
-# ----------------------------------------------------------------------
-# Traceback (most recent call last):
-#   File 'tests.py', line 78, in test_model_abilities_2
-#     cur = conn.cursor()
-# UnboundLocalError: local variable 'conn' referenced before assignment
+# coverage3 run tests.py
 
-# ======================================================================
-# ERROR: test_model_abilities_3 (__main__.TestModels)
+# ................
 # ----------------------------------------------------------------------
-# Traceback (most recent call last):
-#   File 'tests.py', line 93, in test_model_abilities_3
-#     jsonResponse = json.loads(apiResponseRaw)
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/__init__.py', line 318, in loads
-#     return _default_decoder.decode(s)
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py', line 343, in decode
-#     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py', line 361, in raw_decode
-#     raise ValueError(errmsg('Expecting value', s, err.value)) from None
-# ValueError: Expecting value: line 1 column 1 (char 0)
+# Ran 16 tests in 36.514s
 
-# ======================================================================
-# ERROR: test_model_champions_2 (__main__.TestModels)
-# ----------------------------------------------------------------------
-# Traceback (most recent call last):
-#   File 'tests.py', line 42, in test_model_champions_2
-#     cur = conn.cursor()
-# UnboundLocalError: local variable 'conn' referenced before assignment
+# OK
 
-# ======================================================================
-# ERROR: test_model_champions_3 (__main__.TestModels)
-# ----------------------------------------------------------------------
-# Traceback (most recent call last):
-#   File 'tests.py', line 57, in test_model_champions_3
-#     jsonResponse = json.loads(apiResponseRaw)
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/__init__.py', line 318, in loads
-#     return _default_decoder.decode(s)
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py', line 343, in decode
-#     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py', line 361, in raw_decode
-#     raise ValueError(errmsg('Expecting value', s, err.value)) from None
-# ValueError: Expecting value: line 1 column 1 (char 0)
+# coverage3 -m --report
 
-# ======================================================================
-# ERROR: test_model_items_2 (__main__.TestModels)
-# ----------------------------------------------------------------------
-# Traceback (most recent call last):
-#   File 'tests.py', line 114, in test_model_items_2
-#     cur = conn.cursor()
-# UnboundLocalError: local variable 'conn' referenced before assignment
+# Name     Stmts   Miss  Cover   Missing
+# --------------------------------------
+# app        100     69    31%   16, 20, 24-27, 35-43, 50-53, 57-58, 62-65, 69-72, 76-79, 86-89, 93-94, 101-104, 108-109, 113-116, 120-123, 130-133, 137-138, 142-145, 149-152, 162, 165
+# config      17      0   100%   
+# models     127      0   100%   
+# tests      105      0   100%   
+# --------------------------------------
+# TOTAL      349     69    80%   
 
-# ======================================================================
-# ERROR: test_model_items_3 (__main__.TestModels)
-# ----------------------------------------------------------------------
-# Traceback (most recent call last):
-#   File 'tests.py', line 129, in test_model_items_3
-#     jsonResponse = json.loads(apiResponseRaw)
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/__init__.py', line 318, in loads
-#     return _default_decoder.decode(s)
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py', line 343, in decode
-#     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-#   File '/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/json/decoder.py', line 361, in raw_decode
-#     raise ValueError(errmsg('Expecting value', s, err.value)) from None
-# ValueError: Expecting value: line 1 column 1 (char 0)
-
-# ----------------------------------------------------------------------
-# Ran 9 tests in 0.371s
-
-# FAILED (errors=6)
+# NOTE - the tests actually have nearly 100% coverage on app.py through the api calls.
 

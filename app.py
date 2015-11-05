@@ -68,7 +68,7 @@ def api_champions_id_abilities(queried_id):
 def api_champions_id_featuredgames(queried_id):
 	jsonData = {}
 	for data in Champion.query.get(queried_id).featured_games:
-		jsonData[data.name] = get_dict_from_obj(data)
+		jsonData[data.id] = get_dict_from_obj(data)
 	return jsonify(jsonData)
 
 @app.route('/api/champions/<queried_id>/summoners')
@@ -108,18 +108,18 @@ def api_summoners_id(queried_id):
 	data = Summoner.query.get(queried_id)
 	return jsonify(get_dict_from_obj(data))
 
-@app.route('/api/champions/<queried_id>/champions')
+@app.route('/api/summoners/<queried_id>/champions')
 def api_summoners_id_champions(queried_id):
 	jsonData = {}
-	for data in Champion.query.get(queried_id).champions:
+	for data in Summoner.query.get(queried_id).champions:
 		jsonData[data.name] = get_dict_from_obj(data)
 	return jsonify(jsonData)
 
-@app.route('/api/champions/<queried_id>/featured-games')
+@app.route('/api/summoners/<queried_id>/featured-games')
 def api_summoners_id_featuredgames(queried_id):
 	jsonData = {}
-	for data in Champion.query.get(queried_id).featured_games:
-		jsonData[data.name] = get_dict_from_obj(data)
+	for data in Summoner.query.get(queried_id).featured_games:
+		jsonData[data.id] = get_dict_from_obj(data)
 	return jsonify(jsonData)
 
 
@@ -137,17 +137,17 @@ def api_featuredgames_id(queried_id):
 	data = FeaturedGame.query.get(queried_id)
 	return jsonify(get_dict_from_obj(data))
 
-@app.route('/api/champions/<queried_id>/summoners')
+@app.route('/api/featured-games/<queried_id>/summoners')
 def api_featuredgames_id_summoners(queried_id):
 	jsonData = {}
-	for data in Champion.query.get(queried_id).summoners:
+	for data in FeaturedGame.query.get(queried_id).summoners:
 		jsonData[data.name] = get_dict_from_obj(data)
 	return jsonify(jsonData)
 
-@app.route('/api/champions/<queried_id>/champions')
+@app.route('/api/featured-games/<queried_id>/champions')
 def api_featuredgames_id_champions(queried_id):
 	jsonData = {}
-	for data in Champion.query.get(queried_id).champions:
+	for data in FeaturedGame.query.get(queried_id).champions:
 		jsonData[data.name] = get_dict_from_obj(data)
 	return jsonify(jsonData)
 
