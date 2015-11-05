@@ -2,18 +2,18 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from app import db
 
 summoners_champions = db.Table('summoners_champions',
-    db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.summoner_id')),
+    db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id')),
     db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
 )
 
 featuredgames_champions = db.Table('featuredgames_champions',
-    db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.gameId')),
+    db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
     db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
 )
 
 featuredgames_summoners = db.Table('featuredgames_summoners',
-    db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.gameId')),
-    db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.summoner_id'))
+    db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
+    db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id'))
 )
 
 class Champion(db.Model):
@@ -146,7 +146,7 @@ class FeaturedGame(db.Model):
 	gameId = db.Column(db.Integer)
 	gameLength = db.Column(db.Integer)
 	gameMode = db.Column(db.String)
-	gameStartTime = db.Column(db.Integer)
+	gameStartTime = db.Column(db.Numeric)
 	gameType = db.Column(db.String)
 	mapId = db.Column(db.Integer)
 	champions = db.relationship('Champion', secondary=featuredgames_champions, backref=db.backref('featured_games', lazy='dynamic'))
