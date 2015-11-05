@@ -1,4 +1,4 @@
-angular.module('hardcarryApp.featuredGameTable', ['ngRoute'])
+angular.module('hardcarryApp.featuredGameTable', [])
 
 .controller('featuredGameTableCtrl', ['$scope', function($scope){
     this.tableData = [{name: "Lich Bane",         id: 1, cost: 3000, baseCost: 200, nameId: 212},

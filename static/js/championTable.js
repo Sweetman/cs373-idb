@@ -1,4 +1,4 @@
-angular.module('hardcarryApp.championTable', ['ngRoute'])
+angular.module('hardcarryApp.championTable', [])
 
 .controller('championTableCtrl', [function(){
     this.tableData = [{name: "Lee Sin",  id: 1, description: "The Blind Monk", attack: "8", defense: "5", difficulty: "6", magic: "3"},
