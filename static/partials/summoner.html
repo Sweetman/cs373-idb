@@ -3,18 +3,16 @@
         <div class="col-md-4">
             <div class="card nameCard">
                 <img class="cardThumbnail" src="http://vignette3.wikia.nocookie.net/leagueoflegends/images/b/bb/Tempest.png/revision/latest?cb=20130929123014&format=webp">
-                <h1 class="cardName">Tempest/Cripple</h1>
+                <h1 class="cardName">{{summoner.data.name}}</h1>
             </div>
         </div>
         <div class="col-md-8">
             <div class="card descriptionCard">
                 <ul>
-                    <li><b>description:</b> Lee Sin smashes the ground, sending out a shockwave that deals magic damage and reveals enemy units hit. If Tempest hits an enemy, Lee Sin can cast cripple for the next 3 seconds.<br>Cripple: Lee Sin cripples nearby enemies revealed by Tempest, reducing their Movement Speed for 4 seconds. Movement Speed recovers gradually over the duration.</li>
-                    <li><b>cooldown burn:</b> 10 </li>
-                    <li><b>cost burn:</b> 50 </li>
-                    <li><b>cost type:</b> Energy</li>
-                    <li><b>max rank:</b> 18</li>
-                    <li><b>range burn:</b> 425 </li>
+                    <li><b>ID:</b> {{summoner.data.id}}</li>
+                    <li><b>Bot:</b> {{summoner.data.bot}}</li>
+                    <li><b>Summoner Level:</b> {{summoner.data.summonerLevel}}</li>
+                    <li><b>Summoner ID:</b> {{summoner.data.summoner_id}}</li>
                 </ul>
             </div>
         </div>
