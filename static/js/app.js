@@ -64,6 +64,8 @@ angular.module('hardcarryApp', [
             controllerAs: 'featuredGame',
             activeTab: 'Featured Games'
         })
+        .when('/api/:api*', {
+        }
   
         .otherwise({redirectTo: '/'});
         
