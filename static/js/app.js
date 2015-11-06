@@ -53,17 +53,13 @@ angular.module('hardcarryApp', [
             activeTab: "Champions"
         })
         .when('/summoners/:id', {
-            templateUrl: function(params){
-                return '/static/partials/summoner' + params.id + '.html';
-            },
+            templateUrl: '/static/partials/summoner.html',
             controller: "summonerCtrl",
             controllerAs: 'summoner',
             activeTab: 'Summoners'
         })
         .when('/featuredGames/:id', {
-            templateUrl: function(params){
-                return '/static/partials/featuredGame' + params.id + '.html';
-            },
+            templateUrl: '/static/partials/featuredGame.html',
             controller: "featuredGameCtrl",
             controllerAs: 'featuredGame',
             activeTab: 'Featured Games'
