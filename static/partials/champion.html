@@ -1,3 +1,57 @@
+
+<section id="four" class="wrapper alt style5">
+    <div class="inner">
+        <b class="h9">{{champion.data.name}}</b>
+        <section class="features">
+
+            <article class="col-lg-3">
+                <h3 class="major"><span class="icon fa-trophy"> Champion Stats</h3>
+                    <p><img class="cardThumbnail" 
+                    src="http://res.cloudinary.com/dx4at2j5f/image/upload/ChampIcons/{{champion.data.key}}.png"></p>
+                    <p>
+                        <li><b>ID:  </b> {{champion.id}}</li>
+                        <li><b>ATTACK:  </b> {{champion.data.attack}}</li>
+                        <li><b>DEFENSE:  </b> {{champion.data.defense}}</li>
+                        <li><b>DIFFICULTY:  </b> {{champion.data.difficulty}}</li>
+                        <li><b>MAGIC:  </b> {{champion.data.magic}}</li>
+                        <li><b>PAR TYPE:  </b> {{champion.data.partype}}</li>
+                    </p>
+            </article>
+
+            <article class="col-lg-3">
+                <h3 class="major"><span class="icon fa-hourglass"> Lore</h3>
+                    <p></p> {{champion.data.lore}}</li>
+
+             </article>
+
+
+            <div class="col-lg-12">
+                <h3 class="major"></h3>
+            </div>
+
+        </section>
+
+        <ul class="actions">
+            <li><a href="/champions" class="special" class="button">more champions</a></li>
+        </ul>
+
+
+        <div class="container">
+            <div class="row">
+            <div class="col-md-8">
+                <div class="card descriptionCard">
+                    <div class="aspectRatio">
+                        <iframe src="{{champion.data.youtube | trusted}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+</section>
+
 <div class="container">
     <br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -9,7 +63,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item" ng-class="{active: i === 0}" ng-repeat="i in range(champion.data.numberOfSkins)">
-                <img src="http://res.cloudinary.com/dx4at2j5f/image/upload/ChampSkins/{{champion.data.key}}_{{i}}.jpg" width="100%">
+                <img src="http://res.cloudinary.com/dx4at2j5f/image/upload/ChampSkins/{{champion.data.key}}_{{i}}.jpg" width="80%">
             </div>
         </div>
 
@@ -25,31 +79,3 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card nameCard">
-                <img class="cardThumbnail" src="http://res.cloudinary.com/dx4at2j5f/image/upload/ChampIcons/{{champion.data.key}}.png">
-                <h1 class="cardName">{{champion.data.name}}</h1>
-                <h4 class="cardName">{{champion.data.nickname}}</h4>
-            </div>
-        </div>
-
-        <div class="col-md-8">
-            <div class="card descriptionCard">
-                <ul>
-                    <li><b>id:</b> {{champion.id}}</li>
-                    <li><b>attack:</b> {{champion.data.attack}}</li>
-                    <li><b>defense:</b> {{champion.data.defense}}</li>
-                    <li><b>difficulty:</b> {{champion.data.difficulty}}</li>
-                    <li><b>magic:</b> {{champion.data.magic}}</li>
-                    <li><b>par type:</b> {{champion.data.partype}}</li>
-                    <li><b>lore:</b> {{champion.data.lore}}</li>
-                </ul>
-                <div class="aspectRatio">
-                    <iframe src="{{champion.data.youtube | trusted}}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
