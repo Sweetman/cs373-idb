@@ -25,8 +25,8 @@ angular.module('hardcarryApp', [
             controllerAs: 'championTable',
             activeTab: "Champions"
         })
-        .when('/runTests', {
-            templateUrl: '/static/partials/unitTests.html'
+        .when('/tests/runTests', {
+            templateUrl: '/tests/runTests'
         })
         .when('/summoners', {
             templateUrl: '/static/partials/summonerTable.html',
