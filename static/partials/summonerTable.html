@@ -10,9 +10,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="s in summonerTable.tableData | orderBy:summonerTable.order:summonerTable.orderReverse">
+            <tr ng-click="summonerTable.goToSummoner(s.id)" ng-repeat="s in summonerTable.tableData | orderBy:summonerTable.order:summonerTable.orderReverse">
                 <td>{{s.id}}</td>
-                <td><a href="/summoners/{{s.id}}">{{s.name}}</a></td>
+                <td>{{s.name}}</td>
                 <td>{{s.bot}}</td>
                 <td>{{s.summonerLevel}}</td>
                 <td>{{s.summoner_id}}</td>

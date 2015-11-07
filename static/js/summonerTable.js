@@ -1,6 +1,6 @@
 angular.module('hardcarryApp.summonerTable', [])
 
-.controller('summonerTableCtrl', ["$scope", "$http", function($scope, $http){
+.controller('summonerTableCtrl', ["$scope", "$http", "$location", function($scope, $http, $location){
     $http.get("/api/summoners")
         .success(function(response){
             $scope.summonerTable.tableData = response;
@@ -15,5 +15,8 @@ angular.module('hardcarryApp.summonerTable', [])
             this.orderReverse = false;
         }
         this.order = newOrder;
+    };
+    this.goToSummoner = function(id){
+        $location.path("/summoners/" + id); // path not hash
     };
 }]);

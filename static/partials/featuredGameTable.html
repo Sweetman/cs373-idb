@@ -10,8 +10,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="game in featuredGameTable.tableData | orderBy:featuredGameTable.order:featuredGameTable.orderReverse">
-                <td><a href="/featuredGames/{{game.id}}">{{game.id}}</a></td>
+            <tr ng-click="featuredGameTable.goToFeaturedGame(game.id)" ng-repeat="game in featuredGameTable.tableData | orderBy:featuredGameTable.order:featuredGameTable.orderReverse">
+                <td>{{game.id}}</td>
                 <td>{{game.gameMode}}</td>
                 <td>{{game.gameLength}}</td>
                 <td>{{game.gameType}}</td>

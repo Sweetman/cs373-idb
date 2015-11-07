@@ -1,6 +1,6 @@
 angular.module('hardcarryApp.featuredGameTable', [])
 
-.controller('featuredGameTableCtrl', ['$scope', "$http", function($scope, $http){
+.controller('featuredGameTableCtrl', ['$scope', "$http", "$location", function($scope, $http, $location){
     $http.get("/api/featured-games")
         .success(function(response){
             $scope.featuredGameTable.tableData = response;
@@ -15,5 +15,8 @@ angular.module('hardcarryApp.featuredGameTable', [])
             this.orderReverse = false;
         }
         this.order = newOrder;
+    };
+    this.goToFeaturedGame = function(id){
+        $location.path("/featuredGames/" + id); // path not hash
     };
 }]);

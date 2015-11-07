@@ -1,6 +1,6 @@
 angular.module('hardcarryApp.championTable', [])
 
-.controller('championTableCtrl', ["$scope", "$http", function($scope, $http){
+.controller('championTableCtrl', ["$scope", "$http", "$location", function($scope, $http, $location){
     $http.get("/api/champions")
         .success(function(response){
             $scope.championTable.tableData = response;
@@ -15,5 +15,8 @@ angular.module('hardcarryApp.championTable', [])
             this.orderReverse = false;
         }
         this.order = newOrder;
+    };
+    this.goToChampion = function(id){
+        $location.path("/champions/" + id); // path not hash
     };
 }]);
