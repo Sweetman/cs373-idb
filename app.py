@@ -1,6 +1,7 @@
 from flask 				  import Flask, render_template, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.declarative import DeclarativeMeta
+import coverage
 
 import os, json, subprocess
 
@@ -8,7 +9,8 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
-from models import Champion, ChampionAbility, Summoner, FeaturedGame
+from models import Champion,FeaturedGame, ChampionAbility, Summoner
+from tests import TestModels
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -20,10 +22,13 @@ def serve_partial():
 
 @app.route('/tests/runTests/')
 def run_tests():
-	subprocess.call('make test', shell=True)
-	f = open('tests.out')
-	result = f.read()
-	return ('<pre>' + result + '</pre>')
+	cov = coverage.Coverage()
+	cov.start()
+	m = TestModels()
+	m.test_model_champions_1()
+	cov.stop()
+	cov.html_report(directory='html/covhtml')
+	return render_template('index.html')
 
 
 # ------------
