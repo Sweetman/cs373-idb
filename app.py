@@ -27,8 +27,8 @@ def run_tests():
 	m = TestModels()
 	m.test_model_champions_1()
 	cov.stop()
-	cov.html_report(directory='html/covhtml')
-	return render_template('index.html')
+	cov.html_report(directory='templates/covhtml')
+	return render_template('covhtml/index.html')
 
 
 # ------------
