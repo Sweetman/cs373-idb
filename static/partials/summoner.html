@@ -31,7 +31,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-click="championTable.goToChampion(c.championId)" ng-repeat="c in summoner.champions">
+                            <tr ng-click="summoner.goToChampion(c.championId)" ng-repeat="c in summoner.champions">
                                 <td>{{c.championId}}</td>
                                 <td>{{c.name}}</td>
                                 <td>{{c.attack}}</td>
@@ -55,7 +55,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-click="featuredGameTable.goToFeaturedGame(game.id)" ng-repeat="game in summoner.featuredGames">
+                            <tr ng-click="summoner.goToFeaturedGame(game.id)" ng-repeat="game in summoner.featuredGames">
                                 <td>{{game.id}}</td>
                                 <td>{{game.gameMode}}</td>
                                 <td>{{game.gameLength}}</td>

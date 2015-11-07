@@ -38,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-click="featuredGameTable.goToFeaturedGame(game.id)" ng-repeat="game in champion.featuredGames">
+                        <tr ng-click="champion.goToFeaturedGame(game.id)" ng-repeat="game in champion.featuredGames">
                             <td>{{game.id}}</td>
                             <td>{{game.gameMode}}</td>
                             <td>{{game.gameLength}}</td>
@@ -61,7 +61,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-click="summonerTable.goToSummoner(s.id)" ng-repeat="s in champion.summoners">
+                        <tr ng-click="champion.goToSummoner(s.id)" ng-repeat="s in champion.summoners">
                             <td>{{s.id}}</td>
                             <td>{{s.name}}</td>
                             <td>{{s.bot}}</td>
