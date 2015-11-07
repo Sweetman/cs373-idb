@@ -30,6 +30,6 @@ IDB.log:
 
 test: TestHardcarry.out
 
-TestHardcarry.out: idb/tests.py
-	coverage3 run --branch idb/tests.py > tests.out 2>&1
+TestHardcarry.out: tests.py
+	coverage3 run --branch tests.py > tests.out 2>&1
 	coverage3 report -m             >> tests.out

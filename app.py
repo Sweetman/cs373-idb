@@ -1,9 +1,8 @@
 from flask 				  import Flask, render_template, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.declarative import DeclarativeMeta
-from subprocess 		  import call
 
-import os, json
+import os, json, subprocess
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -21,7 +20,7 @@ def serve_partial():
 
 @app.route('/tests/runTests/')
 def run_tests():
-	call('coverage run tests.py > tests.out 2>&1', shell=True)
+	subprocess.call('make test', shell=True)
 	f = open('tests.out')
 	result = f.read()
 	return ('<pre>' + result + '</pre>')
