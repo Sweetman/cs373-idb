@@ -1,3 +1,564 @@
+commit 20d6736007c27ffa0c6dae1ace0d33695e4ccbe0
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 21:52:08 2015 -0600
+
+    updated
+
+commit f5a6f0f39ef7f5adb6705913a4e6f5c9877b5b7b
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 19:46:32 2015 -0800
+
+    Remove pictures on bottom of featured games
+
+commit d80201185c87c319be365420460c730a8b0fae5d
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 19:43:31 2015 -0800
+
+    Remove bad icons at bottom of summoner page
+
+commit 0d5227c96978b5413872fee6ce7235c70fb96e99
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 19:40:56 2015 -0800
+
+    All pages link to eachother
+
+commit d161d7690aa22d583092651fc2627c47f692e321
+Merge: 6a5b66d d34d2e7
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 19:36:19 2015 -0800
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit 6a5b66de76b65f04f8e28e00303332993a0c936e
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 19:36:13 2015 -0800
+
+    Add tables between pages
+
+commit d34d2e7e6044b213262ee475ee70bc2c9ad7f9fa
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 21:29:16 2015 -0600
+
+    run_tests.py showing in test button
+
+commit fa9bf325a455a0d66ef6b5e676a73ad7e204191f
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 21:27:22 2015 -0600
+
+    runtests updated
+
+commit b08e5db56b46416d39eff46e6e20b2adf962e06b
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 19:13:56 2015 -0800
+
+    champion, summoner, and featuredGame retrieve all rest data
+
+commit 38f2be97664bb5add7fad90592e92ff394c36220
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 19:08:28 2015 -0800
+
+    Fix table sorting
+
+commit 07fc0b2f6be7962b7bc081b5cfea52d3a3120545
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 20:52:12 2015 -0600
+
+    updated test function to run coverage - we need to figure out how to display
+
+commit 4f12b318aa7197605c7a07f2afb1befd4ddab136
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 18:48:11 2015 -0800
+
+    Make whole row in tables linkable
+
+commit f7354ac6c4758d616b20baf5bc9f189c7837b865
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 20:37:38 2015 -0600
+
+    featured page
+
+commit 439891fb4851681cdce1d70d892bb4377bce5b61
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Fri Nov 6 20:35:51 2015 -0600
+
+    removed the import *'s
+
+commit 8f32acc0fa553ca3aa556d7a053a84a1a590fd5c
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 20:30:25 2015 -0600
+
+    centered image
+
+commit 147a37072f850678178bf51c2e03a609964430da
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 20:22:52 2015 -0600
+
+    added summoner pictures
+
+commit 29022ec6326a06cf8f73cff18b0d247a5f29838b
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Fri Nov 6 20:19:19 2015 -0600
+
+    tests now only check for non null
+
+commit 0332d56bd1e925142f9970b7408150392ad63067
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 20:16:47 2015 -0600
+
+    summoners update, not competlely done
+
+commit 2c597f13326335c34811a2491b87c47f757cfa72
+Merge: d0cd924 3b58f0a
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 18:13:02 2015 -0800
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit d0cd92483174b53a8ac71687d9693d965f9d3569
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Fri Nov 6 18:12:57 2015 -0800
+
+    process HTML in champion lore
+
+commit 3b58f0a7c19c38598ee2e8b19dead25834e938db
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 20:00:34 2015 -0600
+
+    check this out, Jeffrey
+
+commit 2d8efb10446e839f00a5b502ef30ee268ba35a07
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 19:55:35 2015 -0600
+
+    champion title
+
+commit 7d9117654305241758972d6c4fa225ad0a98401d
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 19:49:07 2015 -0600
+
+    some sketchy images
+
+commit 5e321ba89e4ca0660f3b4b08bf828f90fa1cbb01
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Fri Nov 6 19:47:16 2015 -0600
+
+    hopefully will fix unit tests link
+
+commit 51def64bb2bb26f6ee96947c674aaae00e0de1b3
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 19:30:49 2015 -0600
+
+    fixed card for Champion lore
+
+commit fe3e29307aa34a57ada53eec210d094e8e96779a
+Merge: 14edd51 ffb72f2
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 19:25:42 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit 14edd51e3b80f7489c3fb94d28c4b338ef6a7e97
+Merge: bb7688b 4b8ebd8
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 19:25:37 2015 -0600
+
+    previous merge overwrote my changes
+
+commit ffb72f2341fe2da72d77e7ffa366bc399622d666
+Merge: 9c076c4 4b8ebd8
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 19:24:19 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-idb into dev
+
+commit 9c076c446c43784809f93ae0e0c41ba10c61620e
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 19:24:11 2015 -0600
+
+    made card look better on featured games
+
+commit 4b8ebd890214fcba147b4152290750aaf256bf78
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 19:22:09 2015 -0600
+
+    lingering changes
+
+commit bb7688b2841fc15104c0ae5010cbc764894300d2
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 19:17:18 2015 -0600
+
+    champion images are up
+
+commit 6be379380d30cfcc8cc7c7439686eaa4f8c21bf0
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 18:26:47 2015 -0600
+
+    champion video tag
+
+commit 3214f17848ca7d252bd4170551c6d6d9487441ff
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 18:13:41 2015 -0600
+
+    background change
+
+commit 095b0eeb4d857cd3c673749bedec685fb43d359c
+Merge: fee460d 8629cf5
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 18:12:23 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit fee460d8b219b4752f66c952186354cb1a51727e
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Nov 6 18:12:01 2015 -0600
+
+    updated models and added youtube scraping script
+
+commit 8629cf58569416868169900da900af89a8c4540b
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Fri Nov 6 17:58:18 2015 -0600
+
+    pages updated
+
+commit 66be7c08153d8f6368f013ad3e89d542b52c5fbe
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Fri Nov 6 15:40:35 2015 -0600
+
+    updated stats on about page
+
+commit 9b1b1b6eb093a49be59a6132d4f70b41cb32de9e
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 19:53:22 2015 +0000
+
+    fix missing left paren
+
+commit eb9d3aab69b153a359f41b05ca80cf135a42a0e4
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 19:44:49 2015 +0000
+
+    add angular route for api calls
+
+commit 662294bfa8b76b9cc64512d188cea3f72b5e6f1a
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Fri Nov 6 04:33:11 2015 +0000
+
+    updated .gitignore
+
+commit 15f31448b6b4bf0cc9c0eb9f9dc561d1f3c78967
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 22:19:18 2015 -0600
+
+    rid bad summoner pic
+
+commit cb25bef76576ae646d8087188167f2db88f40f83
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 22:14:02 2015 -0600
+
+    home
+
+commit c6661e7375f74d5e4151cbcdc718eb5f87a879b0
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 22:11:56 2015 -0600
+
+    fix to unit test link
+
+commit da894bf2c7173160c0b7212e7f37a4b61d891666
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 22:07:39 2015 -0600
+
+    featuredGames
+
+commit a3b4e63c565da39bb9fc4848f435fff3383b7b2b
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 21:49:59 2015 -0600
+
+    summoner
+
+commit 9c1e44254d11ad67a7020a4ca1cb204419d59143
+Merge: 8addb95 1314322
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:43:57 2015 -0800
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit 8addb95e31d9291e43d4f6eadf7d0359696268e1
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:43:49 2015 -0800
+
+    put links in featuredGames
+
+commit 1314322273f56f4b1144f9869871ecf822e2e4fd
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 21:42:44 2015 -0600
+
+    still broken champ
+
+commit 9b36869323722e641da9ebf5dc0d70bd69012947
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:31:48 2015 -0800
+
+    get featuredGame page working
+
+commit 2f2584fc7ffd7b3cb86c4fabffdef0ac8b579a18
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:25:28 2015 -0800
+
+    Get featuredGameTable working
+
+commit 6a95c18ad0c8fb4797bd4ae79908077af217ddd1
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:20:43 2015 -0800
+
+    Get summoner pages working
+
+commit 4f5d161f642c98c7d928306610652b2dad49caff
+Merge: e02af2d aa1e02a
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:11:03 2015 -0800
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit e02af2d12c3b9bf2f99471d98fe0d006cdd79daa
+Merge: acbbb20 debd698
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:10:55 2015 -0800
+
+    Merge
+
+commit aa1e02a4231ec7b0e3f79a4a8f667c797cefc6d6
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 21:10:48 2015 -0600
+
+    fixed unit test link
+
+commit acbbb209798470428b9a50b995fc1d94303a4574
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Thu Nov 5 19:10:18 2015 -0800
+
+    halfway fix with champions, summoners, games, all tables
+
+commit debd698172e2a1694e3bf6eaf21ad3eb064f28c0
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 21:06:02 2015 -0600
+
+    changes to featured and home
+
+commit 4142ea4c11ec9d60344cf7854dbf52b3b68b6976
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 20:20:45 2015 -0600
+
+    not sure if this worked
+
+commit 43e984662adcc0504c655c2c7b961712366481c0
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 20:12:59 2015 -0600
+
+    some more scraped featuredgames
+
+commit ce61e824dc2ce045c0ad3a169348500ff6169633
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 20:04:17 2015 -0600
+
+    summoner layout?
+
+commit 1d3a867d3c8e8d3680ad8cfa3904f6b1e4270680
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 16:13:44 2015 -0600
+
+    added api root endpoint
+
+commit e5e2fb0aec63824c1155bef10aa3b8aebb98fd1b
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 15:48:20 2015 -0600
+
+    api endpoints finished and working
+
+commit 665daaacba56efbca00a050092232f7a76afb265
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Nov 5 12:29:46 2015 -0600
+
+    adding another set of data for featured games
+
+commit 80269c49a95acc63fdaaef6870f68e074c406dd6
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Nov 5 10:52:07 2015 -0600
+
+    fixed files
+
+commit 6b70b018b90435015868d38104e46449e8fa8eaa
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Nov 5 10:44:19 2015 -0600
+
+    README for featured games scraper
+
+commit 07933f0cde77e7dd1f1fe3c0fcce03c953decec2
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Nov 5 10:41:32 2015 -0600
+
+    adding featured games scraper
+
+commit 2cc76f7a2365d53bf2d9af8491a1b2e2d83e0961
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 05:53:00 2015 -0600
+
+    added new tests
+
+commit 8f08a61a49972cd478cf318afe592c68591be03c
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 05:30:49 2015 -0600
+
+    unit tests actually pass now lol
+
+commit d6a0b7125a73882fcec3bdad58dc034156923d68
+Merge: 4eb5b7c fa34f93
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 05:04:33 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit 4eb5b7cefd7f1404de5484bba49a56a355addc7d
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 05:04:05 2015 -0600
+
+    adding new api endpoints
+
+commit fa34f9359da24681ffeeb72ff66a6ab0def5108c
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 04:56:26 2015 -0600
+
+    run tests work and requirements.txt updated
+
+commit cc3febfb0dcd55d0eff91a85aa74570490cbaf01
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 04:28:47 2015 -0600
+
+    slight fix to featured game api endpoint
+
+commit 9eaf5ce1bef737a0012db999e3c7e70bb0d184d3
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 04:20:06 2015 -0600
+
+    db scraping works
+
+commit fb5bbae39e9d7865c6c5ca919cd86e566800aebb
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 04:09:59 2015 -0600
+
+    getGamesSummoners runs but does it work?? let's find out
+
+commit 14534b1868faa2016061d9a6ee0903775a9b0761
+Merge: ec57838 93faf1a
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 04:05:08 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit ec578382f7c57875ca175d3f65ba5fd2f6a169fc
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 04:04:56 2015 -0600
+
+    almost done with this
+
+commit 93faf1a4d71e4e1550f84475a30b94d4ebb41906
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 03:47:48 2015 -0600
+
+    api actually returns json now
+
+commit 9a45fb0aed8d78652e8b6570ca5cc7b699d5d179
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 03:16:54 2015 -0600
+
+    updated models to fix m2m tables
+
+commit c611af02f50fa2df51f6a8565bb1d82834d50910
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 02:28:02 2015 -0600
+
+    this is better
+
+commit dae22b3f8c839bb8b1cf9002d8b08b5a37d00d2e
+Merge: d7cce1d 984ae5f
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 02:14:49 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit d7cce1d6f1b34160dc01fe7c84ba956a82ed246e
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 02:14:43 2015 -0600
+
+    some updates to unit tests, will need to make more edits when all tables are filled
+
+commit 984ae5fe1555c83fe3482adb8c166720663749c0
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 02:03:27 2015 -0600
+
+    title anchors
+
+commit b083f9fef4188db8201b7f30366a38cdc1546cf2
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 01:59:06 2015 -0600
+
+    rearrange stuff
+
+commit a3a1a3366d2e6c2e740eb82d2ebf1fb6e27daadb
+Merge: ac54efb 3875708
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 01:37:22 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit ac54efb6e690fd0fff6e2511d2c1c712c31f9c5e
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Thu Nov 5 01:37:10 2015 -0600
+
+    added api endpoints and keeping models.py as it was
+
+commit 3875708bade28178ce03e292c6ad7b2713ff0f4b
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Nov 5 01:34:47 2015 -0600
+
+    Update README.md
+
+commit 0be493be98e3ae35cce5572e66557ddf0d12f6b6
+Merge: 9a0fba1 4d9e4a9
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Nov 5 01:25:14 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-idb into dev
+
+commit 9a0fba1a01e53de84e907ae7fffb83d3575b9a31
+Author: Jeffrey Li <lijeffreytli@gmail.com>
+Date:   Thu Nov 5 01:25:06 2015 -0600
+
+    adding a temporary git log
+
+commit 4d9e4a9ef76f11e29a55aab2e1423219b7ea717b
+Merge: a853d7b 0fa8049
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 00:48:56 2015 -0600
+
+    Merge branch 'dev' of https://github.com/Sweetman/cs373-tbsa into dev
+
+commit a853d7b9c4a6ec417c441cd3363a81213ddfbd37
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Thu Nov 5 00:45:30 2015 -0600
+
+    deleted model.html with error
+
+commit 0fa8049b4227a074d948070ff4eb926121fd4eee
+Author: Kevin Lin <whatakevin@gmail.com>
+Date:   Wed Nov 4 23:19:59 2015 -0700
+
+    Angularize and modularize champions page
+
+commit c6c10c0abbb00d0857ec60d8361d28fe09cd8ddc
+Author: Hanah Luong <hanah.luong@utexas.edu>
+Date:   Thu Nov 5 00:03:44 2015 -0600
+
+    hover links
+
 commit ad2e30e25d76cc33ef9a73555cbdd584e1d75e3a
 Author: Jeffrey Li <lijeffreytli@gmail.com>
 Date:   Wed Nov 4 23:56:44 2015 -0600
@@ -35,6 +596,12 @@ Date:   Wed Nov 4 23:09:28 2015 -0600
 
     fixin
     jeff's oops
+
+commit 411c7d34d60c5c8d30c4794e8a93df2bc64790d8
+Author: Clinton Burgos <clintburgos@users.noreply.github.com>
+Date:   Wed Nov 4 23:00:00 2015 -0600
+
+    changed names in champion model
 
 commit 0078973e56feb1ef010a2817816b872760f8092d
 Merge: 974e810 5ceef22
@@ -147,6 +714,12 @@ Author: Kevin Lin <whatakevin@gmail.com>
 Date:   Wed Nov 4 21:49:37 2015 -0500
 
     Rename table controllers
+
+commit 0cdd47c14f6720871e2d574d46d4dac65830a64e
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Wed Nov 4 18:57:42 2015 -0600
+
+    updated models and champion data collection
 
 commit 68d1ab882d2a027fc6166f5cd63dcae5c454c1d0
 Author: Hanah Luong <hanah.luong@utexas.edu>
