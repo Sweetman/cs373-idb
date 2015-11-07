@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
-from models import *
+from models import Champion, ChampionAbility, Summoner, FeaturedGame
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
