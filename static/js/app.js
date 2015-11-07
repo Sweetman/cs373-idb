@@ -88,6 +88,7 @@ angular.module('hardcarryApp', [
         return $sce.trustAsResourceUrl(url);
     };
 }])
+
 .filter('objectToArray', function() {
     return function(input) {
       var ans = []; 

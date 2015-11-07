@@ -24,7 +24,53 @@
                     <p></p> <div ng-bind-html="champion.data.lore"></div></li>
                     <br></br>
 
-             </article>
+            </article>
+
+            <div class="container tableWrapper">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th ng-click="featuredGameTable.changeOrderTo('id')">ID</th>
+                            <th ng-click="featuredGameTable.changeOrderTo('gameMode')">Game Mode</th>
+                            <th ng-click="featuredGameTable.changeOrderTo('gameLength')">Game Length</th>
+                            <th ng-click="featuredGameTable.changeOrderTo('gameType')">Game Type</th>
+                            <th ng-click="featuredGameTable.changeOrderTo('mapId')">Map ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-click="featuredGameTable.goToFeaturedGame(game.id)" ng-repeat="game in champion.featuredGames">
+                            <td>{{game.id}}</td>
+                            <td>{{game.gameMode}}</td>
+                            <td>{{game.gameLength}}</td>
+                            <td>{{game.gameType}}</td>
+                            <td>{{game.mapId}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="container tableWrapper">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th ng-click="summonerTable.changeOrderTo('id')">Id</th>
+                            <th ng-click="summonerTable.changeOrderTo('name')">Name</th>
+                            <th ng-click="summonerTable.changeOrderTo('bot')">Bot</th>
+                            <th ng-click="summonerTable.changeOrderTo('summonerLevel')">Summoner Level</th>
+                            <th ng-click="summonerTable.changeOrderTo('summoner_id')">Summoner ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-click="summonerTable.goToSummoner(s.id)" ng-repeat="s in champion.summoners">
+                            <td>{{s.id}}</td>
+                            <td>{{s.name}}</td>
+                            <td>{{s.bot}}</td>
+                            <td>{{s.summonerLevel}}</td>
+                            <td>{{s.summoner_id}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <ul class="actions">
             <li><a href="/champions" class="special" class="button">more champions</a></li>
