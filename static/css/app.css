@@ -17,7 +17,14 @@ iframe[seamless] {
 
 .h9 {
     color: #ffffff;
-    font-size:5.2em;
+    font-size:5.2vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.h8 {
+    color: #ffffff;
+    font-size:2vw;
     text-align: center;
     text-transform: uppercase;
 }
