@@ -57,6 +57,7 @@ class Champion(db.Model):
 	stat_spellblock = db.Column(db.Float)
 	stat_spellblockperlevel = db.Column(db.Float)
 	number_of_skins = db.Column(db.Integer)
+	youtube = db.Column(db.String, nullable=True)
 	abilities = db.relationship('ChampionAbility', backref="champion", cascade="all, delete-orphan" , lazy='dynamic')
 
 	def __init__(self, name, championId, imageFileName, lore, partype, title, attack, defense, magic,\
