@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
-from models import Champion,FeaturedGame, ChampionAbility, Summoner
+from models import *
 from tests import TestModels
 
 @app.route('/', methods=['GET', 'POST'])

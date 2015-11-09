@@ -12,7 +12,7 @@
 from io             import StringIO
 from urllib.request import urlopen
 from unittest       import main, TestCase
-from models 		import Champion, ChampionAbility, Summoner, FeaturedGame
+from models 		import *
 import json, postgresql
 
 # ----------
