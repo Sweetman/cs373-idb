@@ -9,7 +9,7 @@ def add_games(jsonResponse):
 	db_summoner_champs = {}
 
 	for jsonFG in jsonResponse['gameList']:
-		if FeaturedGame.query.filter_by(gameId=jsonFG['gameId']).first is not None:
+		if FeaturedGame.query.filter_by(gameId=jsonFG['gameId']).first() is not None:
 			print("game %d is already in the database" % (jsonFG['gameId']))
 		else:
 			featured_game = {}
