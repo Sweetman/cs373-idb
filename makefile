@@ -1,9 +1,9 @@
 FILES :=                              						\
   apiary.apib                      						\
-  IDB1.log                      						\
+  IDB.log                      						\
   model.html                           						\
-  idb/models.py                         						\
-  idb/tests.py                          						\
+  models.py                         						\
+  tests.py                          						\
   UML.pdf		  
 \
 
@@ -23,10 +23,10 @@ clean:
 	rm -rf __pycache__
 
 models.html:
-	pydoc3 -w idb/models.py
+	pydoc3 -w models.py
 
 IDB.log:
-	git log > IDB1.log
+	git log > IDB.log
 
 test: TestHardcarry.out
 

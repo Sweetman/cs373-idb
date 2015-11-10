@@ -27,7 +27,7 @@ def tests():
             stderr=subprocess.PIPE,
             stdin=subprocess.PIPE)
     out, err = p.communicate()
-    return render_template('tests.html', output=err+out)
+    return render_template('covhtml/tests_py.html', output=err+out)
 
 
 # ------------
