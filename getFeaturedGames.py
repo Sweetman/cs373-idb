@@ -42,19 +42,24 @@ def add_games(jsonResponse):
 			apiResponseInfo = apiResponse.info()
 			apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 			jsonSummonerInfo.update(json.loads(apiResponseRaw))
-			# print(jsonSummonerInfo)
-
 			for summoner in jsonSummonerInfo:
-				print(jsonSummonerInfo[summoner]['id'])
+				try:
+					champ = db_summoner_champs[jsonSummonerInfo[summoner]['name']]
+				except KeyError:
+					for participant in participants:
+						if jsonSummonerInfo[summoner]['name'] in participant['summonerName']:
+							champ = db_summoner_champs[participant['summonerName']]
 				if Summoner.query.filter_by(summoner_id=jsonSummonerInfo[summoner]['id']).first() is not None:
 					summoner = Summoner.query.filter_by(summoner_id=jsonSummonerInfo[summoner]['id']).first()
 					db_fg.summoners.append(summoner)
 				else:
 					# hard coded false value because there probably shouldn't be a bot in a featured game
 					# print(participant['summonerName'])
-					summoner = Summoner(jsonSummonerInfo[summoner]['id'], jsonSummonerInfo[summoner]['name'], jsonSummonerInfo[summoner]['profileIconId'], jsonSummonerInfo[summoner]['summonerLevel'], False)
-					db_fg.summoners.append(summoner)
+						summoner = Summoner(jsonSummonerInfo[summoner]['id'], jsonSummonerInfo[summoner]['name'], jsonSummonerInfo[summoner]['profileIconId'], jsonSummonerInfo[summoner]['summonerLevel'], False)
+						db_fg.summoners.append(summoner)
+				summoner.champions.append(champ)
 			db.session.commit()
+			print("game %d added to db" % (jsonFG['gameId']))
 
 if __name__ == '__main__':	
 	apiResponse = urlopen('https://na.api.pvp.net/observer-mode/rest/featured?api_key=b5cf54ec-e9cf-4c5f-8009-74785a540ce4')
