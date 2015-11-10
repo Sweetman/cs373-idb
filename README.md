@@ -7,38 +7,29 @@ Note: Everyone on the team has OS X, so these instructions will be for that envi
 Required: [Python3](https://www.python.org/downloads/)
 
 ### Set up the virtual environment
-Install virtualenv
 ```
-pip install virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-mkdir -p $WORKON_HOME
-which virtualenvwrapper.sh
-source /path/outputted/by/which/command
+pip install virtualenv
+which python3 // outputs path to your python3, will be refered to as PYTHON3_PATH
+virtualenv -p PYTHON3_PATH env
+source env/bin/activate
 ```
 
-Create a virtualenv for the project with python3
-```
-mkvirtualenv -p /path/to/python3 idb
-```
-You will know it worked when your shell prompt has (idb) appended to the beginning.
+You will know it worked when your shell prompt has (env) appended to the beginning.
 
 To start and deactivate your virtualenv run the following (tab completion included)
 ```
-workon idb
-deactivate idb
+source env/bin/activate
+deactivate env
 ```
 
-Edit the postactivate script for the virtualenv and add these commands
+Edit the activate script for the virtualenv and add these commands to the bottom of the file
 ```
-cd ~/path/to/project
 export APP_SETTINGS="config.DevelopmentConfig"
 export DATABASE_URL="postgresql://admin@localhost/idb"
 ```
 
-Change directories into the project's root directory and install the required python and front-end packages
-Omit workon idb if you haven't set up the postactivate script with the cd command
+Now install the requirements for the project
 ```
-workon idb
 pip install -r requirements.txt
 bower update
 ```
@@ -46,10 +37,6 @@ bower update
 
 ### Create the psql database
 Install with homebrew or download the [Postgresql.app](http://postgresapp.com/)
-Start your psql through the app or type the command
-```
-postgres -D /usr/local/pgsql/data
-```
 
 Create a postgres server, user, and database.
 ```
@@ -62,8 +49,17 @@ grant all privileges on database idb to admin;
 ### Set up database and run the server
 Change directories into the idb app and upgrade the database to latest migrations
 ```
-cd idb
+python manage.py db init
+python manage.py db migrate
 python manage.py db upgrade
+```
+
+Populate the database with the scraping scripts. IT IS IMPORTANT THAT YOU RUN getChampionData.py FIRST.
+```
+python getChampionData.py
+python getChampYoutube.py
+python getFeaturedGames.py
+python getTxtFeaturedGames.py
 ```
 
 Start server
