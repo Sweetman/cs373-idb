@@ -26,7 +26,7 @@ models.html:
 	pydoc3 -w models.py
 
 IDB.log:
-	git log > IDB.log
+	git log > IDB3.log
 
 test: TestHardcarry.out
 
