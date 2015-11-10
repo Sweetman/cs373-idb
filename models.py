@@ -1,19 +1,31 @@
 from flask.ext.sqlalchemy import SQLAlchemy
 from app import db
+import json
+
+def get_dict_from_obj(obj):
+	fields = {}
+	for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata']:
+		data = obj.__getattribute__(field)
+		try:
+			json.dumps(data)
+			fields[field] = data
+		except TypeError:
+			pass
+	return fields
 
 summoners_champions = db.Table('summoners_champions',
-    db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id')),
-    db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
+	db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id')),
+	db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
 )
 
 featuredgames_champions = db.Table('featuredgames_champions',
-    db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
-    db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
+	db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
+	db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
 )
 
 featuredgames_summoners = db.Table('featuredgames_summoners',
-    db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
-    db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id'))
+	db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
+	db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id'))
 )
 
 class Champion(db.Model):
@@ -58,7 +70,7 @@ class Champion(db.Model):
 	stat_spellblockperlevel = db.Column(db.Float)
 	number_of_skins = db.Column(db.Integer)
 	youtube = db.Column(db.String, nullable=True)
-	abilities = db.relationship('ChampionAbility', backref="champion", cascade="all, delete-orphan" , lazy='dynamic')
+	abilities = db.relationship('ChampionAbility', backref="champion", cascade="all, delete-orphan")
 
 	def __init__(self, name, championId, imageFileName, lore, partype, title, attack, defense, magic,\
 		difficulty, passiveDescription, passiveImageFileName, passiveName, armor, armorperlevel,\
@@ -99,6 +111,34 @@ class Champion(db.Model):
 		self.stat_spellblockperlevel = spellblockperlevel
 		self.number_of_skins = numberofskins
 
+	def serialize(self):
+		fields = get_dict_from_obj(self)
+		fields['abilities'] = self.serialize_abilities()
+		fields['featured_games'] = self.serialize_featured_games()
+		fields['summoners'] = self.serialize_summoners()
+		return fields
+
+	def serialize_abilities(self):
+		abilities = {}
+		for ability in self.abilities:
+			ability_data = get_dict_from_obj(ability)
+			abilities[ability.name] = ability_data
+		return abilities
+
+	def serialize_featured_games(self):
+		featured_games = {}
+		for featured_game in self.featured_games:
+			featured_game_data = get_dict_from_obj(featured_game)
+			featured_games[featured_game.id] = featured_game_data
+		return featured_games
+
+	def serialize_summoners(self):
+		summoners = {}
+		for summoner in self.summoners:
+			summoner_data = get_dict_from_obj(summoner)
+			summoners[summoner.name] = summoner_data
+		return summoners
+
 class ChampionAbility(db.Model):
 	"""
 	A Champion's abilities are a unique characteristic of each champion that separates them apart from other champions. 
@@ -125,6 +165,9 @@ class ChampionAbility(db.Model):
 		self.spell_name = spell_name
 		self.tooltip = tooltip
 
+	def serialize(self):
+		return get_dict_from_obj(self)
+
 class Summoner(db.Model):
 	__tablename__ = 'summoner'
 	id = db.Column(db.Integer, primary_key=True)
@@ -133,13 +176,33 @@ class Summoner(db.Model):
 	profileIconId = db.Column(db.Integer)
 	summonerLevel = db.Column(db.Integer)
 	bot = db.Column(db.Boolean)
-	champions = db.relationship('Champion', secondary=summoners_champions, backref=db.backref('summoners', lazy='dynamic'), lazy='dynamic')
+	champions = db.relationship('Champion', secondary=summoners_champions, backref=db.backref('summoners'))
 	def __init__(self, summoner_id, name, profileIconId, summonerLevel, bot):
 		self.summoner_id = summoner_id
 		self.name = name
 		self.profileIconId = profileIconId
 		self.summonerLevel = summonerLevel
 		self.bot = bot
+
+	def serialize(self):
+		fields = get_dict_from_obj(self)
+		fields['champions'] = self.serialize_champions()
+		fields['featured_games'] = self.serialize_featured_games()
+		return fields
+
+	def serialize_champions(self):
+		champions = {}
+		for champion in self.champions:
+			champion_data = get_dict_from_obj(champion)
+			champions[champion.name] = champion_data
+		return champions
+
+	def serialize_featured_games(self):
+		featured_games = {}
+		for featured_game in self.featured_games:
+			featured_game_data = get_dict_from_obj(featured_game)
+			featured_games[featured_game.id] = featured_game_data
+		return featured_games
 
 class FeaturedGame(db.Model):
 	__tablename__ = 'featured_game'
@@ -150,7 +213,7 @@ class FeaturedGame(db.Model):
 	gameStartTime = db.Column(db.Numeric)
 	gameType = db.Column(db.String)
 	mapId = db.Column(db.Integer)
-	champions = db.relationship('Champion', secondary=featuredgames_champions, backref=db.backref('featured_games', lazy='dynamic'))
+	champions = db.relationship('Champion', secondary=featuredgames_champions, backref=db.backref('featured_games'))
 	summoners = db.relationship('Summoner', secondary=featuredgames_summoners, backref=db.backref('featured_games'))
 	def __init__(self, gameId, gameLength, gameMode, gameStartTime, gameType, mapId):
 		self.gameId = gameId
@@ -159,3 +222,23 @@ class FeaturedGame(db.Model):
 		self.gameStartTime = gameStartTime
 		self.gameType = gameType
 		self.mapId = mapId
+
+	def serialize(self):
+		fields = get_dict_from_obj(self)
+		fields['champions'] = self.serialize_champions()
+		fields['summoners'] = self.serialize_summoners()
+		return fields
+
+	def serialize_champions(self):
+		champions = {}
+		for champion in self.champions:
+			champion_data = get_dict_from_obj(champion)
+			champions[champion.name] = champion_data
+		return champions
+
+	def serialize_summoners(self):
+		summoners = {}
+		for summoner in self.summoners:
+			summoner_data = get_dict_from_obj(summoner)
+			summoners[summoner.name] = summoner_data
+		return summoners
