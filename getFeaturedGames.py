@@ -30,7 +30,7 @@ def add_games(jsonResponse):
 			# makes the url for all the summoners in the game
 			for participant in participants:
 				curParticipantName = participant['summonerName']
-				print("curPartipantName: %s" % (curParticipantName))
+				# print("curPartipantName: %s" % (curParticipantName))
 				summonerInfoUrl += curParticipantName.replace(' ', '%20') + ','
 				champ = Champion.query.filter_by(championId=participant['championId']).first()
 				db_fg.champions.append(champ)
@@ -42,15 +42,17 @@ def add_games(jsonResponse):
 			apiResponseInfo = apiResponse.info()
 			apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 			jsonSummonerInfo.update(json.loads(apiResponseRaw))
+			# print(jsonSummonerInfo)
 
-			for participant in participants:
-				summoner = participant['summonerName'].lower().replace(' ', '')
-				if Summoner.query.filter_by(name=summoner).first() is not None:
-					db_fg.summoners.append(Summoner.query.filter_by(name=summoner).first())
+			for summoner in jsonSummonerInfo:
+				print(jsonSummonerInfo[summoner]['id'])
+				if Summoner.query.filter_by(summoner_id=jsonSummonerInfo[summoner]['id']).first() is not None:
+					summoner = Summoner.query.filter_by(summoner_id=jsonSummonerInfo[summoner]['id']).first()
+					db_fg.summoners.append(summoner)
 				else:
 					# hard coded false value because there probably shouldn't be a bot in a featured game
-					summoner = Summoner(jsonSummonerInfo[summoner]['id'], participant['summonerName'], jsonSummonerInfo[summoner]['profileIconId'], jsonSummonerInfo[summoner]['summonerLevel'], False)
-					print(summoner.name)
+					# print(participant['summonerName'])
+					summoner = Summoner(jsonSummonerInfo[summoner]['id'], jsonSummonerInfo[summoner]['name'], jsonSummonerInfo[summoner]['profileIconId'], jsonSummonerInfo[summoner]['summonerLevel'], False)
 					db_fg.summoners.append(summoner)
 			db.session.commit()
 

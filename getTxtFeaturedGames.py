@@ -10,3 +10,4 @@ if __name__ == '__main__':
 			f = open(i, "r")
 			jsonResponse = json.load(f)
 			add_games(jsonResponse)
+			print("added games from %s" %(i))
