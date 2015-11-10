@@ -21,14 +21,13 @@ def serve_partial():
 	return render_template('/partials/{}'.format(path))
 
 @app.route('/tests/runTests/')
-def run_tests():
-	cov = coverage.Coverage()
-	cov.start()
-	m = TestModels()
-	m.test_model_champions_1()
-	cov.stop()
-	cov.html_report(directory='templates/covhtml')
-	return render_template('covhtml/tests_py.html')
+def tests():
+    p = subprocess.Popen(["make", "test"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            stdin=subprocess.PIPE)
+    out, err = p.communicate()
+    return render_template('tests.html', output=err+out)
 
 
 # ------------

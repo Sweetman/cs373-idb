@@ -31,5 +31,5 @@ IDB.log:
 test: TestHardcarry.out
 
 TestHardcarry.out: tests.py
-	coverage3 run --branch tests.py > tests.out 2>&1
-	coverage3 report -m             >> tests.out
+	coverage run --branch tests.py
+	coverage report --include=models.py
