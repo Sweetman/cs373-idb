@@ -8,7 +8,7 @@ angular.module('hardcarryApp', [
     'hardcarryApp.champion',
     'hardcarryApp.summoner',
     'hardcarryApp.featuredGame',
-    'hardcarryApp.about'
+    'hardcarryApp.about',
     'hardcarryApp.nobelPrizes'
 ])
 

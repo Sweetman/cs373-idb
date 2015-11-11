@@ -20,6 +20,8 @@
     "angular": "1.4.7",
     "angular-route": "1.4.7",
     "angular-sanitize": "1.4.7",
-    "bootstrap": "3.3.5"
+    "bootstrap": "3.3.5",
+    "jvectormap": "~2.0.4",
+    "nouislider": "~8.1.0"
   }
 }
