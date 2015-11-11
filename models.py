@@ -18,15 +18,16 @@ summoners_champions = db.Table('summoners_champions',
 	db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
 )
 
-featuredgames_champions = db.Table('featuredgames_champions',
-	db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
-	db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
-)
+# games_champions = db.Table('games_champions',
+# 	db.Column('game_id', db.Integer, db.ForeignKey('game.id')),
+# 	db.Column('champion_id', db.Integer, db.ForeignKey('champion.championId'))
+# )
 
-featuredgames_summoners = db.Table('featuredgames_summoners',
-	db.Column('featuredgame_id', db.Integer, db.ForeignKey('featured_game.id')),
-	db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id'))
-)
+# games_summoners = db.Table('games_summoners',
+# 	db.Column('game_id', db.Integer, db.ForeignKey('game.id')),
+# 	db.Column('summoner_id', db.Integer, db.ForeignKey('summoner.id'))
+# )
+
 
 class Champion(db.Model):
 	"""
@@ -114,7 +115,7 @@ class Champion(db.Model):
 	def serialize(self):
 		fields = get_dict_from_obj(self)
 		fields['abilities'] = self.serialize_abilities()
-		fields['featured_games'] = self.serialize_featured_games()
+		fields['games'] = self.serialize_games()
 		fields['summoners'] = self.serialize_summoners()
 		return fields
 
@@ -125,12 +126,12 @@ class Champion(db.Model):
 			abilities[ability.name] = ability_data
 		return abilities
 
-	def serialize_featured_games(self):
-		featured_games = {}
-		for featured_game in self.featured_games:
+	def serialize_games(self):
+		games = {}
+		for featured_game in self.games:
 			featured_game_data = get_dict_from_obj(featured_game)
-			featured_games[featured_game.id] = featured_game_data
-		return featured_games
+			games[featured_game.id] = featured_game_data
+		return games
 
 	def serialize_summoners(self):
 		summoners = {}
@@ -175,7 +176,25 @@ class Summoner(db.Model):
 	name = db.Column(db.String)
 	profileIconId = db.Column(db.Integer)
 	summonerLevel = db.Column(db.Integer)
-	bot = db.Column(db.Boolean)
+	wins = db.Column(db.Integer)
+	losses = db.Column(db.Integer)
+	playerStatSummaryType = db.Column(db.String)
+	averageAssists = db.Column(db.Integer)
+	averageChampionsKilled = db.Column(db.Integer)
+	avaregeNumDeaths= db.Column(db.Integer)
+	averageTotalplayScore = db.Column(db.Integer)
+	killingSpree = db.Column(db.Integer)
+	normalGamesPlayed = db.Column(db.Integer)
+	rankedSoloGamesPlayed = db.Column(db.Integer)
+	totalChampionKills = db.Column(db.Integer)
+	totalGoldEarned = db.Column(db.Integer)
+	totalPentaKills = db.Column(db.Integer)
+	totalQuadraKills = db.Column(db.Integer)
+	totalSessionsPlayed = db.Column(db.Integer)
+	totalSessionsWon = db.Column(db.Integer)
+	totalSessionsLost = db.Column(db.Integer)
+	totalTripleKills = db.Column(db.Integer)
+	totalUnrealKills = db.Column(db.Integer)
 	champions = db.relationship('Champion', secondary=summoners_champions, backref=db.backref('summoners'))
 	def __init__(self, summoner_id, name, profileIconId, summonerLevel, bot):
 		self.summoner_id = summoner_id
@@ -187,7 +206,7 @@ class Summoner(db.Model):
 	def serialize(self):
 		fields = get_dict_from_obj(self)
 		fields['champions'] = self.serialize_champions()
-		fields['featured_games'] = self.serialize_featured_games()
+		fields['games'] = self.serialize_games()
 		return fields
 
 	def serialize_champions(self):
@@ -197,24 +216,24 @@ class Summoner(db.Model):
 			champions[champion.name] = champion_data
 		return champions
 
-	def serialize_featured_games(self):
-		featured_games = {}
-		for featured_game in self.featured_games:
+	def serialize_games(self):
+		games = {}
+		for featured_game in self.games:
 			featured_game_data = get_dict_from_obj(featured_game)
-			featured_games[featured_game.id] = featured_game_data
-		return featured_games
+			games[featured_game.id] = featured_game_data
+		return games
 
-class FeaturedGame(db.Model):
-	__tablename__ = 'featured_game'
+class Game(db.Model):
+	__tablename__ = 'game'
 	id = db.Column(db.Integer, primary_key=True)
 	gameId = db.Column(db.Numeric)
-	gameLength = db.Column(db.Integer)
 	gameMode = db.Column(db.String)
-	gameStartTime = db.Column(db.Numeric)
 	gameType = db.Column(db.String)
 	mapId = db.Column(db.Integer)
-	champions = db.relationship('Champion', secondary=featuredgames_champions, backref=db.backref('featured_games'))
-	summoners = db.relationship('Summoner', secondary=featuredgames_summoners, backref=db.backref('featured_games'))
+	subType = db.Column(db.String)
+	createDate = db.Column(db.Integer)
+	gameStartTime = db.Column(db.Numeric)
+	teams = db.relationship('Team', backref="game", cascade="all, delete-orphan")
 	def __init__(self, gameId, gameLength, gameMode, gameStartTime, gameType, mapId):
 		self.gameId = gameId
 		self.gameLength = gameLength
