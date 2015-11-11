@@ -1,5 +1,18 @@
 angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 
-.controller('nobelPrizesCtrl', [function(){
+// .directive('chatContainer', function() {
+
+// return {
+//     // restrict: "C",    
+
+//     link: function(scope, elem, attrs) {
+
+//       scope.count = 500;
+
+//     }
+//   };
+// });
+
+.controller('nobelPrizesCtrl', [function() {
 
 }]);
