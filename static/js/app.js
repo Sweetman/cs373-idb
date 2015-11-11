@@ -9,6 +9,7 @@ angular.module('hardcarryApp', [
     'hardcarryApp.summoner',
     'hardcarryApp.featuredGame',
     'hardcarryApp.about'
+    'hardcarryApp.nobelPrizes'
 ])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -45,6 +46,12 @@ angular.module('hardcarryApp', [
             controller: 'aboutCtrl',
             controllerAs: 'about',
             activeTab: 'About'
+        })
+        .when('/nobelPrizes', {
+            templateUrl: '/static/partials/nobelPrizes.html',
+            controller: 'nobelPrizesCtrl',
+            controllerAs: 'nobelPrizes',
+            activeTab: 'Nobel Prizes Map'
         })
         .when('/champions/:id', {
             templateUrl: '/static/partials/champion.html',
