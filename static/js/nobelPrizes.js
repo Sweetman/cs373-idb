@@ -11,10 +11,6 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 
 		link: function(scope, elem, attrs) {
 
-			console.log(elem.children());
-			console.log($('#display'));
-			console.log($('#display').children());
-
 			var refresh = $('#refresh'),
 				slider = $('#slider')[0],
 				lowerValue = $('#lower-value')[0],
@@ -23,17 +19,9 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 				worldMap = $('#world-map'),
 				display = $('#display');
 
-			// scope.$watch('worldMap', function(newValue, oldValue) {
-			// 	setTimeout( drawMap, 20);
-			// })
-
 			var drawMap = function() {
 
-				console.log('drawingmap');
-
 				worldMap.empty();
-
-				// display.append('<div id="world-map" class="deleteme" style="width: 80%; height: 400px"></div>');
 
 				// Construct request
 				var requestURL = 'http://104.130.226.110:5000/api/prize?q={%22filters%22:[{%22name%22:%22year%22,%22op%22:%22>=%22,%22val%22:'
@@ -45,7 +33,6 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 				  requestURL += ',{"name":"category","op":"==","val":"' + selectedCategory + '"}';
 				}
 				requestURL += ']}';
-				console.log(requestURL);
 
 				// Execute request
 				$.ajax({
@@ -54,9 +41,7 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 					crossDomain: true,
 					dataType: 'jsonp',
 					success: function( results ) {
-						console.log(results.data);
 						var prizeGeoData = [];
-						console.log(results.data.objects); 
 
 						$.each(results.data.objects, function(key, val) {
 							$.each(val.laureates, function(key, val) {
@@ -67,8 +52,6 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 								}
 							});
 						});
-
-					    console.log(prizeGeoData)
 
 					    worldMap.vectorMap({
 							map: 'world_mill_en',
@@ -86,8 +69,6 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 								el.html(el.html()+' (# Prize Winners - '+prizeGeoData[code]+')');
 							}
 						});
-						
-						// worldMap = $('#world-map')
 			  		}
 				});
 			}
@@ -97,11 +78,9 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 			// Refresh button
 			refresh.bind('mouseup', drawMap);
 
-			console.log(slider);
-
 			// Init year slider
 			noUiSlider.create(slider, {
-				start: [2000, 2015],
+				start: [1901, 2015],
 				step: 1,
 				behavior: 'drag-tap',
 				connect: true,
@@ -118,10 +97,6 @@ angular.module('hardcarryApp.nobelPrizes', ['ngRoute'])
 				  upperValue.innerHTML = parseInt(values[handle]);
 				}
 			});
-
-
-
 		}
 	};
-
 });
