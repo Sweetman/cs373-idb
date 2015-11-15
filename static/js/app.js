@@ -98,7 +98,7 @@ angular.module('hardcarryApp', [
     service.goToSummoner = function(id){
         $location.path("/summoners/" + id); // path not hash
     };
-    service.goToSummoner = function(id){
+    service.goToFeaturedGame= function(id){
         $location.path("/featuredGames/" + id); // path not hash
     };
 
@@ -109,6 +109,12 @@ angular.module('hardcarryApp', [
     var service = {};
     service.getChampions = function(){
         return $http.get("/api/champions", {cache: true});
+    };
+    service.getSummoners = function(){
+        return $http.get("/api/summoners", {cache: true});
+    };
+    service.getFeaturedGames = function(){
+        return $http.get("/api/featured-games", {cache: true});
     };
     return service;
 }])
@@ -125,7 +131,7 @@ angular.module('hardcarryApp', [
         controller: ['$scope', 'hcLocation', function($scope, hcLocation){
             $scope.order = $scope.initialOrder;
             $scope.orderReverse = false;
-            $scope.itemId = $scope.atts[0].id;
+            $scope.itemId = $scope.initialOrder;
             $scope.changeOrderTo = function(newOrder){
                 if(this.order === newOrder){
                     this.orderReverse = ! this.orderReverse;
@@ -148,7 +154,7 @@ angular.module('hardcarryApp', [
         },
         controller: ['$scope', 'hcLocation', function($scope, hcLocation){
             $scope.order = "championId";
-            $scope.goToChampion = hcLocation.goToChampion;
+            $scope.goToItem = hcLocation.goToChampion;
             $scope.atts = [{id: 'championId', name: 'ID'},
                            {id: 'name', name: 'Name'},
                            {id: 'attack', name: 'Attack'},
@@ -156,27 +162,45 @@ angular.module('hardcarryApp', [
                            {id: 'difficulty', name: 'Difficulty'},
                            {id: 'magic', name: 'Magic'}];
         }],
-        template: '<hc-table hc-data="data" hc-order="\'championId\'" hc-atts="atts" hc-go-to-item="goToChampion(id)"></hc-table>'
+        template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
     };
 }])
 
-.directive('summonerTable', [function(){
+.directive('hcSummonerTable', [function(){
     return {
         restrict: 'E',
         scope: {
             data: '=hcData',
         },
-        templateUrl: '/static/directiveTemplates/championTableTemplate.html'
+        controller: ['$scope', 'hcLocation', function($scope, hcLocation){
+            $scope.order = "id";
+            $scope.goToItem = hcLocation.goToSummoner;
+            $scope.atts = [{id: 'id', name: 'ID'},
+                           {id: 'name', name: 'Name'},
+                           {id: 'bot', name: 'Bot'},
+                           {id: 'summonerLevel', name: 'Summoner Level'},
+                           {id: 'summoner_id', name: 'Summoner ID'}];
+        }],
+        template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
     };
 }])
 
-.directive('featuredGameTable', [function(){
+.directive('hcFeaturedGameTable', [function(){
     return {
         restrict: 'E',
         scope: {
             data: '=hcData',
         },
-        templateUrl: '/static/directiveTemplates/championTableTemplate.html'
+        controller: ['$scope', 'hcLocation', function($scope, hcLocation){
+            $scope.order = "id";
+            $scope.goToItem = hcLocation.goToFeaturedGame;
+            $scope.atts = [{id: 'id', name: 'ID'},
+                           {id: 'gameMode', name: 'Game Mode'},
+                           {id: 'gameLength', name: 'Game Length'},
+                           {id: 'gameType', name: 'Game Type'},
+                           {id: 'mapId', name: 'Map ID'}];
+        }],
+        template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
     };
 }])
 
