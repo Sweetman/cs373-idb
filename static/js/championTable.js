@@ -1,7 +1,7 @@
 angular.module('hardcarryApp.championTable', [])
 
-.controller('championTableCtrl', ["$scope", "$http", function($scope, $http){
-    $http.get("/api/champions")
+.controller('championTableCtrl', ['$scope', 'tbsaData' , function($scope, tbsaData){
+    tbsaData.getChampions()
         .success(function(response){
             $scope.championTable.tableData = response;
         });

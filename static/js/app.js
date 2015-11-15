@@ -105,6 +105,14 @@ angular.module('hardcarryApp', [
     return service;
 }])
 
+.factory('tbsaData', ['$http', function($http){
+    var service = {};
+    service.getChampions = function(){
+        return $http.get("/api/champions", {cache: true});
+    };
+    return service;
+}])
+
 .directive('championTable', [function(){
     return {
         restrict: 'E',
