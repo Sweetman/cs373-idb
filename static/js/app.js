@@ -113,16 +113,19 @@ angular.module('hardcarryApp', [
     return service;
 }])
 
-.directive('championTable', [function(){
+.directive('hcTable', [function(){
     return {
         restrict: 'E',
         scope: {
             data: '=hcData',
+            initialOrder: '=hcOrder',
+            atts: '=hcAtts',
+            goToItem: '&hcGoToItem'
         },
         controller: ['$scope', 'tbsaLocation', function($scope, tbsaLocation){
+            $scope.order = $scope.initialOrder;
             $scope.orderReverse = false;
-            $scope.order = "championId";
-            $scope.goToChampion = tbsaLocation.goToChampion;
+            $scope.itemId = $scope.atts[0].id;
             $scope.changeOrderTo = function(newOrder){
                 if(this.order === newOrder){
                     this.orderReverse = ! this.orderReverse;
@@ -133,7 +136,27 @@ angular.module('hardcarryApp', [
                 }
             };
         }],
-        templateUrl: '/static/directiveTemplates/championTableTemplate.html'
+        templateUrl: '/static/directiveTemplates/tableTemplate.html'
+    };
+}])
+
+.directive('championTable', [function(){
+    return {
+        restrict: 'E',
+        scope: {
+            data: '=hcData',
+        },
+        controller: ['$scope', 'tbsaLocation', function($scope, tbsaLocation){
+            $scope.order = "championId";
+            $scope.goToChampion = tbsaLocation.goToChampion;
+            $scope.atts = [{id: 'championId', name: 'ID'},
+                           {id: 'name', name: 'Name'},
+                           {id: 'attack', name: 'Attack'},
+                           {id: 'defense', name: 'Defense'},
+                           {id: 'difficulty', name: 'Difficulty'},
+                           {id: 'magic', name: 'Magic'}];
+        }],
+        template: '<hc-table hc-data="data" hc-order="\'championId\'" hc-atts="atts" hc-go-to-item="goToChampion(id)"></hc-table>'
     };
 }])
 
