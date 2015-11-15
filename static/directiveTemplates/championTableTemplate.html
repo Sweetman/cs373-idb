@@ -1,0 +1,25 @@
+<div class="container tableWrapper">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th ng-click="changeOrderTo('championId')">Id</th>
+                <th ng-click="changeOrderTo('name')">Name</th>
+                <th ng-click="changeOrderTo('attack')">Attack</th>
+                <th ng-click="changeOrderTo('defense')">Defense</th>
+                <th ng-click="changeOrderTo('difficulty')">Difficulty</th>
+                <th ng-click="changeOrderTo('magic')">Magic</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-click="goToChampion(c.championId)" ng-repeat="c in data | objectToArray | orderBy:order:orderReverse">
+                <td>{{c.championId}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.attack}}</td>
+                <td>{{c.defense}}</td>
+                <td>{{c.difficulty}}</td>
+                <td>{{c.magic}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

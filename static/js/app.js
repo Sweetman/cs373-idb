@@ -26,9 +26,6 @@ angular.module('hardcarryApp', [
             controllerAs: 'championTable',
             activeTab: "Champions"
         })
-        .when('/tests/runTests', {
-            templateUrl: '/tests/runTests'
-        })
         .when('/summoners', {
             templateUrl: '/static/partials/summonerTable.html',
             controller: 'summonerTableCtrl',
@@ -73,7 +70,9 @@ angular.module('hardcarryApp', [
         })
         .when('/api/:api*', {
         })
-  
+        .when('/tests/runTests', {
+            templateUrl: '/tests/runTests'
+        })
         .otherwise({redirectTo: '/'});
         
     $locationProvider.html5Mode(true);
@@ -87,6 +86,66 @@ angular.module('hardcarryApp', [
             ans.push(i);
         }
         return ans;
+    };
+}])
+
+.factory('tbsaLocation', ['$location', function($location){
+    var service = {};
+
+    service.goToChampion = function(id){
+        $location.path("/champions/" + id); // path not hash
+    };
+    service.goToSummoner = function(id){
+        $location.path("/summoners/" + id); // path not hash
+    };
+    service.goToSummoner = function(id){
+        $location.path("/featuredGames/" + id); // path not hash
+    };
+
+    return service;
+}])
+
+.directive('championTable', [function(){
+    return {
+        restrict: 'E',
+        scope: {
+            data: '=hcData',
+        },
+        controller: ['$scope', 'tbsaLocation', function($scope, tbsaLocation){
+            $scope.orderReverse = false;
+            $scope.order = "championId";
+            $scope.goToChampion = tbsaLocation.goToChampion;
+            $scope.changeOrderTo = function(newOrder){
+                if(this.order === newOrder){
+                    this.orderReverse = ! this.orderReverse;
+                }
+                else {
+                    this.order = newOrder;
+                    this.orderReverse = false;
+                }
+            };
+        }],
+        templateUrl: '/static/directiveTemplates/championTableTemplate.html'
+    };
+}])
+
+.directive('summonerTable', [function(){
+    return {
+        restrict: 'E',
+        scope: {
+            data: '=hcData',
+        },
+        templateUrl: '/static/directiveTemplates/championTableTemplate.html'
+    };
+}])
+
+.directive('featuredGameTable', [function(){
+    return {
+        restrict: 'E',
+        scope: {
+            data: '=hcData',
+        },
+        templateUrl: '/static/directiveTemplates/championTableTemplate.html'
     };
 }])
 
