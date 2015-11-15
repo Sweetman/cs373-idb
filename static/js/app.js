@@ -89,7 +89,7 @@ angular.module('hardcarryApp', [
     };
 }])
 
-.factory('tbsaLocation', ['$location', function($location){
+.factory('hcLocation', ['$location', function($location){
     var service = {};
 
     service.goToChampion = function(id){
@@ -105,7 +105,7 @@ angular.module('hardcarryApp', [
     return service;
 }])
 
-.factory('tbsaData', ['$http', function($http){
+.factory('hcData', ['$http', function($http){
     var service = {};
     service.getChampions = function(){
         return $http.get("/api/champions", {cache: true});
@@ -122,7 +122,7 @@ angular.module('hardcarryApp', [
             atts: '=hcAtts',
             goToItem: '&hcGoToItem'
         },
-        controller: ['$scope', 'tbsaLocation', function($scope, tbsaLocation){
+        controller: ['$scope', 'hcLocation', function($scope, hcLocation){
             $scope.order = $scope.initialOrder;
             $scope.orderReverse = false;
             $scope.itemId = $scope.atts[0].id;
@@ -140,15 +140,15 @@ angular.module('hardcarryApp', [
     };
 }])
 
-.directive('championTable', [function(){
+.directive('hcChampionTable', [function(){
     return {
         restrict: 'E',
         scope: {
             data: '=hcData',
         },
-        controller: ['$scope', 'tbsaLocation', function($scope, tbsaLocation){
+        controller: ['$scope', 'hcLocation', function($scope, hcLocation){
             $scope.order = "championId";
-            $scope.goToChampion = tbsaLocation.goToChampion;
+            $scope.goToChampion = hcLocation.goToChampion;
             $scope.atts = [{id: 'championId', name: 'ID'},
                            {id: 'name', name: 'Name'},
                            {id: 'attack', name: 'Attack'},
