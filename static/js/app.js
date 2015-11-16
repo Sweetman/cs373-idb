@@ -9,7 +9,8 @@ angular.module('hardcarryApp', [
     'hardcarryApp.summoner',
     'hardcarryApp.featuredGame',
     'hardcarryApp.about',
-    'hardcarryApp.nobelPrizes'
+    'hardcarryApp.nobelPrizes',
+    'angularUtils.directives.dirPagination'
 ])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){

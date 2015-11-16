@@ -6,9 +6,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-click="goToItem({id: i[itemId]})" ng-repeat="i in data | objectToArray | orderBy:order:orderReverse">
+            <tr ng-click="goToItem({id: i[itemId]})" dir-paginate="i in data | objectToArray | orderBy:order:orderReverse | itemsPerPage:20">
                 <td ng-repeat="a in atts">{{::i[a.id]}}</td>
             </tr>
         </tbody>
     </table>
+    <dir-pagination-controls template-url="/static/directiveTemplates/paginatorTemplate.html"></dir-pagination-controls>
 </div>
