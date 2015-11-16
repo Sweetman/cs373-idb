@@ -95,7 +95,45 @@ table > tbody > tr {
     cursor: pointer;
 }
 
-.thText{
+.thText {
     display: inline;
     cursor: pointer;
+}
+
+.pagination > li > a {
+    background-color: rgba(0,0,0,0);
+    border-width: 1;
+    border-color: rgba(256,256,256,.2);
+    color: #ffffff;
+}
+
+.pagination > .active > a {
+    background-color: #E7E7E7;
+    border-color: rgba(256,256,256,.2);
+    color: #555;
+}
+
+.pagination > li > a:hover {
+    background-color: rgba(0,0,0,0);
+    /*border-color: rgba(256,256,256,.2);*/
+    background-color: rgb(51, 54, 69);
+    border-color: rgba(256,256,256,.2);
+}
+
+.pagination > .active > a:hover {
+    background-color: #E7E7E7;
+    border-color: rgba(256,256,256,.2);
+}
+
+.pagination > .active > a:focus {
+    background-color: #E7E7E7;
+    border-color: rgba(256,256,256,.2);
+    color: #555;
+}
+
+.pagination > .disabled > a, .pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus{
+    background-color: rgba(0,0,0,0);
+    color: #ffffff;
+    border-color: rgba(256,256,256,.2);
 }
