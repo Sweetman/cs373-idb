@@ -17,55 +17,9 @@
                     <p>
                  </article>
 
-                <div class="container tableWrapper">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th ng-click="championTable.changeOrderTo('championId')">Id</th>
-                                <th ng-click="championTable.changeOrderTo('name')">Name</th>
-                                <th ng-click="championTable.changeOrderTo('attack')">Attack</th>
-                                <th ng-click="championTable.changeOrderTo('defense')">Defense</th>
-                                <th ng-click="championTable.changeOrderTo('difficulty')">Difficulty</th>
-                                <th ng-click="championTable.changeOrderTo('magic')">Magic</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-click="summoner.goToChampion(c.championId)" ng-repeat="c in summoner.champions">
-                                <td>{{c.championId}}</td>
-                                <td>{{c.name}}</td>
-                                <td>{{c.attack}}</td>
-                                <td>{{c.defense}}</td>
-                                <td>{{c.difficulty}}</td>
-                                <td>{{c.magic}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="container tableWrapper">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th ng-click="featuredGameTable.changeOrderTo('id')">ID</th>
-                                <th ng-click="featuredGameTable.changeOrderTo('gameMode')">Game Mode</th>
-                                <th ng-click="featuredGameTable.changeOrderTo('gameLength')">Game Length</th>
-                                <th ng-click="featuredGameTable.changeOrderTo('gameType')">Game Type</th>
-                                <th ng-click="featuredGameTable.changeOrderTo('mapId')">Map ID</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-click="summoner.goToFeaturedGame(game.id)" ng-repeat="game in summoner.featuredGames">
-                                <td>{{game.id}}</td>
-                                <td>{{game.gameMode}}</td>
-                                <td>{{game.gameLength}}</td>
-                                <td>{{game.gameType}}</td>
-                                <td>{{game.mapId}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>    
-
+                <hc-champion-table hc-data="summoner.data.champions"></hc-champion-table>
+              
+                <hc-featured-game-table hc-data="summoner.data.featured_games"></hc-featured-game-table>
 
                 <div class="col-lg-12">
                     <h3 class="major"></h3>

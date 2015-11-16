@@ -6,14 +6,6 @@ angular.module('hardcarryApp.summoner', ['ngRoute'])
         .success(function(response){
             $scope.summoner.data = response;
         });
-    $http.get("/api/summoners/" + this.id + "/champions")
-        .success(function(response){
-            $scope.summoner.champions = response;
-        });
-    $http.get("/api/summoners/" + this.id + "/featured-games")
-        .success(function(response){
-            $scope.summoner.featuredGames = response;
-        });
     this.goToSummoner = function(id){
         $location.path("/summoners/" + id); // path not hash
     };
