@@ -2,12 +2,12 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th ng-click="$parent.changeOrderTo(a.id)" ng-repeat="a in atts">{{a.name}}</th>
+                <th ng-repeat="a in atts"><div class="thText" ng-click="$parent.changeOrderTo(a.id)">{{a.name}}</div></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-click="goToItem({id: i[itemId]})" ng-repeat="i in data | objectToArray | orderBy:order:orderReverse">
-                <td ng-repeat="a in atts">{{i[a.id]}}</td>
+                <td ng-repeat="a in atts">{{::i[a.id]}}</td>
             </tr>
         </tbody>
     </table>

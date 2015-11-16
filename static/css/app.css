@@ -90,3 +90,12 @@ table tbody tr:nth-child(2n + 1){
     margin-top: 0;
     padding-top: 0;
 }
+
+table > tbody > tr {
+    cursor: pointer;
+}
+
+.thText{
+    display: inline;
+    cursor: pointer;
+}
