@@ -100,7 +100,7 @@ def api_summoners_all():
 @app.route('/api/summoners/<queried_id>')
 def api_summoners_id(queried_id):
 	data = Summoner.query.get(queried_id)
-	return jsonify(data.serialize)
+	return jsonify(data.serialize())
 
 
 # Featured Games
