@@ -2,7 +2,11 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th ng-repeat="a in atts"><div class="thText" ng-click="$parent.changeOrderTo(a.id)">{{a.name}}</div></th>
+                <th ng-repeat="a in atts">
+                    <div class="thText" ng-click="$parent.changeOrderTo(a.id)">{{a.name}}</div>
+                    <span ng-if="order === a.id && !orderReverse" class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                    <span ng-if="order === a.id && orderReverse" class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+                </th>
             </tr>
         </thead>
         <tbody>
