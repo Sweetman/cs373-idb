@@ -75,8 +75,8 @@ They have the following attributes:
         {
             "champions": ... ,
             "gameLength": 362,
-            "gameMode": "CLASSIC",
-            "gameType": "MATCHED_GAME",
+            "game_mode": "CLASSIC",
+            "game_type": "MATCHED_GAME",
             "id": 1,
             "mapId": 11,
             "summoners": ...
@@ -398,5 +398,24 @@ They have the following attributes:
             "profileIconId": 16,
             "summonerLevel": 30,
             "summoner_id": 19549591
+        }
+
+# Group Search
+
+The API also allows general search queries across all models. AND and OR operations on terms are supported. Responses will vary.
+
+## Run a Query [/search/{search_query}]
+
++ Parameters
+    + search_query (string) - Query to execute in the form of a string.
+    
+### Run a Query [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "<championId>": ... ,
+            "<summoner_id>": ... ,
+            "<game_id>": ... ,
         }
 
