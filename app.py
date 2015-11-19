@@ -129,15 +129,18 @@ def api_search(query_string):
 	ability_query = db.session.query(ChampionAbility)
 	summoners_query = db.session.query(Summoner)
 	game_query = db.session.query(FeaturedGame)
-	result = search(champ_query, query_string).all()
-	result += search(ability_query, query_string).all()
-	result += search(summoners_query, query_string).all()
-	result += search(game_query, query_string).all()
+	result = {}
+	result['champions'] = search(champ_query, query_string).all()
+	result['abilities'] = search(ability_query, query_string).all()
+	result['summoners'] = search(summoners_query, query_string).all()
+	result['featured-games'] = search(game_query, query_string).all()
 	jsonData = {}
 	i = 0
-	for data in result:
-		jsonData[i] = data.serialize()
-		i+=1
+	for model, data in result.items():
+		jsonData[model] = {}
+		for result_item in data:
+			jsonData[model][i] = result_item.serialize()
+			i+=1
 	return jsonify(jsonData)
 
 
