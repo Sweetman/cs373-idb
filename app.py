@@ -1,4 +1,5 @@
 from flask 				  import Flask, render_template, jsonify
+from flask.ext.cors       import CORS
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.declarative import DeclarativeMeta
 import coverage
@@ -8,6 +9,7 @@ import os, json, subprocess
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
+CORS(app)
 
 import models
 from models import *
