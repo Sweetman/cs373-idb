@@ -9,6 +9,7 @@ angular.module('hardcarryApp', [
     'hardcarryApp.summoner',
     'hardcarryApp.featuredGame',
     'hardcarryApp.about',
+    'hardcarryApp.search',
     'hardcarryApp.nobelPrizes',
     'angularUtils.directives.dirPagination'
 ])
@@ -68,6 +69,12 @@ angular.module('hardcarryApp', [
             controller: "featuredGameCtrl",
             controllerAs: 'featuredGame',
             activeTab: 'Featured Games'
+        })
+        .when('/search/:query', {
+            templateUrl: '/static/partials/search.html',
+            controller: 'searchCtrl',
+            controllerAs: 'search',
+            activeTab: 'Search'
         })
         .when('/api/:api*', {
         })
@@ -204,6 +211,26 @@ angular.module('hardcarryApp', [
         template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
     };
 }])
+
+// .directive('hcSearchResults', [function(){
+//     return {
+//         restrict: 'E',
+//         scope: {
+//             data: '=hcData',
+//         },
+//         controller: ['$scope', 'hcLocation', function($scope, hcLocation){
+//             $scope.order = "championId";
+//             $scope.goToItem = hcLocation.goToChampion;
+//             $scope.atts = [{id: 'championId', name: 'ID'},
+//                            {id: 'name', name: 'Name'},
+//                            {id: 'attack', name: 'Attack'},
+//                            {id: 'defense', name: 'Defense'},
+//                            {id: 'difficulty', name: 'Difficulty'},
+//                            {id: 'magic', name: 'Magic'}];
+//         }],
+//         template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
+//     };
+// }])
 
 .filter('trusted', ['$sce', function ($sce) {
     return function(url) {
