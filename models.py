@@ -227,9 +227,9 @@ class FeaturedGame(db.Model):
 	def __init__(self, gameId, gameLength, gameMode, gameStartTime, gameType, mapId):
 		self.gameId = gameId
 		self.gameLength = gameLength
-		self.gameMode = gameMode
+		self.game_mode = gameMode
 		self.gameStartTime = gameStartTime
-		self.gameType = gameType
+		self.game_type = gameType
 		self.mapId = mapId
 
 	def serialize(self):

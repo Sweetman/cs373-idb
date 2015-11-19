@@ -104,7 +104,7 @@ class TestModels (TestCase):
 	def test_model_featuredgames_2(self):
 		mockGame = FeaturedGame(0, 321, 'CLASSIC', 0, '', 0)
 		self.assertEqual(mockGame.gameLength, 321) 
-		self.assertEqual(mockGame.gameMode, 'CLASSIC') 
+		self.assertEqual(mockGame.game_mode, 'CLASSIC') 
 
 	def test_model_featuredgames_3(self):
 		game1 = FeaturedGame.query.get(1)
