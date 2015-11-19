@@ -43,7 +43,8 @@ def api_root():
 							'champions_url': '/champions',
                      		'abilities_url': '/abilities',
                 	 		'summoners_url': '/summoners',
-                	 		'featured-games_url': '/featured-games'
+                	 		'featured-games_url': '/featured-games',
+                	 		'search_url': '/search'
                 		}
            }
 	return jsonify(data)
