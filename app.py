@@ -119,6 +119,7 @@ def api_featuredgames_id(queried_id):
 	data = FeaturedGame.query.get(queried_id)
 	return jsonify(data.serialize())
 
+
 # Search
 
 @app.route('/api/search/<query_string>')
@@ -137,7 +138,6 @@ def api_search(query_string):
 		jsonData[i] = data.serialize()
 		i+=1
 	return jsonify(jsonData)
-
 
 
 # -------

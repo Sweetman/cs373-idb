@@ -94,11 +94,11 @@ class TestModels (TestCase):
 	# --------------
 
 	def test_model_featuredgames_1(self):
-		mockResponse = [{'gameLength': 321, 'gameMode': 'CLASSIC'},
-						{'gameType': 'MATCHED_GAME', 'mapId': 11} ]
+		mockResponse = [{'gameLength': 321, 'game_mode': 'CLASSIC'},
+						{'game_type': 'MATCHED_GAME', 'mapId': 11} ]
 		self.assertEqual(mockResponse[0]['gameLength'], 321) 
-		self.assertEqual(mockResponse[0]['gameMode'], 'CLASSIC') 
-		self.assertEqual(mockResponse[1]['gameType'], 'MATCHED_GAME') 
+		self.assertEqual(mockResponse[0]['game_mode'], 'CLASSIC') 
+		self.assertEqual(mockResponse[1]['game_type'], 'MATCHED_GAME') 
 		self.assertEqual(mockResponse[1]['mapId'], 11) 
 
 	def test_model_featuredgames_2(self):
@@ -110,8 +110,8 @@ class TestModels (TestCase):
 		game1 = FeaturedGame.query.get(1)
 		game2 = FeaturedGame.query.get(2)
 		self.assertTrue(game1.gameLength) 
-		self.assertTrue(game1.gameMode) 
-		self.assertTrue(game2.gameType)
+		self.assertTrue(game1.champions) 
+		self.assertTrue(game2.summoners)
 		self.assertTrue(game2.mapId) 
 
 	def test_model_featuredgames_4(self):
@@ -120,7 +120,7 @@ class TestModels (TestCase):
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
 		self.assertTrue(jsonResponse['gameLength'])
-		self.assertTrue(jsonResponse['gameMode'])
+		self.assertTrue(jsonResponse['champions'])
 
 	# ---------
 	# Summoners
@@ -155,6 +155,38 @@ class TestModels (TestCase):
 		self.assertTrue(jsonResponse['name'])
 		self.assertTrue(jsonResponse['profileIconId'])
 
+	# ------
+	# Search
+	# ------
+
+	def test_search_1(self):
+		apiResponse = urlopen('http://hardcarry.me/api/search/aatrox')
+		apiResponseInfo = apiResponse.info()
+		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
+		jsonResponse = json.loads(apiResponseRaw)
+		self.assertTrue(jsonResponse['0'])
+		self.assertTrue(jsonResponse['0']['abilities'])
+		self.assertTrue(jsonResponse['0']['abilities']['Dark Flight'])
+
+	def test_search_2(self):
+		apiResponse = urlopen('http://hardcarry.me/api/search/aatrox%20and%20thresh')
+		apiResponseInfo = apiResponse.info()
+		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
+		jsonResponse = json.loads(apiResponseRaw)
+		self.assertTrue(not jsonResponse)
+
+	def test_search_3(self):
+		apiResponse = urlopen('http://hardcarry.me/api/search/aatrox%20or%20thresh')
+		apiResponseInfo = apiResponse.info()
+		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
+		jsonResponse = json.loads(apiResponseRaw)
+		self.assertTrue(jsonResponse['0'])
+		self.assertTrue(jsonResponse['0']['abilities'])
+		self.assertTrue(jsonResponse['0']['abilities']['Savagery'])
+		self.assertTrue(jsonResponse['1'])
+		self.assertTrue(jsonResponse['1']['abilities'])
+		self.assertTrue(jsonResponse['1']['abilities']['The Box'])
+
 # ----
 # Main
 # ----
@@ -164,20 +196,17 @@ if __name__ == '__main__' :
 
 
 # coverage3 run tests.py
-
-# ................
+# ...................
 # ----------------------------------------------------------------------
-# Ran 16 tests in 0.668s
+# Ran 19 tests in 0.763s
 
 # OK
-# Name     Stmts   Miss Branch BrMiss  Cover   Missing
-# ----------------------------------------------------
-# app        102     71     27     26    25%   15, 19, 23-26, 35-43, 46-54, 61-64, 68-69, 73-76, 80-83, 87-90, 97-100, 104-105, 112-115, 119-120, 124-127, 131-134, 141-144, 148-149, 153-156, 160-163, 173, 176
-# config      17      0      0      0   100%   
-# models     128      0      0      0   100%   
-# tests      105      0      2      1    99%   
-# ----------------------------------------------------
-# TOTAL      352     71     29     27    74%    
 
-# NOTE - the tests actually have nearly 100% coverage on app.py through the api calls.
+# coverage3 report -m --include="models.py"
+# Name        Stmts   Miss  Cover   Missing
+# -----------------------------------------
+# models.py     207     59    71%   10-19, 121-125, 128-132, 135-139, 142-146, 176, 196-199, 202-206, 209-213, 236-239, 242-246, 249-253
+
+# NOTE - the tests actually have nearly 100% coverage on app.py through the api calls. The parts coverage says are missing are the 
+#		 serialization done by the api calls.
 
