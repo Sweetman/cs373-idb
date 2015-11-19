@@ -9,8 +9,10 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
+import models
 from models import *
 from tests import TestModels
+from sqlalchemy_searchable import search
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -116,6 +118,26 @@ def api_featuredgames_all():
 def api_featuredgames_id(queried_id):
 	data = FeaturedGame.query.get(queried_id)
 	return jsonify(data.serialize())
+
+# Search
+
+@app.route('/api/search/<query_string>')
+def api_search(query_string):
+	champ_query = db.session.query(Champion)
+	ability_query = db.session.query(ChampionAbility)
+	summoners_query = db.session.query(Summoner)
+	game_query = db.session.query(FeaturedGame)
+	result = search(champ_query, query_string).all()
+	result += search(ability_query, query_string).all()
+	result += search(summoners_query, query_string).all()
+	result += search(game_query, query_string).all()
+	jsonData = {}
+	i = 0
+	for data in result:
+		jsonData[i] = data.serialize()
+		i+=1
+	return jsonify(jsonData)
+
 
 
 # -------

@@ -38,28 +38,10 @@ bower update
 ### Create the psql database
 Install with homebrew or download the [Postgresql.app](http://postgresapp.com/)
 
-Create a postgres server, user, and database.
+Make sure you have a user called admin already.
+Now run the following:
 ```
-psql
-create database idb;
-create user admin;
-grant all privileges on database idb to admin;
-```
-
-### Set up database and run the server
-Change directories into the idb app and upgrade the database to latest migrations
-```
-python manage.py db init
-python manage.py db migrate
-python manage.py db upgrade
-```
-
-Populate the database with the scraping scripts. IT IS IMPORTANT THAT YOU RUN getChampionData.py FIRST.
-```
-python getChampionData.py
-python getChampYoutube.py
-python getFeaturedGames.py
-python getTxtFeaturedGames.py
+make database
 ```
 
 Start server
