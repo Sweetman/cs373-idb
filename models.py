@@ -1,6 +1,10 @@
 from flask.ext.sqlalchemy import SQLAlchemy
 from app import db
 import json
+from sqlalchemy_searchable import make_searchable
+from sqlalchemy_utils.types import TSVectorType
+
+make_searchable()
 
 def get_dict_from_obj(obj):
 	fields = {}
@@ -71,6 +75,7 @@ class Champion(db.Model):
 	number_of_skins = db.Column(db.Integer)
 	youtube = db.Column(db.String, nullable=True)
 	abilities = db.relationship('ChampionAbility', backref="champion", cascade="all, delete-orphan")
+	search_vector = db.Column(TSVectorType('name', 'lore', 'partype', 'title', 'passive_description', 'passive_name'))
 
 	def __init__(self, name, championId, imageFileName, lore, partype, title, attack, defense, magic,\
 		difficulty, passiveDescription, passiveImageFileName, passiveName, armor, armorperlevel,\
@@ -156,6 +161,7 @@ class ChampionAbility(db.Model):
 	spell_name = db.Column(db.String)
 	tooltip = db.Column(db.String)
 	championId = db.Column(db.Integer, db.ForeignKey('champion.championId'))
+	search_vector = db.Column(TSVectorType('name', 'description', 'spell_name', 'tooltip'))
 	def __init__(self, name, description, costType, image, maxrank, spell_name, tooltip):
 		self.name = name
 		self.description = description
@@ -177,6 +183,7 @@ class Summoner(db.Model):
 	summonerLevel = db.Column(db.Integer)
 	bot = db.Column(db.Boolean)
 	champions = db.relationship('Champion', secondary=summoners_champions, backref=db.backref('summoners'))
+	search_vector = db.Column(TSVectorType('name'))
 	def __init__(self, summoner_id, name, profileIconId, summonerLevel, bot):
 		self.summoner_id = summoner_id
 		self.name = name
@@ -209,12 +216,13 @@ class FeaturedGame(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	gameId = db.Column(db.Numeric)
 	gameLength = db.Column(db.Integer)
-	gameMode = db.Column(db.String)
+	game_mode = db.Column(db.String)
 	gameStartTime = db.Column(db.Numeric)
-	gameType = db.Column(db.String)
+	game_type = db.Column(db.String)
 	mapId = db.Column(db.Integer)
 	champions = db.relationship('Champion', secondary=featuredgames_champions, backref=db.backref('featured_games'))
 	summoners = db.relationship('Summoner', secondary=featuredgames_summoners, backref=db.backref('featured_games'))
+	search_vector = db.Column(TSVectorType('game_mode', 'game_type'))
 	def __init__(self, gameId, gameLength, gameMode, gameStartTime, gameType, mapId):
 		self.gameId = gameId
 		self.gameLength = gameLength

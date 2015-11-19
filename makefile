@@ -22,6 +22,14 @@ clean:
 	rm -f  IDB1.log
 	rm -rf __pycache__
 
+database: scrap_db.sql setup_db.py getChampionData.py getChampYoutube.py getFeaturedGames.py getTxtFeaturedGames.py
+	psql -f scrap_db.sql
+	python setup_db.py 
+	python getChampionData.py 
+	python getChampYoutube.py
+	python getFeaturedGames.py
+	python getTxtFeaturedGames.py
+
 models.html:
 	pydoc3 -w models.py
 
