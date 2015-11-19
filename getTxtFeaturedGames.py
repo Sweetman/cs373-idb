@@ -1,5 +1,6 @@
 from getFeaturedGames import add_games
 import json, os
+from time import sleep
 
 if __name__ == '__main__':
 	path = "%s/FeaturedGamesScraper" % (os.getcwd())
@@ -11,3 +12,4 @@ if __name__ == '__main__':
 			jsonResponse = json.load(f)
 			add_games(jsonResponse)
 			print("added games from %s" %(i))
+		sleep(7)
