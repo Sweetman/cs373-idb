@@ -196,9 +196,9 @@ angular.module('hardcarryApp', [
             $scope.order = "id";
             $scope.goToItem = hcLocation.goToFeaturedGame;
             $scope.atts = [{id: 'id', name: 'ID'},
-                           {id: 'gameMode', name: 'Game Mode'},
+                           {id: 'game_mode', name: 'Game Mode'},
                            {id: 'gameLength', name: 'Game Length'},
-                           {id: 'gameType', name: 'Game Type'},
+                           {id: 'game_type', name: 'Game Type'},
                            {id: 'mapId', name: 'Map ID'}];
         }],
         template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
