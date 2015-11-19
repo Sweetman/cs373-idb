@@ -57,6 +57,11 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <form ng-submit="submitQuery()">
+                                    <input ng-model="query" class="searchBar" placeholder="search">
+                                </form>
+                            </li>
                             <li ng-class="{active: $route.current.activeTab == 'Champions'}"><a href="/champions">Champions</a></li>
                             <li ng-class="{active: $route.current.activeTab == 'Summoners'}"><a href="/summoners">Summoners</a></li>
                             <li ng-class="{active: $route.current.activeTab == 'Featured Games'}"><a href="/featuredGames">Featured Games</a></li>

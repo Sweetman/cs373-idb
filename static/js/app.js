@@ -86,7 +86,7 @@ angular.module('hardcarryApp', [
     $locationProvider.html5Mode(true);
 }])
 
-.controller('indexCtrl', ['$scope', '$route', function($scope, $route){
+.controller('indexCtrl', ['$scope', '$route', '$location', function($scope, $route, $location){
     $scope.$route = $route;
     $scope.range = function(n){
         var ans = [];
@@ -95,6 +95,10 @@ angular.module('hardcarryApp', [
         }
         return ans;
     };
+    $scope.submitQuery = function(){
+        $location.path("/search/" + $scope.query); // path not hash
+    };
+
 }])
 
 .factory('hcLocation', ['$location', function($location){

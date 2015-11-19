@@ -19,6 +19,10 @@ iframe[seamless] {
     display: block;
 }
 
+.searchBar{
+    color: #000000; 
+}
+
 .h9 {
     color: #ffffff;
     font-size:5.2vw;
