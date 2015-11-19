@@ -9,12 +9,13 @@ make_searchable()
 def get_dict_from_obj(obj):
 	fields = {}
 	for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata']:
-		data = obj.__getattribute__(field)
-		try:
-			json.dumps(data)
-			fields[field] = data
-		except TypeError:
-			pass
+		if(field is not "search_vector"):
+			data = obj.__getattribute__(field)
+			try:
+				json.dumps(data)
+				fields[field] = data
+			except TypeError:
+				pass
 	return fields
 
 summoners_champions = db.Table('summoners_champions',

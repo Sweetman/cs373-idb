@@ -132,13 +132,11 @@ def api_search(query_string):
 	result += search(summoners_query, query_string).all()
 	result += search(game_query, query_string).all()
 	jsonData = {}
+	i = 0
 	for data in result:
-		if type(data) is models.FeaturedGame:
-			jsonData[data.id] = data.serialize()
-		else:
-			jsonData[data.name] = data.serialize()
-	print(jsonData)
-	# return jsonify(jsonData)
+		jsonData[i] = data.serialize()
+		i+=1
+	return jsonify(jsonData)
 
 
 
