@@ -164,28 +164,23 @@ class TestModels (TestCase):
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertTrue(jsonResponse['0'])
-		self.assertTrue(jsonResponse['0']['abilities'])
-		self.assertTrue(jsonResponse['0']['abilities']['Dark Flight'])
+		self.assertTrue(jsonResponse['champions'])
 
 	def test_search_2(self):
 		apiResponse = urlopen('http://hardcarry.me/api/search/aatrox%20and%20thresh')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertTrue(not jsonResponse)
+		self.assertTrue(not jsonResponse['champions'])
+		self.assertTrue(not jsonResponse['featured-games'])
+		self.assertTrue(not jsonResponse['summoners'])
 
 	def test_search_3(self):
 		apiResponse = urlopen('http://hardcarry.me/api/search/aatrox%20or%20thresh')
 		apiResponseInfo = apiResponse.info()
 		apiResponseRaw = apiResponse.read().decode(apiResponseInfo.get_content_charset('utf8'))
 		jsonResponse = json.loads(apiResponseRaw)
-		self.assertTrue(jsonResponse['0'])
-		self.assertTrue(jsonResponse['0']['abilities'])
-		self.assertTrue(jsonResponse['0']['abilities']['Savagery'])
-		self.assertTrue(jsonResponse['1'])
-		self.assertTrue(jsonResponse['1']['abilities'])
-		self.assertTrue(jsonResponse['1']['abilities']['The Box'])
+		self.assertTrue(jsonResponse['champions'])
 
 # ----
 # Main
