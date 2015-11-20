@@ -13,13 +13,13 @@ angular.module('hardcarryApp.search', ['ngRoute'])
             } else if(typeof object === 'string' || typeof object === 'boolean' ||
                       typeof object === 'number'){
                 stringRep = String(object);
-                if(stringRep.indexOf(query) !== -1){
+                if(stringRep.toLowerCase().indexOf(query.toLowerCase()) !== -1){
                     ans.push(stringRep);
                 }
             }
         };
         contextOfObjectHelper(obj);
-        return ans;
+        return ans.join('\n');
     }
 
     $http.get("/api/search/" + $routeParams.query)
