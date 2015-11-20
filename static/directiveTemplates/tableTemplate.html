@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             <tr ng-click="goToItem({id: i[itemId]})" dir-paginate="i in data | objectToArray | orderBy:order:orderReverse | itemsPerPage:20">
-                <td ng-repeat="a in atts">{{::i[a.id]}}</td>
+                <td ng-repeat="a in atts"><div ng-bind-html="i[a.id]"></div></td>
             </tr>
         </tbody>
     </table>
