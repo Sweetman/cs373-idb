@@ -10,7 +10,8 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['CORS_HEADERS'] = 'Content-Type'
 db = SQLAlchemy(app)
-CORS(app)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 import models
 from models import *
@@ -77,6 +78,7 @@ def api_champions_all():
 	return jsonify(jsonData)
 
 @app.route('/api/champions/<queried_id>')
+@cross_origin()
 def api_champions_id(queried_id):
 	data = Champion.query.get(queried_id)
 	return jsonify(data.serialize())
@@ -93,6 +95,7 @@ def api_abilities_all():
 	return jsonify(jsonData)
 
 @app.route('/api/abilities/<queried_id>')
+@cross_origin()
 def api_abilities_id(queried_id):
 	data = ChampionAbility.query.get(queried_id)
 	return jsonify(data.serialize())

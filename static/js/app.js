@@ -86,7 +86,7 @@ angular.module('hardcarryApp', [
     $locationProvider.html5Mode(true);
 }])
 
-.controller('indexCtrl', ['$scope', '$route', function($scope, $route){
+.controller('indexCtrl', ['$scope', '$route', '$location', function($scope, $route, $location){
     $scope.$route = $route;
     $scope.range = function(n){
         var ans = [];
@@ -95,6 +95,10 @@ angular.module('hardcarryApp', [
         }
         return ans;
     };
+    $scope.submitQuery = function(){
+        $location.path("/search/" + $scope.query); // path not hash
+    };
+
 }])
 
 .factory('hcLocation', ['$location', function($location){
@@ -123,6 +127,9 @@ angular.module('hardcarryApp', [
     };
     service.getFeaturedGames = function(){
         return $http.get("/api/featured-games", {cache: true});
+    };
+    service.getSearchResults = function(query){
+        return $http.get("/api/search" + query, {cache: true});
     };
     return service;
 }])
@@ -207,6 +214,23 @@ angular.module('hardcarryApp', [
                            {id: 'gameLength', name: 'Game Length'},
                            {id: 'game_type', name: 'Game Type'},
                            {id: 'mapId', name: 'Map ID'}];
+        }],
+        template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
+    };
+}])
+
+.directive('hcChampionSearchTable', [function(){
+    return {
+        restrict: 'E',
+        scope: {
+            data: '=hcData',
+        },
+        controller: ['$scope', 'hcLocation', function($scope, hcLocation){
+            // $scope.order = "championId";
+            $scope.goToItem = hcLocation.goToChampion;
+            $scope.atts = [{id: 'championId', name: 'ID'},
+                           {id: 'name', name: 'Name'},
+                           {id: 'context', name: 'Context'}];
         }],
         template: '<hc-table hc-data="data" hc-order="order" hc-atts="atts" hc-go-to-item="goToItem(id)"></hc-table>'
     };
