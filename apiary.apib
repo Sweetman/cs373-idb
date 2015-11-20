@@ -1,7 +1,7 @@
 FORMAT: 1A
-HOST: localhost:8080/api/
+HOST: hardcarry.me/api
 
-# League IDB
+# HardCarry
 
 Simple API for the League based, IMDB inspired website.
 
@@ -15,10 +15,73 @@ Simple API for the League based, IMDB inspired website.
             'urls': {
                         "champions_url": "/champions",
                         "abilities_url": "/abilities",
-                        "items_url": "/items"
+                        "summoners_url": "/summoners",
+                        "featured-games_url": "/featured-games",
+                        "search_url": "/search"
                     }
         }
-        
+    
+# Group Featured Games
+
+Featured Games are recent or current matches that typically feature skilled players.
+They have the following attributes:
+
+### Attributes
+* id: (integer) ID of the featured game.
+* champions: (dictionary) All the information for the champions used in the game.
+* gameLength: (integer) Amount of time in seconds passed since the game started.
+* game_mode: (string) Game mode (CLASSIC, ODIN, ARAM, TUTORIAL, ONEFORALL, ASCENSION, FIRSTBLOOD, KINGPORO)
+* game_type: (string) Game type (CUSTOM_GAME, MATCHED_GAME, TUTORIAL_GAME)
+* mapId: (integer) ID of the map the game is being played on.
+* summoners: (dictionary) All the information for the summoners who played the game.
+
+## All Featured Games [/featured-games]
+### List all Featured Games [GET]
+
++ Response 200 (application/json)
+
+        {
+            "1": {
+                "champions": ... ,
+                "gameLength": 362,
+                "game_mode": "CLASSIC",
+                "game_type": "MATCHED_GAME",
+                "id": 1,
+                "mapId": 11,
+                "summoners": ...
+            },
+            "2": {
+                "champions": ... ,
+                "gameLength": 266,
+                "game_mode": "CLASSIC",
+                "game_type": "MATCHED_GAME",
+                "id": 2,
+                "mapId": 11,
+                "summoners": ...
+            },
+            
+            ...
+        }
+
+## Featured Game [/featured-games/{id}]
+
++ Parameters
+    + id (integer) - ID of Featured Games in the form of an integer.
+
+### Retreive a Featured Game by ID [GET]
+
++ Response 200 (application/json)
+
+        {
+            "champions": ... ,
+            "gameLength": 362,
+            "game_mode": "CLASSIC",
+            "game_type": "MATCHED_GAME",
+            "id": 1,
+            "mapId": 11,
+            "summoners": ...
+        }
+
 # Group Champions
 
 Champions are playable characters with unique abilities.
@@ -26,15 +89,46 @@ They have the following attributes:
 
 ### Attributes
 
-* champ_name: (string) Name of the champion.
+* abilities: (dictionary) All the abilities belonging to this champion.
+* summoners: (dictionary) All summoners who have played this champion.
+* featured_games: (dictionary) All featured games this champion has been played in.
+* name: (string) Name of the champion.
 * allytips: (blob) Tips for allies.
 * enemytips: (blob) Tips for enemies.
-* blurb: (string) Description of champion.
-* id: (integer) ID of the champion.
-* image: (string) Filename of this champion's image.
+* championId: (integer) ID of the champion.
+* imageFileName: (string) Filename of this champion's image.
 * lore: (string) Description of this champion's background lore.
 * partype: (string) Champion type.
 * title: (string) Champion's title.
+* attack: (integer) Champion's attack rating.
+* defense: (integer) Champion's defense rating.
+* magic: (integer) Champion's magic rating.
+* difficulty: (integer) Champion's difficulty rating.
+* passiveDescription: (string) Description of passive abilities.
+* passiveImageFileName: (string) Filename of this champion's passive ability image.
+* passiveName: (string) Champion's passive ability name.
+* armor: (double) Armor stat.
+* armorperlevel: (double) Armor stat increase per level.
+* attackdamage: (double) Attack damage stat.
+* attackdamageperlevel: (double) Attack damage stat increase per level.
+* attackrange: (double) Attack range stat.
+* attackspeedoffset: (double) Attack speed offset (from items or abilities that also increase speed).
+* attackspeedperlevel: (double) Attack speed offset increase per level.
+* crit: (double) Chance of critical hit.
+* critperlevel: (double) Increase in chance of critical hit per level.
+* hp: (double) Health points.
+* hpperlevel: (double) Increase in HP per level.
+* hpregen: (double) HP regeneration stat.
+* hpregenperlevel: (double) Increase in HP regeneration per level.
+* movespeed: (double) Speed of movement.
+* mp: (double) Magic points.
+* mpperlevel: (double) Increase in MP per level.
+* mpregen: (double) MP regeneration stat.
+* mpregenperlevel: (double) Increase in MP regeneration per level.
+* spellblock: (double) The resistence to magic damage.
+* spellblockperlevel: (double) Increase in resistence to magic damage per level.
+* numberOfSkins: (integer) Number of skins belonging to this champion.
+* youtube: (string) Link to YouTube video of this champion.
 
 ## All Champions [/champions]
 ### List all Champions [GET]
@@ -43,76 +137,135 @@ They have the following attributes:
 
         {   
             "Aatrox": {
+                "abilities": ... ,
+                "summoners": ... ,
+                "featured_games": ... ,
+                "attack": 8,
+                "championId": 266,
+                "defense": 4,
+                "difficulty": 4,
+                "image_file_name": "Aatrox.png",
+                "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox",
+                "magic": 3,
                 "name": "Aatrox",
-                "allytips": [
-                    "Avoid engaging in a fight with low health unless your Blood Well is full so that you regain enough health to continue fighting.",
-                    "Building Life Steal can be very potent on Aatrox to help compensate for his health costs.",
-                    "Massacre is great at turning the tide of a battle. Make sure to use it at the right moment to maximize its benefits."
-                ],
-                "enemytips": [
-                    "When Aatrox takes fatal damage he is healed for the amount currently in his resource bar, landing a fatal blow on him while the resource bar is low will result in him reviving with a lower amount of Health.",
-                    "When Aatrox casts Dark Flight towards your location, avoid being knocked up by moving away from the center of impact.",
-                    "Aatrox is auto attack reliant for most of his damage and survivability, reducing his attack speed by purchasing Randuin's Omen or Frozen Heart can help reduce both of those components greatly."
-                ],
-                "blurb": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's ...",
-                "id": 266,
-                "image": "Aatrox.png",
-                "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox"
+                "number_of_skins": 4,
                 "partype": "BloodWell",
-                "title": "the Darkin Blade"
+                "passive_description": "When using an ability that costs Health, Aatrox stores the self-inflicted damage into the Blood Well. Upon taking fatal damage, Aatrox extracts the blood from the well and recovers it as Health over a brief duration. Additionally, Aatrox gains 1% Attack Speed for every 2% blood that is in the well.",
+                "passive_image_file_name": "Aatrox_Passive.png",
+                "passive_name": "Blood Well",
+                "stat_armor": 24.384,
+                "stat_armorperlevel": 3.8,
+                "stat_attackdamage": 60.376,
+                "stat_attackdamageperlevel": 3.2,
+                "stat_attackrange": 150,
+                "stat_attackspeedoffset": -0.04,
+                "stat_attackspeedperlevel": 3,
+                "stat_crit": 0,
+                "stat_hp": 537.8,
+                "stat_hpperlevel": 85,
+                "stat_hpregen": 6.59,
+                "stat_hpregenperlevel": 0.5,
+                "stat_movespeed": 345,
+                "stat_mp": 105.6,
+                "stat_mpperlevel": 45,
+                "stat_mpregen": 0,
+                "stat_mpregenperlevel": 0,
+                "stat_spellblock": 32.1,
+                "stat_spellblockperlevel": 1.25,
+                "title": "the Darkin Blade",
+                "youtube": "https://www.youtube.com/embed/0gvBGmwhOLU\n"
             },
-            "Thresh": {
-                "name": "Thresh",
-                "allytips": [
-                    "Communication is key when making use of Thresh's lantern. Let your teammates know how you like to use it.",
-                    "Death Sentence and Flay can be combined in either cast order for powerful combinations.",
-                    "Thresh can collect souls without needing to kill units himself. Planning your map position to be near the most deaths will help to maximize soul collection."
-                ],
-                "enemytips": [
-                    "Thresh's Death Sentence has a long cast time. Watch for the cast to begin to take evasive actions.",
-                    "Intentionally breaking a wall of The Box can allow a vulnerable ally to escape unscathed.",
-                    "Thresh relies on collecting souls for a portion of his defense and damage. Try punishing him when he moves to collect them."
-                ],
-                "blurb": "Thresh is a sadistic, spectral reaper who relishes tormenting the living and the dead. Once a jailer who mercilessly brutalized all under his charge, Thresh was hanged from his own chains by the prisoners he had tortured. With his vicious essence ...",
-                "id": 412,
-                "image": "Thresh.png",
-                "lore": "Thresh is a sadistic, spectral reaper who relishes tormenting the living and the dead. Once a jailer who mercilessly brutalized all under his charge, Thresh was hanged from his own chains by the prisoners he had tortured. With his vicious essence unbound, the Chain Warden roams Runeterra in search of prey. He derives twisted joy from slowly breaking the minds of his most defiant victims, before trapping their souls within the sickly green light of his lantern."
+            "Ahri": {
+                "abilities": ... ,
+                "summoners": ... ,
+                "featured_games": ... ,
+                "attack": 3,
+                "championId": 103,
+                "defense": 4,
+                "difficulty": 5,
+                "image_file_name": "Ahri.png",
+                "lore": "Unlike other foxes that roamed the woods of southern Ionia, Ahri had always felt a strange connection to the magical world around her; a connection that was somehow incomplete. Deep inside, she felt the skin she had been born into was an ill fit for her and dreamt of one day becoming human. Her goal seemed forever out of reach, until she happened upon the wake of a human battle. It was a grisly scene, the land obscured by the forms of wounded and dying soldiers. She felt drawn to one: a robed man encircled by a waning field of magic, his life quickly slipping away. She approached him and something deep inside of her triggered, reaching out to the man in a way she couldn't understand. His life essence poured into her, carried on invisible strands of magic. The sensation was intoxicating and overwhelming. As her reverie faded, she was delighted to discover that she had changed. Her sleek white fur had receded and her body was long and lithe - the shape of the humans who lay scattered about her.<br><br>However, though she appeared human, she knew that in truth the transformation was incomplete. A cunning creature, she adapted herself to the customs of human society and used her profound gift of beauty to attract unsuspecting men. She could consume their life essences when they were under the spell of her seductive charms. Feeding on their desires brought her closer to her dream, but as she took more lives, a strange sense of regret began to well within her. She had reservations about actions which never troubled her as a fox. She realized that she could not overcome the pangs of her evolving morality. In search of a solution, Ahri found the Institute of War, home of the most gifted mages on Runeterra. They offered her a chance to attain her humanity without further harm through service in the League of Legends.<br><br>''Mercy is a human luxury... and responsibility.''<br>-- Ahri",
+                "magic": 8,
+                "name": "Ahri",
+                "number_of_skins": 7,
                 "partype": "Mana",
-                "title": "the Chain Warden"
-              }
+                "passive_description": "Gains a charge of Essence Theft whenever a spell hits an enemy (max: 3 charges per spell). Upon reaching 9 charges, Ahri's next spell heals her whenever it hits an enemy.",
+                "passive_image_file_name": "Ahri_SoulEater.png",
+                "passive_name": "Essence Theft",
+                "stat_armor": 20.88,
+                "stat_armorperlevel": 3.5,
+                "stat_attackdamage": 53.04,
+                "stat_attackdamageperlevel": 3,
+                "stat_attackrange": 550,
+                "stat_attackspeedoffset": -0.065,
+                "stat_attackspeedperlevel": 2,
+                "stat_crit": 0,
+                "stat_hp": 514.4,
+                "stat_hpperlevel": 80,
+                "stat_hpregen": 6.505,
+                "stat_hpregenperlevel": 0.6,
+                "stat_movespeed": 330,
+                "stat_mp": 334,
+                "stat_mpperlevel": 50,
+                "stat_mpregen": 6,
+                "stat_mpregenperlevel": 0.8,
+                "stat_spellblock": 30,
+                "stat_spellblockperlevel": 0,
+                "title": "the Nine-Tailed Fox",
+                "youtube": "https://www.youtube.com/embed/hlalkAUkwqE\n"
+            },
+            
+            ...
         }
 
-## Champion [/champions/{champ_name}]
+## Champion [/champions/{championId}]
 
 + Parameters
-    + champ_name (string) - Name of Champion in the form of a string.
+    + championId (integer) - ID of Champion in the form of an integer.
     
-### Retrieve a Champion by name [GET]
+### Retrieve a Champion by ID [GET]
 
 + Response 200 (application/json)
 
         {
-            "Aatrox": {
-                "name": "Aatrox",
-                "allytips": [
-                    "Avoid engaging in a fight with low health unless your Blood Well is full so that you regain enough health to continue fighting.",
-                    "Building Life Steal can be very potent on Aatrox to help compensate for his health costs.",
-                    "Massacre is great at turning the tide of a battle. Make sure to use it at the right moment to maximize its benefits."
-                ],
-                "enemytips": [
-                    "When Aatrox takes fatal damage he is healed for the amount currently in his resource bar, landing a fatal blow on him while the resource bar is low will result in him reviving with a lower amount of Health.",
-                    "When Aatrox casts Dark Flight towards your location, avoid being knocked up by moving away from the center of impact.",
-                    "Aatrox is auto attack reliant for most of his damage and survivability, reducing his attack speed by purchasing Randuin's Omen or Frozen Heart can help reduce both of those components greatly."
-                ],
-                "blurb": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's ...",
-                "id": 266,
-                "image": "Aatrox.png",
-                "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox"
-                "partype": "BloodWell",
-                "title": "the Darkin Blade"
-            }
+            "abilities": ... ,
+            "summoners": ... ,
+            "featured_games": ... ,
+            "attack": 8,
+            "championId": 266,
+            "defense": 4,
+            "difficulty": 4,
+            "image_file_name": "Aatrox.png",
+            "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox",
+            "magic": 3,
+            "name": "Aatrox",
+            "number_of_skins": 4,
+            "partype": "BloodWell",
+            "passive_description": "When using an ability that costs Health, Aatrox stores the self-inflicted damage into the Blood Well. Upon taking fatal damage, Aatrox extracts the blood from the well and recovers it as Health over a brief duration. Additionally, Aatrox gains 1% Attack Speed for every 2% blood that is in the well.",
+            "passive_image_file_name": "Aatrox_Passive.png",
+            "passive_name": "Blood Well",
+            "stat_armor": 24.384,
+            "stat_armorperlevel": 3.8,
+            "stat_attackdamage": 60.376,
+            "stat_attackdamageperlevel": 3.2,
+            "stat_attackrange": 150,
+            "stat_attackspeedoffset": -0.04,
+            "stat_attackspeedperlevel": 3,
+            "stat_crit": 0,
+            "stat_hp": 537.8,
+            "stat_hpperlevel": 85,
+            "stat_hpregen": 6.59,
+            "stat_hpregenperlevel": 0.5,
+            "stat_movespeed": 345,
+            "stat_mp": 105.6,
+            "stat_mpperlevel": 45,
+            "stat_mpregen": 0,
+            "stat_mpregenperlevel": 0,
+            "stat_spellblock": 32.1,
+            "stat_spellblockperlevel": 1.25,
+            "title": "the Darkin Blade",
+            "youtube": "https://www.youtube.com/embed/0gvBGmwhOLU\n"
         }
-
 
 # Group Abilities
 
@@ -122,11 +275,12 @@ They have the following attributes:
 ### Attributes
 * description: (string) Description of the spell.
 * costType: (string) Type of cost of this spell.
-* ability_id: (integer) Spell ID.
-* image: (string) Spell's image filename.
-* maxrank: (integer) Maximum rank for this spell.
-* spell_name: (string) Name of spell.
-* champ_name: (string) Name of champion who can cast this spell.
+* id: (integer) Spell ID.
+* imageFileName: (string) Spell's image filename.
+* maxrank: (integer) Maximum rank to level up for this spell.
+* name: (string) Name of spell.
+* tooltip: (string) A tip for using this spell.
+* championId: (integer) ID of champion who can cast this spell.
 
 ## All Abilities [/abilities]
 ### List all Abilities [GET]
@@ -134,96 +288,134 @@ They have the following attributes:
 + Response 200 (application/json)
 
         {
-            "0": {
-                "description": "Aatrox takes flight and slams down at a targeted location, dealing damage and knocking up enemies at the center of impact.",
-                "costType": "pofcurrentHealth",
-                "ability_id": 0,
-                "image": "AatroxQ.png",
+            "90 Caliber Net": {
+                "championId": 51,
+                "costType": "Mana",
+                "description": "Caitlyn fires a heavy net to slow her target. The recoil knocks Caitlyn back.",
+                "id": 478,
+                "image": null,
                 "maxrank": 5,
-                "spell_name": "Dark Flight",
-                "champ_name": "Aatrox"
+                "name": "90 Caliber Net",
+                "spell_name": "90 Caliber Net",
+                "tooltip": "Fires a net dealing {{ e1 }} <span class=\"color99FF99\">(+{{ a1 }})</span> magic damage and slowing an enemy by {{ e3 }}% for {{ e2 }} second(s). Knocks Caitlyn back."
             },
-            "1": {
-                "description": "Aatrox unleashes the power of his blade, dealing damage to all enemies hit and slowing them.",
-                "costType": "pofcurrentHealth",
-                "ability_id": 1,
-                "image": "AatroxE.png",
-                "maxrank": 5,
-                "spell_name": "Blades of Torment",
-                "champ_name": "Aatrox"
-            }
+            "Absolute Zero": {
+                "championId": 20,
+                "costType": "Mana",
+                "description": "Nunu begins to sap the area of heat, slowing all nearby enemies. When the spell ends, he deals massive damage to all enemies caught in the area.",
+                "id": 359,
+                "image": null,
+                "maxrank": 3,
+                "name": "Absolute Zero",
+                "spell_name": "Absolute Zero",
+                "tooltip": "Nunu saps the area of heat, channeling up to {{ e4 }} seconds, slowing surrounding enemy units' Movement Speed by {{ e2 }}% and Attack Speed by {{ e3 }}%.<br><br>Enemies caught in the area when the channel ends receive up to {{ e1 }} <span class=\"color99FF99\">(+{{ a1 }})</span> magic damage, depending on how long the spell was channeled.<br>(Minimum Damage: <span class=\"color99FF99\">{{ f2 }}</span>)"
+            },
+            
+            ...
         }
         
-## Ability [/abilities/{ability_id}]
+## Ability [/abilities/{id}]
 ### Retrieve an Ability by ID [GET]
+
++ Parameters
+    + id (integer) - ID of Ability in the form of an integer.
 
 + Response 200 (application/json)
 
         {
-            "0": {
-                "description": "Aatrox takes flight and slams down at a targeted location, dealing damage and knocking up enemies at the center of impact.",
-                "costType": "pofcurrentHealth",
-                "ability_id": 0,
-                "image": "AatroxQ.png",
-                "maxrank": 5,
-                "spell_name": "Dark Flight",
-                "champ_name": "Aatrox"
-            }
+            "championId": 51,
+            "costType": "Mana",
+            "description": "Caitlyn fires a heavy net to slow her target. The recoil knocks Caitlyn back.",
+            "id": 478,
+            "image": null,
+            "maxrank": 5,
+            "name": "90 Caliber Net",
+            "spell_name": "90 Caliber Net",
+            "tooltip": "Fires a net dealing {{ e1 }} <span class=\"color99FF99\">(+{{ a1 }})</span> magic damage and slowing an enemy by {{ e3 }}% for {{ e2 }} second(s). Knocks Caitlyn back."
         }
 
-# Group Items
+# Group Summoners
 
-Items augment a Champion's abilities.
+Summoners are human players who compete in Featured Games.
 They have the following attributes:
 
 ### Attributes
-* item_name: (string) Name of the item.
-* group: (string) Group item belongs to.
-* description: (string) Description of item (HTML).
-* plaintext: (string) Plaintext version of description.
-* image: (string) Item's image filename.
-* champ_name: (string) Name of the champion who owns this item.
+* champions: (dictionary) Champions used by this summoner.
+* featured_games: (dictionary) Games this summoner has played in.
+* summoner_id: (integer) ID of the summoner.
+* name: (string) Name of the summoner.
+* profileIconId: (integer) ID of the icon associated with the summoner.
+* summonerLevel: (integer) Summoner level associated with the summoner.
+* bot: (boolean) Indicates whether the summoner is a bot or human.
+* championId: (integer) ID of the champion this summoner is using.
+* teamId: (integer) ID of the team this summoner is on.
 
-## All Items [/items]
-### List all Items [GET]
+## All Summoners [/summoners]
+### List all Summoners [GET]
 
 + Response 200 (application/json)
 
         {
-            "Enchantment: Cinderhulk": {
-                "item_name": "Enchantment: Cinderhulk",
-                "group": "JungleItems"
-                "description": "<stats>+400 Health<br>+15% Bonus Health<\/stats><br><br><unique>UNIQUE Passive - Immolate:<\/unique> Deals 15 (+0.6 per champion level) magic damage a second to nearby enemies. Deals 100% bonus damage to monsters. ",
-                "plaintext": "",
-                "image": "3725.png",
-                "champ_name": "Aatrox"
+            " FlapDoodLe  Hmm": {
+                "champions": ... ,
+                "featured_games": ... ,
+                "bot": false,
+                "id": 70,
+                "name": " FlapDoodLe  Hmm",
+                "profileIconId": 550,
+                "summonerLevel": 30,
+                "summoner_id": 32007673
             },
-            "Enchantment: Runeglaive": {
-                "item_name": "Enchantment: Runeglaive",
-                "group": "JungleItems"
-                "description": "<stats>+50 Ability Power<br><mana>+200 Mana<\/mana><br>+10% Cooldown Reduction<\/stats><br><br><unique>UNIQUE Passive - Spellblade:<\/unique> After using an ability, the next basic attack deals 100% Base Attack Damage (+30% of Ability Power) bonus magic damage on hit (1.5 second cooldown). When directly attacking a monster, the bonus damage is reapplied in an AoE around the target, and 8% of your missing Mana is restored.",
-                "plaintext": "",
-                "image": "3724.png",
-                "champ_name": "Aatrox"
-            }
+            "A Wizard": {
+                "champions": ... ,
+                "featured_games": ... ,
+                "bot": false,
+                "id": 16,
+                "name": "A Wizard",
+                "profileIconId": 16,
+                "summonerLevel": 30,
+                "summoner_id": 19549591
+            },
+            
+            ...
         }
 
-## Item [/items/{item_name}]
+## Summoner [/summoners/{summoner_id}]
 
 + Parameters
-    + item_name (string) - Name of Item in the form of a string.
+    + summoner_id (integer) - ID of Summoner in the form of an integer.
 
-### Retreive an Item by name [GET]
+### Retreive a Summoner by ID [GET]
 
 + Response 200 (application/json)
 
         {
-            "Enchantment: Cinderhulk": {
-                "item_name": "Enchantment: Cinderhulk",
-                "group": "JungleItems"
-                "description": "<stats>+400 Health<br>+15% Bonus Health<\/stats><br><br><unique>UNIQUE Passive - Immolate:<\/unique> Deals 15 (+0.6 per champion level) magic damage a second to nearby enemies. Deals 100% bonus damage to monsters. ",
-                "plaintext": "",
-                "image": "3725.png",
-                "champ_name": "Aatrox"
-            }
+            "champions": ... ,
+            "featured_games": ... ,
+            "bot": false,
+            "id": 16,
+            "name": "A Wizard",
+            "profileIconId": 16,
+            "summonerLevel": 30,
+            "summoner_id": 19549591
         }
+
+# Group Search
+
+The API also allows general search queries across all models. AND and OR operations on terms are supported. Responses will vary.
+
+## Run a Query [/search/{search_query}]
+
++ Parameters
+    + search_query (string) - Query to execute in the form of a string.
+    
+### Run a Query [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "<championId>": ... ,
+            "<summoner_id>": ... ,
+            "<game_id>": ... ,
+        }
+
