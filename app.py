@@ -9,7 +9,7 @@ import os, json, subprocess
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
-# CORS(app)
+CORS(app)
 
 import models
 from models import *
