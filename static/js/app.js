@@ -110,8 +110,11 @@ angular.module('hardcarryApp', [
     service.goToSummoner = function(id){
         $location.path("/summoners/" + id); // path not hash
     };
-    service.goToFeaturedGame= function(id){
+    service.goToFeaturedGame = function(id){
         $location.path("/featuredGames/" + id); // path not hash
+    };
+    service.goToSearchRow = function(idTuple){
+        $location.path("/" + idTuple.type + "/" + idTuple.id);
     };
 
     return service;
@@ -219,16 +222,16 @@ angular.module('hardcarryApp', [
     };
 }])
 
-.directive('hcChampionSearchTable', [function(){
+.directive('hcSearchTable', [function(){
     return {
         restrict: 'E',
         scope: {
             data: '=hcData',
         },
         controller: ['$scope', 'hcLocation', function($scope, hcLocation){
-            // $scope.order = "championId";
-            $scope.goToItem = hcLocation.goToChampion;
-            $scope.atts = [{id: 'championId', name: 'ID'},
+            $scope.order = "id";
+            $scope.goToItem = hcLocation.goToSearchRow;
+            $scope.atts = [{id: 'type', name: 'Type'},
                            {id: 'name', name: 'Name'},
                            {id: 'context', name: 'Context'}];
         }],
