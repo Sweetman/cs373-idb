@@ -1,5 +1,5 @@
 from flask 				  import Flask, render_template, jsonify
-from flask.ext.cors import CORS, cross_origin
+from flask.ext.cors       import CORS, cross_origin
 from flask.ext.sqlalchemy import SQLAlchemy
 import coverage
 
@@ -25,13 +25,29 @@ def serve_partial():
 	return render_template('/partials/{}'.format(path))
 
 @app.route('/tests/runTests/')
-def tests():
-    p = subprocess.Popen(["make", "test"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            stdin=subprocess.PIPE)
-    out, err = p.communicate()
-    return render_template('tests.html', output=err+out)
+# def tests():
+#     p = subprocess.Popen(["make", "test"],
+#             stdout=subprocess.PIPE,
+#             stderr=subprocess.PIPE,
+#             stdin=subprocess.PIPE)
+#     out, err = p.communicate()
+#     return render_template('tests.html', output=err+out)
+def get():
+   res = ''
+   path = os.path.dirname(os.path.realpath(__file__))
+   for i in run_command(('python3 ' + path + '/tests.py').split()):
+       res += i.decode("utf-8")
+
+   return json.dumps({ 'results': res })
+
+def run_command(exe):
+   p = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+   while True:
+       retcode = p.poll()  # returns None while subprocess is running
+       line = p.stdout.readline()
+       yield line
+       if retcode is not None:
+           break
 
 
 # ------------

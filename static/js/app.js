@@ -10,7 +10,9 @@ angular.module('hardcarryApp', [
     'hardcarryApp.featuredGame',
     'hardcarryApp.about',
     'hardcarryApp.search',
+    'hardcarryApp.tests',
     'hardcarryApp.nobelPrizes',
+    // 'hardcarryApp.httpServices',
     'angularUtils.directives.dirPagination'
 ])
 
@@ -51,6 +53,12 @@ angular.module('hardcarryApp', [
             controller: 'nobelPrizesCtrl',
             controllerAs: 'nobelPrizes',
             activeTab: 'Nobel Prizes Map'
+        })
+        .when('/tests', {
+            templateUrl: '/static/partials/tests.html',
+            controller: 'testsCtrl',
+            controllerAs: 'tests',
+            activeTab: 'Unit Tests'
         })
         .when('/champions/:id', {
             templateUrl: '/static/partials/champion.html',

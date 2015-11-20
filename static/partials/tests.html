@@ -6,9 +6,9 @@
 {% endblock %} -->
 
 <div class="container">
-    <button class="btn btn-info btn-lg" ng-click="runTests()">Run Tests</button>
+    <pre class="top-buffer"><code ng-bind="results"></code></pre>
 </div>
 
 <div class="container">
-    <pre class="top-buffer"><code ng-bind="results"></code></pre>
+    <button ng-click="runTests()">Run Tests</button>
 </div>
