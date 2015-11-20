@@ -1,17 +1,14 @@
 from flask 				  import Flask, render_template, jsonify
 from flask.ext.cors import CORS, cross_origin
 from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy.ext.declarative import DeclarativeMeta
 import coverage
 
 import os, json, subprocess
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
-app.config['CORS_HEADERS'] = 'Content-Type'
 db = SQLAlchemy(app)
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
 
 import models
 from models import *
@@ -41,8 +38,7 @@ def tests():
 # API requests
 # ------------
 
-@app.route('/api/', methods=['POST', 'OPTIONS'])
-@cross_origin(origin='*')
+@app.route('/api/')
 def api_root():
 	data = {
 				'urls': {
@@ -69,8 +65,7 @@ def get_dict_from_obj(obj):
 
 # Champions
 
-@app.route('/api/champions/', methods=['POST', 'OPTIONS'])
-@cross_origin(origin='*')
+@app.route('/api/champions/')
 def api_champions_all():
 	jsonData = {}
 	for data in Champion.query:
@@ -78,7 +73,6 @@ def api_champions_all():
 	return jsonify(jsonData)
 
 @app.route('/api/champions/<queried_id>')
-@cross_origin()
 def api_champions_id(queried_id):
 	data = Champion.query.get(queried_id)
 	return jsonify(data.serialize())
@@ -86,8 +80,7 @@ def api_champions_id(queried_id):
 
 # Abilities
 
-@app.route('/api/abilities/', methods=['POST', 'OPTIONS'])
-@cross_origin(origin='*')
+@app.route('/api/abilities/')
 def api_abilities_all():
 	jsonData = {}
 	for data in ChampionAbility.query:
@@ -95,7 +88,6 @@ def api_abilities_all():
 	return jsonify(jsonData)
 
 @app.route('/api/abilities/<queried_id>')
-@cross_origin()
 def api_abilities_id(queried_id):
 	data = ChampionAbility.query.get(queried_id)
 	return jsonify(data.serialize())
@@ -103,8 +95,7 @@ def api_abilities_id(queried_id):
 
 # Summoners
 
-@app.route('/api/summoners/', methods=['POST', 'OPTIONS'])
-@cross_origin(origin='*')
+@app.route('/api/summoners/')
 def api_summoners_all():
 	jsonData = {}
 	for data in Summoner.query:
@@ -112,7 +103,6 @@ def api_summoners_all():
 	return jsonify(jsonData)
 
 @app.route('/api/summoners/<queried_id>')
-@cross_origin()
 def api_summoners_id(queried_id):
 	data = Summoner.query.get(queried_id)
 	return jsonify(data.serialize())
@@ -120,8 +110,7 @@ def api_summoners_id(queried_id):
 
 # Featured Games
 
-@app.route('/api/featured-games/', methods=['POST', 'OPTIONS'])
-@cross_origin(origin='*')
+@app.route('/api/featured-games/')
 def api_featuredgames_all():
 	jsonData = {}
 	for data in FeaturedGame.query:
@@ -129,16 +118,13 @@ def api_featuredgames_all():
 	return jsonify(jsonData)
 
 @app.route('/api/featured-games/<queried_id>')
-@cross_origin()
 def api_featuredgames_id(queried_id):
 	data = FeaturedGame.query.get(queried_id)
 	return jsonify(data.serialize())
 
 
 # Search
-
-@app.route('/api/search/<query_string>', methods=['POST', 'OPTIONS'])
-@cross_origin(origin='*')
+@app.route('/api/search/<query_string>')
 def api_search(query_string):
 	champ_query = db.session.query(Champion)
 	ability_query = db.session.query(ChampionAbility)
